@@ -21,6 +21,8 @@ exclude:
   - resources/
   - vendor/
 
+baseurl: "/portfolio"
+url: "https://elysableu.github.io"
 
 # Welcome to Jekyll!
 #
