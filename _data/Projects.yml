@@ -14,5 +14,4 @@ contents:
       - Completed in 16 hours as a technical exercise
       - Built a backend API to store, access, and manage subscription information using Active Record to query the database
       - Designed an aesthetic and simply frontend using React components to display information dynamically and implemented sorting behavior to organize displayed information
-      -"Technology Used: React, Ruby on Rails, Cypres, Rspec"
-    image: "![](https://i.ibb.co/Ttb5Qn9/21321312.webp)"
+      - "Technology Used: React, Ruby on Rails, Cypres, Rspec"
