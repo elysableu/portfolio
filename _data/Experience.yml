@@ -2,21 +2,11 @@ subject: Experiences
 listing-order: 2
 icon: "/assets/img/briefcase.svg"
 contents:
-  - title: Nanosoft
-    role: Project Manager
+  - title: Denver Public Schools, Cherry Creek Public Schools, and Jefferson County Public Schools
+    role: Student Teacher
     description:
-      - Led development of a new chatbot software utilizing large language model
-      - Co-designer of '*Kopilot*' and '*Gemmini*'
-    date: Jan. 2024 - Ongoing
-  - title: Amazone
-    role: Senior Software Engineer
-    description: 
-      - Built a Java microservice, database schema to manage customer accounts
-      - Enhanced internal pipelines to query real-time data from client devices
-    date: Apr. 2016 - Dec. 2018
-  - title: Pacebook
-    role: Software Engineer Intern
-    description: 
-      - Designed the dynamic website using React for data visualization
-      - Integrated '*Yolo*' to boost the accuracy of the object detection
-    date: Jul. 2013 - Sep. 2013
+      - Presented lessons to classes of 20+ students in 9th to 12th grade, fostering an interactive and inclusive classroom environment.
+      - Developed engaging Pre-Calculus lessons, leading to a higher class participation and a deeper understanding of Trigonometry concepts
+      - Supported students with one-on-one tutoring contributing to improved student confidence in reading prompts in English and independently solving algebra problems
+      - Collaborated with fellow teachers to create Math projects and support students through projects, resulting in a significant improvement in student retention and performance
+    date: Aug. 2017 - Dec. 2019
