@@ -18,6 +18,9 @@ exclude:
   - _posts/
   - resources/
   - vendor/
+  
+include: 
+  - assets/img
 
 # Welcome to Jekyll!
 #
