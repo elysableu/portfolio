@@ -2,16 +2,15 @@ subject: Projects
 listing-order: 4
 icon: "/assets/img/clipboard-list.svg"
 contents:
-  - title: "RepRadar"
+  - title: "RepRadar | Group of 6 | Completed in two weeks"
     description: 
-      - Web application that provides users with easy access to most recent executive orders and representative contacts by an input zip code
-      - Designed an intuitive frontend using React and CSS to improve user experience and interaction
-      - Implemented endpoints in rails backend to retrieve representative information from 5calls API and set up behaviors to isolate targeted information (i.e. name, district, party affiliation, contact number, etc.) to be distributed to the frontend
       - "Technology used: React, Ruby on Rails, Cypress, Rspec, 5Calls API, Federal Register API"
-  - title: Bloom&Brew
+      - "Description: Web application that provides users with easy access to most recent executive orders and representative contacts by an input zip code"
+      - "Learning Goal: Develop an understanding of design patterns and experience app development from ideation to deployment"
+      - "Personal Focus: Designed an intuitive frontend using React and CSS to improve user experience and interaction. Implemented endpoints in rails backend to retrieve representative information from 5calls API and set up behaviors to isolate targeted information (i.e. name, district, party affiliation, contact number, etc.) to be distributed to the frontend."
+  - title: "Bloom&Brew | Solo | Completed in 16 hours"
     description: 
-      - An administrative portal for a tea subscription service that allows business managers to efficiently track and manage subscriptions. The platform provides detailed insights into each subscription, including customer information and curated tea selections.
-      - Completed in 16 hours as a technical exercise
-      - Built a backend API to store, access, and manage subscription information using Active Record to query the database
-      - Designed an aesthetic and simply frontend using React components to display information dynamically and implemented sorting behavior to organize displayed information
       - "Technology Used: React, Ruby on Rails, Cypres, Rspec"
+      - "Description: An administrative portal for a tea subscription service that allows business managers to efficiently track and manage subscriptions. The platform provides detailed insights into each subscription, including customer information and curated tea selections."
+      - "Learning Goals: Simulate a task that I might receive during an interview process (i.e. take home technical challenge) and to practice explaining my process to a peer as if in an interview"
+      - "Focus: Built a backend API to store, access, and manage subscription information using Active Record to query the database. Designed an aesthetic and simply frontend using React components to display information dynamically and implemented sorting behavior to organize displayed information."
