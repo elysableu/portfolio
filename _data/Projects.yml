@@ -2,13 +2,13 @@ subject: Projects
 listing-order: 4
 icon: "/assets/img/clipboard-list.svg"
 contents:
-  - title: "RepRadar | Group of 6 | Completed in two weeks"
+  - title: "RepRadar - Group of 6 - Completed in two weeks"
     description: 
       - "Technology used: React, Ruby on Rails, Cypress, Rspec, 5Calls API, Federal Register API"
       - "Description: Web application that provides users with easy access to most recent executive orders and representative contacts by an input zip code"
       - "Learning Goal: Develop an understanding of design patterns and experience app development from ideation to deployment"
       - "Personal Focus: Designed an intuitive frontend using React and CSS to improve user experience and interaction. Implemented endpoints in rails backend to retrieve representative information from 5calls API and set up behaviors to isolate targeted information (i.e. name, district, party affiliation, contact number, etc.) to be distributed to the frontend."
-  - title: "Bloom&Brew | Solo | Completed in 16 hours"
+  - title: "Bloom&Brew - Solo - Completed in 16 hours"
     description: 
       - "Technology Used: React, Ruby on Rails, Cypres, Rspec"
       - "Description: An administrative portal for a tea subscription service that allows business managers to efficiently track and manage subscriptions. The platform provides detailed insights into each subscription, including customer information and curated tea selections."
