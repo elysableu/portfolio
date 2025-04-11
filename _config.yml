@@ -1,4 +1,4 @@
-title: Professional Portfolio
+title: Elysa Ward | Portfolio Home
 profile_img: /assets/img/Profile_pic.svg
 icon_img: /assets/img/Portfolio_logo.svg
 
@@ -21,6 +21,7 @@ exclude:
   
 include: 
   - assets/img
+  -assets/docs
 
 # Welcome to Jekyll!
 #
