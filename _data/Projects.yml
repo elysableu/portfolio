@@ -5,7 +5,7 @@ contents:
   - title: "RepRadar - Group of 6 - Completed in two weeks"
     deploy: "[Live Site](https://frontend-9cax.onrender.com/)"
     backend_repo: "Backend Repo: [GitHub](https://github.com/RedRadar-WT-Team/backend)"
-    frontend_Repo: "Frontend Repo: [GitHub](https://github.com/RedRadar-WT-Team/frontend)"
+    frontend_repo: "Frontend Repo: [GitHub](https://github.com/RedRadar-WT-Team/frontend)"
     description: 
       - "Technology used: React, Ruby on Rails, Cypress, Rspec, 5Calls API, Federal Register API"
       - "Description: Web application that provides users with easy access to most recent executive orders and representative contacts by an input zip code."
@@ -14,7 +14,7 @@ contents:
   - title: "Tracker - Group of 34 - Contributed to for 4 weeks"
     deploy: "[Live Site](https://tracker-crm-fe-38f7cf1aaca5.herokuapp.com/)"
     backend_repo: "Backend Repo: [GitHub](https://github.com/turingschool/tracker-crm)"
-    frontend_Repo: "Frontend Repo: [GitHub](https://github.com/turingschool/tracker-crm-fe)"
+    frontend_repo: "Frontend Repo: [GitHub](https://github.com/turingschool/tracker-crm-fe)"
     description: 
       - "Technology Used: React, Typescript, Tailwind CSS, Ruby on Rails, Cypress, Rspec, TipTap"
       - "Description: A web application designed to help users track their job hunt by organizing key contacts, interesting companies, and job applications—all in one place. By connecting this information, the app streamlines the job search and enhances the overall experience."
