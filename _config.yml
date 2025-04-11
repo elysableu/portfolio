@@ -21,7 +21,7 @@ exclude:
   
 include: 
   - assets/img
-  -assets/docs
+  - assets/docs
 
 # Welcome to Jekyll!
 #
