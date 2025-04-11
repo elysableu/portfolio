@@ -3,9 +3,9 @@ listing-order: 4
 icon: "/assets/img/clipboard-list.svg"
 contents:
   - title: "RepRadar - Group of 6 - Completed in two weeks"
-    deployment_link: "[Live Site](https://frontend-9cax.onrender.com/)"
-    be_repo_link: "[BE Repo](https://github.com/RedRadar-WT-Team/backend)"
-    fe_repo_link: "[FE Repo](https://github.com/RedRadar-WT-Team/frontend)"
+    [Live Site](https://frontend-9cax.onrender.com/)
+    [BE Repo](https://github.com/RedRadar-WT-Team/backend)
+    [FE Repo](https://github.com/RedRadar-WT-Team/frontend)
     description: 
       - "Technology used: React, Ruby on Rails, Cypress, Rspec, 5Calls API, Federal Register API"
       - "Description: Web application that provides users with easy access to most recent executive orders and representative contacts by an input zip code."
