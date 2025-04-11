@@ -7,9 +7,9 @@ job: Software Engineer
 
 phone_number: 303-875-5603
 address: Superior, Colorado, United States
-email: {{ site.data.Links.email }}
-linkedin_username:  {{ site.data.Links.linkedin }}
-github_username:  {{ site.data.Links.github }}
+email: { site.data.Links.email }
+linkedin_username:  { site.data.Links.linkedin }
+github_username:  { site.data.Links.github }
 instagram_username: astubyinbleu
 
 theme: jekyll-professional-resume
