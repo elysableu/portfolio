@@ -3,7 +3,7 @@ listing-order: 4
 icon: "/assets/img/clipboard-list.svg"
 contents:
   - title: "RepRadar - Group of 6 - Completed in two weeks"
-    "[Live Site](https://frontend-9cax.onrender.com/)"
+    # "[Live Site](https://frontend-9cax.onrender.com/)"
     # [BE Repo](https://github.com/RedRadar-WT-Team/backend)
     # [FE Repo](https://github.com/RedRadar-WT-Team/frontend)
     description: 
@@ -12,9 +12,9 @@ contents:
       - "Learning Goal: Develop an understanding of design patterns and experience app development from ideation to deployment."
       - "Personal Focus: Designed an intuitive frontend using React and CSS to improve user experience and interaction. Implemented endpoints in rails backend to retrieve representative information from 5calls API and set up behaviors to isolate targeted information (i.e. name, district, party affiliation, contact number, etc.) to be distributed to the frontend."
   - title: "Tracker - Group of 34 - Contributed to for 4 weeks"
-    deployment_link: "[Live Site](https://tracker-crm-fe-38f7cf1aaca5.herokuapp.com/)"
-    be_repo_link: "[BE Repo](https://github.com/turingschool/tracker-crm)"
-    fe_repo_link: "[FE Repo](https://github.com/turingschool/tracker-crm-fe)"
+    deploy: "[Live Site](https://tracker-crm-fe-38f7cf1aaca5.herokuapp.com/)"
+    backend_repo: "Backend Repo: [GitHub](https://github.com/turingschool/tracker-crm)"
+    frontend_Repo: "Frontend Repo: [GitHub](https://github.com/turingschool/tracker-crm-fe)"
     description: 
       - "Technology Used: React, Typescript, Tailwind CSS, Ruby on Rails, Cypress, Rspec, TipTap"
       - "Description: A web application designed to help users track their job hunt by organizing key contacts, interesting companies, and job applications—all in one place. By connecting this information, the app streamlines the job search and enhances the overall experience."
