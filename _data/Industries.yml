@@ -2,5 +2,4 @@ subject: Past Industries
 listing-order: 1
 icon: "/assets/img/factory-icon.svg"
 contents:
-- Education
-- Retail Sales
+- past_industries: "Education | Retail Sales"
