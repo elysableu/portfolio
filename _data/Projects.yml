@@ -3,6 +3,7 @@ listing-order: 5
 icon: "/assets/img/clipboard-list.svg"
 contents:
   - title: "RepRadar - Group of 6 - Completed in two weeks"
+    creenshot: "![repradarScreenShot](https://elysableu.github.io/portfolio/assets/img/repradar.png)"
     deploy: "[Live Site](https://frontend-9cax.onrender.com/)"
     backend_repo: "Backend Repo: [GitHub](https://github.com/RedRadar-WT-Team/backend)"
     frontend_repo: "Frontend Repo: [GitHub](https://github.com/RedRadar-WT-Team/frontend)"
@@ -12,6 +13,7 @@ contents:
       - "Learning Goal: Develop an understanding of design patterns and experience app development from ideation to deployment."
       - "Personal Focus: Designed an intuitive frontend using React and CSS to improve user experience and interaction. Implemented endpoints in rails backend to retrieve representative information from 5calls API and set up behaviors to isolate targeted information (i.e. name, district, party affiliation, contact number, etc.) to be distributed to the frontend."
   - title: "Tracker - Group of 34 - Contributed to for 4 weeks"
+    screenshot: "![trackerScreenShot](https://elysableu.github.io/portfolio/assets/img/tracker.png)"
     deploy: "[Live Site](https://tracker-crm-fe-38f7cf1aaca5.herokuapp.com/)"
     backend_repo: "Backend Repo: [GitHub](https://github.com/turingschool/tracker-crm)"
     frontend_repo: "Frontend Repo: [GitHub](https://github.com/turingschool/tracker-crm-fe)"
