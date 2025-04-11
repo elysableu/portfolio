@@ -4,7 +4,6 @@ icon_img: /assets/img/Portfolio_logo.svg
 
 name: Elysa Ward
 job: Software Engineer
-pronouns: She/Her
 
 phone_number: 303-875-5603
 address: Superior, Colorado, United States
@@ -12,7 +11,6 @@ email: "<a href='mailto:elysabward@outlook.com'>elysabward@outlook.com</a>"
 linkedin_username: "[elysa-ward](https://www.linkedin.com/in/elysa-ward/)"
 github_username: "[elysableu](https://github.com/elysableu)"
 instagram_username: astubyinbleu
-resume: "[Resume](assets/docs/Resume_Ward_Elysa_2025.pdf)"
 
 theme: jekyll-professional-resume
 
