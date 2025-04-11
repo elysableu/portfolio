@@ -7,9 +7,9 @@ job: Software Engineer
 
 phone_number: 303-875-5603
 address: Superior, Colorado, United States
-email: "[elysabward@outlook.com](mailto:elysabward@outlook.com)"
-linkedin_username: "[elysa-ward](https://www.linkedin.com/in/elysa-ward/)"
-github_username: "[elysableu](https://github.com/elysableu)"
+email: "<a href='mailto:elysabward@outlook.com'>elysabward@outlook.com</a>"
+linkedin_username: "<a href='https://www.linkedin.com/in/elysa-ward/'>elysa-ward</a>"
+github_username: "<a href='https://github.com/elysableu'>elysableu</a>"
 instagram_username: astubyinbleu
 
 theme: jekyll-professional-resume
