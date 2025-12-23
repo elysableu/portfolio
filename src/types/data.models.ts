@@ -29,7 +29,6 @@ export interface Home {
   headline: string
   introduction: string
   callToAction: CallToAction
-  featuredProjects: TickerItem[]
   stats: Stat[]
 }
 
@@ -174,7 +173,7 @@ export interface ProjectMetrics {
 // ============================================================================
 // TICKER (for Ticker component)
 // ============================================================================
-export interface TickerItem {
+export interface TickerItemType {
   id: string
   title: string
   thumbnail: string
