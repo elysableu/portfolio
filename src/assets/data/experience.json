@@ -1,0 +1,77 @@
+[
+  {
+    "id": "se-current",
+    "title": "Software Engineer",
+    "company": "Tech Company Name",
+    "location": "Denver, CO",
+    "locationType": "Hybrid",
+    "type": "Full-time",
+    "startDate": "2023-06",
+    "endDate": null,
+    "current": true,
+    "description": "Developing full-stack web applications using modern frameworks and best practices. Collaborating with cross-functional teams to deliver scalable solutions.",
+    "responsibilities": [
+      "Built and maintained RESTful APIs using Node.js and Express",
+      "Developed responsive frontend applications with Angular and React",
+      "Implemented automated testing with Jest and Cypress",
+      "Collaborated with UX designers to create intuitive user interfaces",
+      "Participated in code reviews and mentored junior developers"
+    ],
+    "achievements": [
+      "Improved application performance by 40% through optimization",
+      "Led migration from legacy system to modern tech stack",
+      "Reduced bug reports by 30% through comprehensive testing"
+    ],
+    "technologies": ["Angular", "Node.js", "PostgreSQL", "TypeScript", "Docker", "AWS"],
+    "logo": "assets/img/companies/company-logo.png"
+  },
+  {
+    "id": "teacher",
+    "title": "Mathematics Teacher",
+    "company": "Denver Public Schools",
+    "location": "Denver, CO",
+    "locationType": "On-site",
+    "type": "Full-time",
+    "startDate": "2019-08",
+    "endDate": "2023-05",
+    "current": false,
+    "description": "Taught high school mathematics while developing educational technology tools to enhance student learning.",
+    "responsibilities": [
+      "Designed and delivered engaging mathematics curriculum for 150+ students",
+      "Created interactive learning materials using technology",
+      "Analyzed student data to inform instructional decisions",
+      "Collaborated with colleagues on curriculum development"
+    ],
+    "achievements": [
+      "Increased student test scores by 25% through innovative teaching methods",
+      "Developed custom web-based tools to track student progress",
+      "Received Teacher of the Year nomination"
+    ],
+    "technologies": ["JavaScript", "Python", "Google Apps Script", "Excel"],
+    "logo": "assets/img/companies/dps-logo.png"
+  },
+  {
+    "id": "intern",
+    "title": "Software Engineering Intern",
+    "company": "Startup Name",
+    "location": "Remote",
+    "locationType": "Remote",
+    "type": "Internship",
+    "startDate": "2022-05",
+    "endDate": "2022-08",
+    "current": false,
+    "description": "Summer internship focused on frontend development and user experience improvements.",
+    "responsibilities": [
+      "Implemented new features for customer-facing web application",
+      "Fixed bugs and improved code quality",
+      "Participated in daily standups and sprint planning",
+      "Wrote technical documentation"
+    ],
+    "achievements": [
+      "Delivered 3 major features ahead of schedule",
+      "Improved page load time by 50%"
+    ],
+    "technologies": ["React", "JavaScript", "CSS", "Git"],
+    "logo": "assets/img/companies/startup-logo.png"
+  }
+]

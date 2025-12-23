@@ -1,0 +1,199 @@
+{
+  "categories": [
+    {
+      "category": "Frontend Development",
+      "icon": "monitor",
+      "skills": [
+        {
+          "name": "Angular",
+          "level": 90,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/angular.svg"
+        },
+        {
+          "name": "React",
+          "level": 75,
+          "yearsOfExperience": 1.5,
+          "icon": "assets/img/icons/react.svg"
+        },
+        {
+          "name": "TypeScript",
+          "level": 85,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/typescript.svg"
+        },
+        {
+          "name": "HTML/CSS",
+          "level": 90,
+          "yearsOfExperience": 3,
+          "icon": "assets/img/icons/html5.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": 80,
+          "yearsOfExperience": 1,
+          "icon": "assets/img/icons/tailwind.svg"
+        },
+        {
+          "name": "SCSS/SASS",
+          "level": 85,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/sass.svg"
+        }
+      ]
+    },
+    {
+      "category": "Backend Development",
+      "icon": "server",
+      "skills": [
+        {
+          "name": "Node.js",
+          "level": 80,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/nodejs.svg"
+        },
+        {
+          "name": "Express",
+          "level": 80,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/express.svg"
+        },
+        {
+          "name": "Python",
+          "level": 75,
+          "yearsOfExperience": 3,
+          "icon": "assets/img/icons/python.svg"
+        },
+        {
+          "name": "Flask",
+          "level": 70,
+          "yearsOfExperience": 1,
+          "icon": "assets/img/icons/flask.svg"
+        },
+        {
+          "name": "RESTful APIs",
+          "level": 85,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/api.svg"
+        }
+      ]
+    },
+    {
+      "category": "Database",
+      "icon": "database",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "level": 80,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/postgresql.svg"
+        },
+        {
+          "name": "MongoDB",
+          "level": 70,
+          "yearsOfExperience": 1,
+          "icon": "assets/img/icons/mongodb.svg"
+        },
+        {
+          "name": "MySQL",
+          "level": 75,
+          "yearsOfExperience": 1.5,
+          "icon": "assets/img/icons/mysql.svg"
+        },
+        {
+          "name": "SQL",
+          "level": 85,
+          "yearsOfExperience": 3,
+          "icon": "assets/img/icons/sql.svg"
+        }
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "icon": "tool",
+      "skills": [
+        {
+          "name": "Git",
+          "level": 90,
+          "yearsOfExperience": 3,
+          "icon": "assets/img/icons/git.svg"
+        },
+        {
+          "name": "Docker",
+          "level": 70,
+          "yearsOfExperience": 1,
+          "icon": "assets/img/icons/docker.svg"
+        },
+        {
+          "name": "AWS",
+          "level": 65,
+          "yearsOfExperience": 1,
+          "icon": "assets/img/icons/aws.svg"
+        },
+        {
+          "name": "CI/CD",
+          "level": 70,
+          "yearsOfExperience": 1,
+          "icon": "assets/img/icons/cicd.svg"
+        },
+        {
+          "name": "Linux",
+          "level": 75,
+          "yearsOfExperience": 2,
+          "icon": "assets/img/icons/linux.svg"
+        }
+      ]
+    },
+    {
+      "category": "Testing",
+      "icon": "check-circle",
+      "skills": [
+        {
+          "name": "Jest",
+          "level": 75,
+          "yearsOfExperience": 1.5,
+          "icon": "assets/img/icons/jest.svg"
+        },
+        {
+          "name": "Cypress",
+          "level": 70,
+          "yearsOfExperience": 1,
+          "icon": "assets/img/icons/cypress.svg"
+        },
+        {
+          "name": "Jasmine/Karma",
+          "level": 75,
+          "yearsOfExperience": 1.5,
+          "icon": "assets/img/icons/jasmine.svg"
+        }
+      ]
+    }
+  ],
+  "proficiencies": [
+    {
+      "name": "Problem Solving",
+      "description": "Breaking down complex problems into manageable solutions",
+      "level": 95
+    },
+    {
+      "name": "Code Review",
+      "description": "Providing constructive feedback and maintaining code quality",
+      "level": 85
+    },
+    {
+      "name": "Agile/Scrum",
+      "description": "Working effectively in agile development environments",
+      "level": 80
+    },
+    {
+      "name": "Technical Writing",
+      "description": "Creating clear documentation and technical specifications",
+      "level": 90
+    },
+    {
+      "name": "Teaching/Mentoring",
+      "description": "Helping others learn and grow their technical skills",
+      "level": 95
+    }
+  ]
+}

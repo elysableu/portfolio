@@ -1,0 +1,47 @@
+[
+  {
+    "id": "msudenver-math-cs",
+    "degree": "Bachelor of Arts in Mathematics",
+    "field": "Mathematics",
+    "institution": "Metropolitan State University of Denver",
+    "location": "Denver, CO",
+    "startDate": "2012-08",
+    "endDate": "2022-12",
+    "gpa": "",
+    "honors": [],
+    "minors": ["Computer Science"],
+    "relevantCoursework": [
+      "Abstract Algebra",
+      "Differential Equations",
+      "Discrete Math",
+      "Geometric Proofs",
+      "Introduction to Computational Theory",
+      "Introduction to Mathematical Proofs",
+      "Linear Algebra",
+      "Multidimensional Calculus",
+      "Software Development and Management",
+      "Statistics and Probability",
+      "Web Application Development"
+    ],
+    "projects": [
+      "Turing Consultancy: RepRadar - Congressional tracking application",
+      "Turing CapStone: Tracker - Job hunt tracking app"
+    ],
+    "logo": "assets/img/education/msud-logo.png"
+  },
+  {
+    "id": "turing-cs",
+    "degree": "Accreditted certificate on Full Stack Software Engineering",
+    "field": "Software Engineering",
+    "institution": "Turing School of Software and Design",
+    "location": "Denver, CO",
+    "startDate": "2024-10",
+    "endDate": "2025-05",
+    "gpa": "",
+    "honors": [],
+    "concentration": "Full Stack Development",
+    "relevantCoursework": [
+    ],
+    "logo": "assets/img/education/turing-logo.png"
+  }
+]

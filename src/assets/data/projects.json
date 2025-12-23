@@ -1,0 +1,156 @@
+[
+  {
+    "id": "repradar",
+    "title": "RepRadar",
+    "tagline": "Track your representatives, stay informed",
+    "shortDescription": "A comprehensive tool for tracking congressional representatives and current executive orders.",
+    "fullDescription": "RepRadar is a full-stack web application that helps citizens stay informed about their congressional representatives. Users can search for representatives by location, and view the most recent executive orders. Built with a focus on civic engagement, transparency, and user experience.",
+    "motivation": "Inspired by the need for greater civic engagement and transparency in government, RepRadar makes it easy for everyday citizens to understand current executire orders and find representatives to contact",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Ruby on Rails",
+      "PostgreSQL",
+      "5 Calls API",
+      "Federal Register API"
+    ],
+    "features": [
+      "Real-time representative lookup by zip code",
+      "Up to date executive orders and ai generated summaries"
+    ],
+    "challenges": [
+      {
+        "challenge": "Integrating multiple government APIs with inconsistent data formats",
+        "solution": "Built a data normalization layer to standardize information from different sources"
+      },
+      {
+        "challenge": "Handling large datasets efficiently",
+        "solution": "Implemented pagination, caching, and database indexing strategies"
+      },
+      {
+        "challenge": "Finding an API that provided up to date summaries of each executive order",
+        "solution": "Created AI data scraper to create summaries as each detailed view loaded in"
+      }
+    ],
+    "images": [
+      "assets/img/project_screenshots/repradar.png"
+    ],
+    "thumbnail": "assets/img/project_screenshots/repradar.png",
+    "githubUrl": "https://github.com/RedRadar-WT-Team",
+    "liveUrl": "https://repradar.example.com",
+    "demoVideo": "",
+    "status": "completed",
+    "startDate": "2025-04",
+    "endDate": "2025-04",
+    "featured": true,
+    "priority": 1,
+    "role": "Full-Stack Developer",
+    "teamSize": 6,
+    "tags": ["civic-tech", "full-stack", "API-integration", "data-visualization"],
+    "metrics": {
+      "users": "",
+      "uptime": "",
+      "apiCalls": ""
+    }
+  },
+  {
+    "id": "tracker",
+    "title": "Tracker",
+    "tagline": "Organize your job search, one connection at a time",
+    "shortDescription": "A comprehensive job hunt tracking application for managing contacts, companies, and applications.",
+    "fullDescription": "A full-stack job search management application designed to help users stay organized throughout their job hunt. Features include contact management, company tracking, application progress monitoring, and relationship mapping between contacts, companies, and applications. The app helps users maintain meaningful connections while keeping track of their entire job search pipeline.",
+    "motivation": "After experiencing the chaos of managing hundreds of applications, contacts, and company research during my own job search, I wanted to create a centralized tool that connects all the pieces of the job hunt process.",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Cypress",
+      "Ruby on Rails",
+      "PostgreSQL",
+      "RSpec",
+      "CircleCI"
+    ],
+    "features": [
+      "Contact management with notes and interaction history",
+      "Company profiles with interest levels and research notes",
+      "Application tracking with customizable status stages",
+      "Network mapping connecting contacts to companies and applications",
+      "Visual pipeline dashboard showing application progress"
+    ],
+    "challenges": [
+      {
+        "challenge": "Designing a relational data model that connects contacts, companies, and applications",
+        "solution": "Implemented a flexible schema with junction tables to support many-to-many relationships"
+      },
+      {
+        "challenge": "Creating an intuitive interface for complex relationship mapping",
+        "solution": "Built interactive visualizations showing connections between entities with clear visual hierarchies"
+      }
+    ],
+    "images": [
+      "assets/img/project_screenshots/tracker.png",
+      "assets/img/project_screenshots/tracker-dashboard.png"
+    ],
+    "thumbnail": "assets/img/project_screenshots/tracker.png",
+    "githubUrl-fe": "https://github.com/turingschool/tracker-crm-fe",
+    "githubUrl-be": "https://github.com/turingschool/tracker-crm",
+    "liveUrl": null,
+    "demoVideo": null,
+    "status": "in-progress",
+    "startDate": "2024-08",
+    "endDate": null,
+    "featured": true,
+    "priority": 2,
+    "role": "Solo Developer",
+    "teamSize": 1,
+    "tags": ["productivity", "full-stack", "data-visualization", "job-search"],
+    "metrics": null
+  },
+  {
+    "id": "portfolio",
+    "title": "Personal Portfolio",
+    "tagline": "Showcasing my work with modern web tech",
+    "shortDescription": "This portfolio website built with Angular and modern web technologies.",
+    "fullDescription": "A modern, responsive portfolio website showcasing my projects, skills, and experience. Built with Angular 19 and featuring server-side rendering, custom reusable components, a clean design system using SCSS variables, and dynamic content loading. Demonstrates proficiency in modern web development practices and attention to detail.",
+    "motivation": "To create a professional online presence that showcases both my technical skills and design sensibility.",
+    "technologies": [
+      "Angular",
+      "TypeScript",
+      "SCSS",
+      "Tailwind CSS",
+      "Angular SSR",
+      "RxJS"
+    ],
+    "features": [
+      "Server-side rendering for better SEO and performance",
+      "Fully responsive design across all devices",
+      "Custom reusable components (ticker, cards, etc.)",
+      "Dynamic content loading from JSON files",
+      "Design system with SCSS variables",
+      "Smooth animations and transitions"
+    ],
+    "challenges": [
+      {
+        "challenge": "Making components SSR-compatible",
+        "solution": "Used platform detection and conditional rendering"
+      }
+    ],
+    "images": [
+      "assets/img/project_screenshots/portfolio-home.png",
+      "assets/img/project_screenshots/portfolio-projects.png"
+    ],
+    "thumbnail": "assets/img/project_screenshots/portfolio-home.png",
+    "githubUrl": "https://github.com/yourusername/portfolio",
+    "liveUrl": "https://elysaward.com",
+    "demoVideo": null,
+    "status": "completed",
+    "startDate": "2024-12",
+    "endDate": "2025-01",
+    "featured": false,
+    "priority": 3,
+    "role": "Designer & Developer",
+    "teamSize": 1,
+    "tags": ["frontend", "Angular", "web-design", "SSR"],
+    "metrics": null
+  }
+]
