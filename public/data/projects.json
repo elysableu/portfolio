@@ -32,8 +32,8 @@
         "solution": "Created AI data scraper to create summaries as each detailed view loaded in"
       }
     ],
-    "images": ["assets/img/project_screenshots/repradar.png"],
-    "thumbnail": "assets/img/project_screenshots/repradar.png",
+    "images": ["/img/project_screenshots/repradar.png"],
+    "thumbnail": "/img/project_screenshots/repradar.png",
     "githubUrl": "https://github.com/RedRadar-WT-Team",
     "liveUrl": "https://repradar.example.com",
     "demoVideo": "",
@@ -86,10 +86,10 @@
       }
     ],
     "images": [
-      "assets/img/project_screenshots/tracker.png",
-      "assets/img/project_screenshots/tracker-dashboard.png"
+      "/img/project_screenshots/tracker.png",
+      "/img/project_screenshots/tracker-dashboard.png"
     ],
-    "thumbnail": "assets/img/project_screenshots/tracker.png",
+    "thumbnail": "/img/project_screenshots/tracker.png",
     "githubUrl-fe": "https://github.com/turingschool/tracker-crm-fe",
     "githubUrl-be": "https://github.com/turingschool/tracker-crm",
     "liveUrl": null,
