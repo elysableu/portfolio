@@ -1,0 +1,196 @@
+// ============================================================================
+// PERSONAL
+// ============================================================================
+export interface Personal {
+  name: string
+  title: string
+  tagline: string
+  email: string
+  phone: string
+  location: string
+  timezone: string
+  links: PersonalLinks
+  avatar: string
+}
+
+export interface PersonalLinks {
+  github: string
+  linkedin: string
+  twitter: string
+  resume: string
+  portfolio: string
+}
+
+// ============================================================================
+// HOME
+// ============================================================================
+export interface Home {
+  greeting: string
+  headline: string
+  introduction: string
+  callToAction: CallToAction
+  featuredProjects: TickerItem[]
+  stats: Stat[]
+}
+
+export interface CallToAction {
+  primary: CallToActionButton
+  secondary: CallToActionButton
+}
+
+export interface CallToActionButton {
+  text: string
+  link: string
+}
+
+export interface Stat {
+  label: string
+  value: string
+}
+
+// ============================================================================
+// ABOUT
+// ============================================================================
+export interface About {
+  bio: string
+  journey: Journey
+  values: Value[]
+  interests: string[]
+  currentlyLearning: string[]
+}
+
+export interface Journey {
+  title: string
+  paragraphs: string[]
+}
+
+export interface Value {
+  title: string
+  description: string
+  icon: string
+}
+
+// ============================================================================
+// EDUCATION
+// ============================================================================
+export interface Education {
+  id: string
+  degree: string
+  field: string
+  institution: string
+  location: string
+  startDate: string
+  graduationDate: string
+  gpa?: string
+  honors?: string[]
+  minors?: string[]
+  concentration?: string
+  relevantCoursework?: string[]
+  projects?: string[]
+  logo?: string
+}
+
+// ============================================================================
+// EXPERIENCE
+// ============================================================================
+export interface Experience {
+  id: string
+  title: string
+  company: string
+  location: string
+  locationType: 'Remote' | 'Hybrid' | 'On-site'
+  type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship'
+  startDate: string
+  endDate: string | null
+  current: boolean
+  description: string
+  responsibilities: string[]
+  achievements: string[]
+  technologies: string[]
+  logo?: string
+}
+
+// ============================================================================
+// SKILLS
+// ============================================================================
+export interface Skills {
+  categories: SkillCategory[]
+}
+
+export interface SkillCategory {
+  category: string
+  icon: string
+  skills: Skill[]
+}
+
+export interface Skill {
+  name: string
+  level: number
+  yearsOfExperience: number
+  icon?: string
+}
+
+// ============================================================================
+// PROJECTS
+// ============================================================================
+export interface Project {
+  id: string
+  title: string
+  tagline: string
+  shortDescription: string
+  fullDescription: string
+  motivation: string
+  technologies: string[]
+  features: string[]
+  challenges: Challenge[]
+  images: string[]
+  thumbnail: string
+  githubUrl?: string
+  liveUrl?: string
+  demoVideo?: string
+  status: ProjectStatus
+  startDate: string
+  endDate: string | null
+  featured: boolean
+  priority: number
+  role: string
+  teamSize: number
+  tags: string[]
+  metrics?: ProjectMetrics
+}
+
+export interface Challenge {
+  challenge: string
+  solution: string
+}
+
+export interface ProjectMetrics {
+  users?: string
+  uptime?: string
+  apiCalls?: string
+  [key: string]: string | undefined
+}
+
+// ============================================================================
+// TICKER (for Ticker component)
+// ============================================================================
+export interface TickerItem {
+  id: string
+  title: string
+  thumbnail: string
+  url: string
+}
+
+// ============================================================================
+// UTILITY TYPES
+// ============================================================================
+
+export type ProjectStatus = 'completed' | 'in-progress' | 'planned'
+
+export interface SearchResult {
+  type: 'project' | 'skill' | 'experience'
+  id: string
+  title: string
+  description: string
+  url: string
+}
