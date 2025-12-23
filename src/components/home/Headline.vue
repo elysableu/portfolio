@@ -1,13 +1,15 @@
-<script lang="ts">
+<script setup lang="ts">
+interface Props {
+  headline: string
+}
 
+defineProps<Props>()
 </script>
 
 <template>
   <div>
-    <h3>Headline</h3>
+    <h3>{{ headline }}</h3>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
