@@ -36,9 +36,5 @@
     "Data Visualization",
     "Educational Software"
   ],
-  "currentlyLearning": [
-    "GraphQL",
-    "Microservices Architecture",
-    "Machine Learning Basics"
-  ]
+  "currentlyLearning": ["GraphQL", "Microservices Architecture", "Machine Learning Basics"]
 }
