@@ -33,7 +33,7 @@
       <p>{{ about.bio }}</p>
     </div>
     <div class="journey">
-
+      <Journey></Journey>
     </div>
     <div class="values-container">
 
