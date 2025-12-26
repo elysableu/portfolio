@@ -5,9 +5,7 @@ export function useData() {
   const loading = ref(false)
   const error = ref<string | null>(null)
 
-  const fetchData = async <T>(
-    fetchFn: () => Promise<T>
-  ) : Promise<T | null> => {
+  const fetchData = async <T>(fetchFn: () => Promise<T>): Promise<T | null> => {
     loading.value = true
     error.value = null
 
@@ -27,6 +25,6 @@ export function useData() {
     loading,
     error,
     fetchData,
-    ...dataService
+    ...dataService,
   }
 }

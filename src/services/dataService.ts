@@ -6,12 +6,11 @@ import type {
   Experience,
   Skills,
   Project,
-  ProjectStatus
+  ProjectStatus,
+  TickerItemType,
 } from '@/types/data.models'
 
-const BASE_PATH = '@/assets'
-const DATA_PATH = `${BASE_PATH}/data`
-// const DOC_PATH = `${BASE_PATH}/data`
+const DATA_PATH = `/data`
 
 // =========================
 // BASIC DATA RETRIEVAL
@@ -59,41 +58,47 @@ export const getProjects = async (): Promise<Project[]> => {
   return response.json()
 }
 
-
 // ==============================
 // FILTERED/COMPUTED DATA
 // ==============================
 
-export const getFeaturedProjects = async (): Promise<Project[]> => {
+export const getFeaturedProjects = async (): Promise<TickerItemType[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.featured === true)
+  return projects
+    .filter((project) => project.featured === true)
+    .map((project) => ({
+      id: project.id,
+      title: project.title,
+      thumbnail: project.thumbnail,
+      url: `/projects/${project.id}`,
+    }))
 }
 
 export const getProjectById = async (id: string): Promise<Project | undefined> => {
   const projects = await getProjects()
-  return projects.find(project => project.id === id)
+  return projects.find((project) => project.id === id)
 }
 
 export const getProjectsByStatus = async (status: ProjectStatus): Promise<Project[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.status === status)
+  return projects.filter((project) => project.status === status)
 }
 
 export const getProjectsByTag = async (tag: string): Promise<Project[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.tags?.includes(tag))
+  return projects.filter((project) => project.tags?.includes(tag))
 }
 
 export const getProjectsByTechnology = async (technology: string): Promise<Project[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.technologies?.includes(technology))
+  return projects.filter((project) => project.technologies?.includes(technology))
 }
 
 export const getAllProjectTags = async (): Promise<string[]> => {
   const projects = await getProjects()
   const tags = new Set<string>()
-  projects.forEach(project =>{
-    project.tags?.forEach(tag => tags.add(tag))
+  projects.forEach((project) => {
+    project.tags?.forEach((tag) => tags.add(tag))
   })
   return Array.from(tags).sort()
 }
@@ -101,15 +106,15 @@ export const getAllProjectTags = async (): Promise<string[]> => {
 export const getAllTechnologies = async (): Promise<string[]> => {
   const projects = await getProjects()
   const technologies = new Set<string>()
-  projects.forEach(project =>{
-    project.technologies?.forEach(technology => technologies.add(technology))
+  projects.forEach((project) => {
+    project.technologies?.forEach((technology) => technologies.add(technology))
   })
   return Array.from(technologies).sort()
 }
 
 export const getCurrentExperience = async (): Promise<Experience[]> => {
   const experiences = await getExperience()
-  return experiences.filter( exp => !exp.endDate || exp.endDate === 'Present')
+  return experiences.filter((exp) => !exp.endDate || exp.endDate === 'Present')
 }
 
 export const getExperienceSorted = async (): Promise<Experience[]> => {
@@ -130,22 +135,20 @@ export const getEducationSorted = async (): Promise<Education[]> => {
   })
 }
 
-
 // =====================================
 // BULK DATA LOADING
 // =====================================
 
 export const getAllData = async () => {
-  const [personal, home, about, education, experience, skills, projects] =
-    await Promise.all([
-      getPersonal(),
-      getHome(),
-      getAbout(),
-      getEducation(),
-      getExperience(),
-      getSkills(),
-      getProjects()
-    ])
+  const [personal, home, about, education, experience, skills, projects] = await Promise.all([
+    getPersonal(),
+    getHome(),
+    getAbout(),
+    getEducation(),
+    getExperience(),
+    getSkills(),
+    getProjects(),
+  ])
 
   return {
     personal,
@@ -154,7 +157,7 @@ export const getAllData = async () => {
     education,
     experience,
     skills,
-    projects
+    projects,
   }
 }
 
@@ -162,13 +165,13 @@ export const getHomePageData = async () => {
   const [home, personal, featuredProjects] = await Promise.all([
     getHome(),
     getPersonal(),
-    getFeaturedProjects()
+    getFeaturedProjects(),
   ])
 
   return {
     home,
     personal,
-    featuredProjects
+    featuredProjects,
   }
 }
 
@@ -178,7 +181,7 @@ export const getAboutPageData = async () => {
     getPersonal(),
     getEducation(),
     getExperience(),
-    getSkills()
+    getSkills(),
   ])
 
   return {
@@ -186,7 +189,7 @@ export const getAboutPageData = async () => {
     personal,
     education,
     experience,
-    skills
+    skills,
   }
 }
 
@@ -194,13 +197,12 @@ export const getProjectsPageData = async () => {
   const [projects, tags, technologies] = await Promise.all([
     getProjects(),
     getAllProjectTags(),
-    getAllTechnologies()
+    getAllTechnologies(),
   ])
 
   return {
     projects,
     tags,
-    technologies
+    technologies,
   }
 }
-
