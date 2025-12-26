@@ -27,10 +27,10 @@ defineProps<Props>()
 }
 
 .ticker-thumbnail {
-  max-width: 600px;        /* Maximum width */
-  width: 100%;             /* Responsive - will shrink on small screens */
-  height: auto;            /* Maintains aspect ratio */
-  object-fit: contain;     /* Ensures full image is visible */
+  max-width: 600px; /* Maximum width */
+  width: 100%; /* Responsive - will shrink on small screens */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures full image is visible */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

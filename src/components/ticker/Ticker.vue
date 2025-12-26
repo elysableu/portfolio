@@ -79,8 +79,10 @@ onUnmounted(() => {
       </div>
       <div class="ticker-buttons">
         <button @click="previousSlide" class="ticker-button">⇠</button>
-        <button @click="toggleAutoPlay"  class="ticker-button">{{ isAutoPlaying ? '⏸' : '▶' }}</button>
-        <button @click="nextSlide"  class="ticker-button">⇢</button>
+        <button @click="toggleAutoPlay" class="ticker-button">
+          {{ isAutoPlaying ? '⏸' : '▶' }}
+        </button>
+        <button @click="nextSlide" class="ticker-button">⇢</button>
       </div>
     </div>
   </div>
