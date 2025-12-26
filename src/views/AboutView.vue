@@ -1,6 +1,23 @@
+<script lang="ts">
+  import {ref, onMounted } from 'vue'
+  import { useData } from '@/composables/useData'
+  import type {Personal, About, Education, Experience, Skills } from '@/types/data.models'
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div class="openning-container">
+      
+    </div>
+    <div class="education-container">
+
+    </div>
+    <div class="experience-container">
+
+    </div>
+    <div class="skills-container">
+
+    </div>
   </div>
 </template>
 
