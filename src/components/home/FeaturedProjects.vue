@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Ticker from '@/components/ticker/Ticker.vue'
+import Ticker from '@/components/shared/ticker/Ticker.vue'
 import type { TickerItemType } from '@/types/data.models'
 
 interface Props {
