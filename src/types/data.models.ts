@@ -72,7 +72,7 @@ export interface Value {
 // ============================================================================
 // EDUCATION
 // ============================================================================
-export interface Education {
+export interface EducationType {
   id: string
   degree: string
   field: string
@@ -92,7 +92,7 @@ export interface Education {
 // ============================================================================
 // EXPERIENCE
 // ============================================================================
-export interface Experience {
+export interface ExperienceType {
   id: string
   title: string
   company: string
@@ -112,7 +112,7 @@ export interface Experience {
 // ============================================================================
 // SKILLS
 // ============================================================================
-export interface Skills {
+export interface SkillsType {
   categories: SkillCategory[]
 }
 
