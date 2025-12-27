@@ -3,7 +3,7 @@
   import { useData } from '@/composables/useData'
   import type { About, Personal, EducationType, ExperienceType, SkillsType } from '@/types/data.models'
 
-  import OpeningDetails from '@/components/about/OpeningDetails.vue'
+  import OpeningDetails from '@/components/about/opening/OpeningDetails.vue'
   import Education from '@/components/about/education/Education.vue'
   import Experience from '@/components/about/experience/Experience.vue'
   import Skills from '@/components/about/skills/Skills.vue'
