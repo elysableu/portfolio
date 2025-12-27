@@ -34,7 +34,7 @@
       class="dropdown-item"
       @click="handleClick"
     >
-      <span v-if="icon" class="item-icon">{{ icon }}</span>
+      <img v-if="icon" :src="icon" class="item-icon" width="60" height="60"/>
       <slot></slot>
     </a>
 
@@ -44,7 +44,7 @@
       class="dropdown-item"
       @click="handleClick"
     >
-      <span v-if="icon" class="item-icon">{{ icon }}</span>
+      <img v-if="icon" :src="icon" class="item-icon" width="60" height="60" />
       <slot></slot>
     </button>
   </li>

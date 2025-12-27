@@ -8,7 +8,7 @@
     width?: string
   }
 
-  const props = withDefaults(defineProps<Props>(), {
+  withDefaults(defineProps<Props>(), {
     align: 'left',
     width: 'auto'
   })
