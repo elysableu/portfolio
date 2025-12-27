@@ -5,6 +5,7 @@
   import DropDown from '@/components/shared/dropdown/DropDown.vue'
   import DropDownItem from '@/components/shared/dropdown/DropDownItem.vue'
   import Journey from './journey/Journey.vue'
+  import Values from './values/Values.vue'
 
   interface Props {
     about: About
@@ -45,10 +46,10 @@
       <p>{{ about.bio }}</p>
     </div>
     <div class="journey">
-      <Journey :journey="about.journey" :images="images"></Journey>
+      <Journey :journey="about.journey" :images="images" />
     </div>
     <div class="values-container">
-
+      <Values :values="about.values" />
     </div>
     <div class="interests">
 
