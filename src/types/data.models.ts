@@ -129,7 +129,6 @@ export interface SkillCategory {
 
 export interface Skill {
   name: string
-  level: number
   yearsOfExperience: number
   icon?: string
 }
