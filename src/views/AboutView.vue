@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import {ref, onMounted } from 'vue'
   import { useData } from '@/composables/useData'
-  import type { About, Personal, EducationType, ExperienceType, SkillsType } from '@/types/data.models'
+  import type { About, EducationType, ExperienceType, SkillsType } from '@/types/data.models'
 
   import OpeningDetails from '@/components/about/opening/OpeningDetails.vue'
   import Education from '@/components/about/education/Education.vue'
@@ -11,7 +11,6 @@
   const { loading, error, getAboutPageData } = useData()
   const aboutData = ref<{
     about: About
-    personal: Personal
     education: EducationType[]
     experience: ExperienceType[]
     skills: SkillsType
@@ -31,13 +30,13 @@
         <OpeningDetails :about="aboutData.about"/>
       </div>
       <div class="education-container">
-        <Education />
+        <Education :education="aboutData.education"/>
       </div>
       <div class="experience-container">
-        <Experience />
+        <Experience :experience="aboutData.experience"/>
       </div>
       <div class="skills-container">
-        <Skills />
+        <Skills :skills="aboutData.skills"/>
       </div>
     </div>
   </main>
