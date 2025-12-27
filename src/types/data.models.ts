@@ -107,7 +107,6 @@ export interface ExperienceType {
   current: boolean
   description: string
   responsibilities: string[]
-  achievements: string[]
   technologies: string[]
   logo?: string
 }
