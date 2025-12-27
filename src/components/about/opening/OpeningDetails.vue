@@ -6,6 +6,7 @@
   import DropDownItem from '@/components/shared/dropdown/DropDownItem.vue'
   import Journey from './journey/Journey.vue'
   import Values from './values/Values.vue'
+  import Interests from './interests/Interests.vue'
 
   interface Props {
     about: About
@@ -52,10 +53,10 @@
       <Values :values="about.values" />
     </div>
     <div class="interests">
-
+      <Interests :interests="about.interests"/>
     </div>
     <div class="currently-learning">
-
+      
     </div>
   </div>
 </template>
