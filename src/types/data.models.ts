@@ -52,15 +52,20 @@ export interface Stat {
 // ============================================================================
 export interface About {
   bio: string
-  journey: Journey
+  journey: JourneyType
   values: Value[]
   interests: string[]
   currentlyLearning: string[]
 }
 
-export interface Journey {
+export interface JourneyType {
   title: string
   paragraphs: string[]
+}
+
+export interface AboutImages {
+  teach: string
+  computer: string
 }
 
 export interface Value {
@@ -193,3 +198,5 @@ export interface SearchResult {
   description: string
   url: string
 }
+
+export type ImageCollection = Record<string, string>
