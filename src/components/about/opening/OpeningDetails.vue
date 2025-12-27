@@ -7,6 +7,7 @@
   import Journey from './journey/Journey.vue'
   import Values from './values/Values.vue'
   import Interests from './interests/Interests.vue'
+import CurrentlyLearning from './currentlyLearning/CurrentlyLearning.vue'
 
   interface Props {
     about: About
@@ -53,10 +54,12 @@
       <Values :values="about.values" />
     </div>
     <div class="interests">
+      <h3>Interests</h3>
       <Interests :interests="about.interests"/>
     </div>
     <div class="currently-learning">
-      
+      <h3>Currently Learning</h3>
+      <CurrentlyLearning :currentlyLearningList="about.currentlyLearning"/>
     </div>
   </div>
 </template>
