@@ -1,14 +1,26 @@
 <script setup lang="ts">
   import resumePdf from '/documents/Elysa_Ward_Resume_2025.pdf'
-  import DropDown from '@/components/shared/dropdown/DropDown.vue'
-  import DropDownItem from '../shared/dropdown/DropDownItem.vue'
   import type { About } from '@/types/data.models'
+
+  import DropDown from '@/components/shared/dropdown/DropDown.vue'
+  import DropDownItem from '@/components/shared/dropdown/DropDownItem.vue'
+  import Journey from './journey/Journey.vue'
 
   interface Props {
     about: About
   }
 
   defineProps<Props>()
+
+  const icons = {
+    view: '/img/eye.svg',
+    download: '/img/download.svg'
+  }
+
+  const images = {
+    teach: '/img/about/teach.svg',
+    computer: '/img/about/computer.svg'
+  } as const
 
   const viewResume = () => {
     window.open(resumePdf, '_blank')
@@ -20,10 +32,10 @@
     <div class="resume">
       <DropDown label="Resume" align="left">
         <template #default="{ close }">
-          <DropDownItem icon="👁️" @click="viewResume(); close()">
+          <DropDownItem :icon="icons.view" @click="viewResume(); close()">
             View
           </DropDownItem>
-          <DropDownItem icon="⬇️" :href="resumePdf" download="Elysa_Ward_Resume_2025.pdf" @click="close">
+          <DropDownItem :icon="icons.download" :href="resumePdf" download="Elysa_Ward_Resume_2025.pdf" @click="close">
             Download
           </DropDownItem>
         </template>
@@ -33,7 +45,7 @@
       <p>{{ about.bio }}</p>
     </div>
     <div class="journey">
-      <Journey></Journey>
+      <Journey :journey="about.journey" :images="images"></Journey>
     </div>
     <div class="values-container">
 
