@@ -30,10 +30,10 @@
         <OpeningDetails :about="aboutData.about"/>
       </div>
       <div class="education-container">
-        <Education :education="aboutData.education"/>
+        <Education :educationList="aboutData.education"/>
       </div>
       <div class="experience-container">
-        <Experience :experience="aboutData.experience"/>
+        <Experience :experienceList="aboutData.experience"/>
       </div>
       <div class="skills-container">
         <Skills :skills="aboutData.skills"/>
