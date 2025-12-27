@@ -85,8 +85,6 @@ export interface EducationType {
   location: string
   startDate: string
   graduationDate: string
-  gpa?: string
-  honors?: string[]
   minors?: string[]
   concentration?: string
   relevantCoursework?: string[]
