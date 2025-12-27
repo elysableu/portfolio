@@ -9,15 +9,8 @@
 
   const props = defineProps<Props>()
 
-    console.log('Journey - Images received:', props.images)
-console.log('Journey - teach path:', props.images.teach)
-console.log('Journey - computer path:', props.images.computer)
-
   const getImage = (index: number) => {
-     const imagePath = index % 2 === 0 ? props.images.teach : props.images.computer
-  console.log(`Journey - Image for index ${index}:`, imagePath)
-  return imagePath
-    // return index % 2 === 0 ? props.images.teach : props.images.computer
+    return index % 2 === 0 ? props.images.teach : props.images.computer
   }
 </script>
 

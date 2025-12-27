@@ -4,10 +4,7 @@
     paragraph: string
   }
 
-  const props = defineProps<Props>()
-
-  console.log('JourneyItem - Image path:', props.image)
-console.log('JourneyItem - Full URL:', window.location.origin + props.image)
+  defineProps<Props>()
 </script>
 
 <template>
