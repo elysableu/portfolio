@@ -52,15 +52,20 @@ export interface Stat {
 // ============================================================================
 export interface About {
   bio: string
-  journey: Journey
+  journey: JourneyType
   values: Value[]
   interests: string[]
   currentlyLearning: string[]
 }
 
-export interface Journey {
+export interface JourneyType {
   title: string
   paragraphs: string[]
+}
+
+export interface AboutImages {
+  teach: string
+  computer: string
 }
 
 export interface Value {
@@ -72,7 +77,7 @@ export interface Value {
 // ============================================================================
 // EDUCATION
 // ============================================================================
-export interface Education {
+export interface EducationType {
   id: string
   degree: string
   field: string
@@ -80,8 +85,6 @@ export interface Education {
   location: string
   startDate: string
   graduationDate: string
-  gpa?: string
-  honors?: string[]
   minors?: string[]
   concentration?: string
   relevantCoursework?: string[]
@@ -92,7 +95,7 @@ export interface Education {
 // ============================================================================
 // EXPERIENCE
 // ============================================================================
-export interface Experience {
+export interface ExperienceType {
   id: string
   title: string
   company: string
@@ -104,7 +107,6 @@ export interface Experience {
   current: boolean
   description: string
   responsibilities: string[]
-  achievements: string[]
   technologies: string[]
   logo?: string
 }
@@ -112,7 +114,7 @@ export interface Experience {
 // ============================================================================
 // SKILLS
 // ============================================================================
-export interface Skills {
+export interface SkillsType {
   categories: SkillCategory[]
 }
 
@@ -124,7 +126,6 @@ export interface SkillCategory {
 
 export interface Skill {
   name: string
-  level: number
   yearsOfExperience: number
   icon?: string
 }
@@ -193,3 +194,5 @@ export interface SearchResult {
   description: string
   url: string
 }
+
+export type ImageCollection = Record<string, string>

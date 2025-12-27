@@ -176,9 +176,8 @@ export const getHomePageData = async () => {
 }
 
 export const getAboutPageData = async () => {
-  const [about, personal, education, experience, skills] = await Promise.all([
+  const [about, education, experience, skills] = await Promise.all([
     getAbout(),
-    getPersonal(),
     getEducation(),
     getExperience(),
     getSkills(),
@@ -186,7 +185,6 @@ export const getAboutPageData = async () => {
 
   return {
     about,
-    personal,
     education,
     experience,
     skills,
