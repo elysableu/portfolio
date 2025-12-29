@@ -10,10 +10,12 @@ defineProps<Props>()
 
 <template>
   <div class="ticker-item">
-    <a :href="item.url" target="_blank" rel="noopener noreferrer">
+    <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link">
       <img :alt="item.title" :src="item.thumbnail" class="ticker-thumbnail" />
     </a>
-    <h3>{{ item.title }}</h3>
+    <div class="ticker-label">
+      <h3>{{ item.title }}</h3>
+    </div>
   </div>
 </template>
 
@@ -22,33 +24,51 @@ defineProps<Props>()
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  padding: var(--spacing-md);
+}
+
+.ticker-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  transition: transform var(--transition-base);
+}
+
+.ticker-link:hover {
+  transform: scale(1.02);
 }
 
 .ticker-thumbnail {
-  max-width: 600px; /* Maximum width */
-  width: 100%; /* Responsive - will shrink on small screens */
-  height: auto; /* Maintains aspect ratio */
-  object-fit: contain; /* Ensures full image is visible */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+
+.ticker-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    transparent 100%
+  );
+  padding: var(--spacing-lg);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 h3 {
-  margin: 0;
+  margin: var(--spacing-lg);
   font-size: 1.5rem;
-  color: #333;
-  text-align: center;
-}
-
-a {
-  text-decoration: none;
-  transition: transform 0.3s;
-}
-
-a:hover {
-  transform: scale(1.02);
+  color: var(--color-text-inverse);
+  text-align: left;
+  font-weight: 600;
 }
 
 /* Responsive adjustments */

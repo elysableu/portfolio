@@ -7,9 +7,15 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div>
+  <div class="headline">
     <h3>{{ headline }}</h3>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .headline {
+    font-family: 'Dosis';
+    font-weight: 700;
+  }
+
+</style>
