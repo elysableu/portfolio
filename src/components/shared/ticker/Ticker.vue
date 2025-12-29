@@ -67,7 +67,10 @@ const toggleAutoPlay = () => {
   }
 }
 
-const currentItem = computed(() => props.items[currentIndex.value])
+const currentItem = computed(() => {
+  if (props.items.length === 0) return null
+  return props.items[currentIndex.value]
+})
 
 onMounted(() => {
   startAutoPlay()
@@ -84,10 +87,10 @@ onUnmounted(() => {
       <h4>{{ title }}</h4>
     </div>
     <div class="ticker-content">
-      <div class="ticker-wrapper">
+      <div v-if="currentItem" class="ticker-wrapper">
         <TickerItem :key="currentItem.id" :item="currentItem" />
       </div>
-      <div class="ticker-controls">
+      <div v-if="currentItem" class="ticker-controls">
         <button @click="previousSlide" class="ticker-button">
           <img :src="buttonIcons.previous" alt="previous" class="button-icon" />
         </button>
