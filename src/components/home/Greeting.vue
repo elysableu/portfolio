@@ -7,7 +7,13 @@ defineProps<Props>()
 </script>
 
 <template>
-  <h1>{{ greeting }}</h1>
+  <div class="greeting-message">
+    <h1>{{ greeting }}</h1>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .greeting-message {
+    font-family: 'Metamorphous'
+  }
+</style>

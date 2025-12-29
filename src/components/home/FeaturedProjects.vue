@@ -11,7 +11,7 @@ defineProps<Props>()
 
 <template>
   <div>
-    <Ticker :items="featured" />
+    <Ticker title="Featured Projects" :items="featured" />
   </div>
 </template>
 

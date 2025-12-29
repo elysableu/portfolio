@@ -21,17 +21,64 @@ onMounted(async () => {
 </script>
 
 <template>
-  <main>
-    <div v-if="loading">Loading...</div>
-    <div v-else-if="error">{{ error }}</div>
-    <div v-else-if="homeData">
-      <Greeting :greeting="homeData.home.greeting" />
-      <Headline :headline="homeData.home.headline" />
-      <Introduction :introduction="homeData.home.introduction" />
-      <FeaturedProjects :featured="homeData.featuredProjects" />
-      <!-- <FeaturedBlogPosts /> -->
+  <div class="home-container">
+    <div v-if="loading" class="loading">Loading...</div>
+    <div v-else-if="error" class="error">{{ error }}</div>
+    <div v-else-if="homeData" class="home-content">
+      <div class="greeting-header">
+        <Greeting :greeting="homeData.home.greeting" />
+      </div>
+      <div class="intro-wrapper">
+        <div class="intro">
+          <div class="intro-content glass-card-dark">
+            <Headline :headline="homeData.home.headline" />
+            <Introduction :introduction="homeData.home.introduction" />
+          </div>
+        </div>
+        <div class="featured glass-card-dark">
+          <FeaturedProjects :featured="homeData.featuredProjects" />
+        </div>
+        <!-- <FeaturedBlogPosts /> -->
+      </div>
     </div>
-  </main>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .home-container {
+    position: fixed;
+    padding: var(--spacing-md);
+    margin: 0 auto;
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  .intro-wrapper {
+    display: flex;
+    gap: var(--spacing-lg);
+  }
+
+  .greeting-header {
+    font-size: larger;
+    text-align: center;
+  }
+
+  .intro {
+    flex: 2;
+  }
+
+  .intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+  }
+
+  .featured {
+     flex: 1;
+  }
+</style>
