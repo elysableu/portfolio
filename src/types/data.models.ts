@@ -196,3 +196,7 @@ export interface SearchResult {
 }
 
 export type ImageCollection = Record<string, string>
+
+export type RadialItem =
+  | { label: string; type: 'link'; link: string }
+  | { label: string; type: 'contact'; contact: string }
