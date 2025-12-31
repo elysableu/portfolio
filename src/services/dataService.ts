@@ -2,9 +2,9 @@ import type {
   Personal,
   Home,
   About,
-  Education,
-  Experience,
-  Skills,
+  EducationType,
+  ExperienceType,
+  SkillsType,
   Project,
   ProjectStatus,
   TickerItemType,
@@ -34,19 +34,19 @@ export const getAbout = async (): Promise<About> => {
   return response.json()
 }
 
-export const getEducation = async (): Promise<Education[]> => {
+export const getEducation = async (): Promise<EducationType[]> => {
   const response = await fetch(`${DATA_PATH}/education.json`)
   if (!response.ok) throw new Error('Failed to fetch education data')
   return response.json()
 }
 
-export const getExperience = async (): Promise<Experience[]> => {
+export const getExperience = async (): Promise<ExperienceType[]> => {
   const response = await fetch(`${DATA_PATH}/experience.json`)
   if (!response.ok) throw new Error('Failed to fetch experience data')
   return response.json()
 }
 
-export const getSkills = async (): Promise<Skills> => {
+export const getSkills = async (): Promise<SkillsType> => {
   const response = await fetch(`${DATA_PATH}/skills.json`)
   if (!response.ok) throw new Error('Failed to fetch skills data')
   return response.json()
@@ -112,12 +112,12 @@ export const getAllTechnologies = async (): Promise<string[]> => {
   return Array.from(technologies).sort()
 }
 
-export const getCurrentExperience = async (): Promise<Experience[]> => {
+export const getCurrentExperience = async (): Promise<ExperienceType[]> => {
   const experiences = await getExperience()
   return experiences.filter((exp) => !exp.endDate || exp.endDate === 'Present')
 }
 
-export const getExperienceSorted = async (): Promise<Experience[]> => {
+export const getExperienceSorted = async (): Promise<ExperienceType[]> => {
   const experiences = await getExperience()
   return experiences.sort((a, b) => {
     const dateA = new Date(a.startDate).getTime()
@@ -126,7 +126,7 @@ export const getExperienceSorted = async (): Promise<Experience[]> => {
   })
 }
 
-export const getEducationSorted = async (): Promise<Education[]> => {
+export const getEducationSorted = async (): Promise<EducationType[]> => {
   const education = await getEducation()
   return education.sort((a, b) => {
     const dateA = new Date(a.graduationDate).getTime()
