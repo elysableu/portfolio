@@ -198,5 +198,18 @@ export interface SearchResult {
 export type ImageCollection = Record<string, string>
 
 export type RadialItem =
-  | { label: string; type: 'link'; link: string }
-  | { label: string; type: 'contact'; contact: string }
+  | { label: string; type: 'link'; link: string, icon: string }
+  | { label: string; type: 'contact'; contact: string, icon: string }
+
+export interface RadialConfig {
+ headshotRadius: number
+  orbitGap: number
+  startAngle: number
+  endAngle: number
+}
+
+export interface RadialItemWithPosition extends RadialItem {
+  x: number
+  y: number
+  rotation: number
+}
