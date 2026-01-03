@@ -16,6 +16,6 @@ defineProps<Props>()
   .headline {
     font-family: 'Dosis';
     font-weight: 700;
+    text-align: right;
   }
-
 </style>

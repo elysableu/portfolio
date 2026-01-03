@@ -35,25 +35,17 @@ import { RouterLink } from 'vue-router'
   padding: var(--spacing-xl) var(--spacing-xl);
 }
 
-.logo {
-  display: block;
-  transition: transform var(--transition-base);
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
 .navBar nav {
   display: flex;
   gap: var(--spacing-xl);
   align-items: center;
+  padding-top: var(--spacing-xl);
 }
 
 .navBar a {
   color: var(--color-text-inverse);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-md);
