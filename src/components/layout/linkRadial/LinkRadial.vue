@@ -35,7 +35,7 @@ onMounted(async () => {
     <div class="radial-container">
       <div class="headshot-background">
         <div class="headshot">
-          <img :src="`https://ui-avatars.com/api/?name=EW&size=64&background=7B9BB3`" alt="headshot-image" class="headshot-image"/>
+          <img :src="`https://ui-avatars.com/api/?name=EW&size=64&background=a6429b`" alt="headshot-image" class="headshot-image"/>
         </div>
       </div>
       <div class="radial-items">

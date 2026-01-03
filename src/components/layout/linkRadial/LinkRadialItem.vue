@@ -30,11 +30,19 @@
       </a>
       <a
         v-else-if="item.type === 'link'"
-        :href="item.link"
+        :href="item.label === 'github' ? `https://github.com/${item.link}` : `https://www.linkedin.com/in/${item.link}/`"
         target="_blank"
         class="radial-link-text"
       >
         {{ item.link }}
+      </a>
+      <a
+        v-else-if="item.type === 'resume'"
+        :href="item.resume"
+        target="_blank"
+        class="radial-link-text"
+      >
+      Resume
       </a>
     </div>
   </div>

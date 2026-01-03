@@ -19,7 +19,7 @@ export function extractRadialItems(data: Personal): RadialItem[] {
 
 
   if (data) {
-    radialItems.push(...extractContacts(data), ...extractLinks(data))
+    radialItems.push(...extractContacts(data), ...extractLinks(data), ...extractResume(data))
   }
 
   return radialItems
@@ -51,8 +51,18 @@ export function extractLinks(data: Personal): RadialItem[] {
   return linksData
 }
 
+export function extractResume(data: Personal): RadialItem[] {
+  const resumeData: RadialItem[] = []
+
+  if (data.resume) {
+    resumeData.push(formatRadialItems('resume', 'resume', data.resume))
+  }
+
+  return resumeData
+}
+
 export function formatRadialItems(
-  type: 'contact' | 'link',
+  type: 'contact' | 'link' | 'resume',
   label: string,
   item: string
 ): RadialItem {
@@ -65,6 +75,13 @@ export function formatRadialItems(
       contact: item,
       icon: iconSrc
     }
+  } else if (type === "resume") {
+    return {
+      label: label,
+      type: type,
+      resume: item,
+      icon: iconSrc
+    }
   } else {
     return {
       label: label,
@@ -74,7 +91,6 @@ export function formatRadialItems(
     }
   }
 }
-
 
 export function calculateRadialPostions(
   items: RadialItem[],
