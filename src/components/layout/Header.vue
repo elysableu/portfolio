@@ -5,14 +5,6 @@ import { RouterLink } from 'vue-router'
 <template>
   <header class="header">
     <div class="header-content">
-      <img
-        alt="Portfolio logo"
-        class="logo"
-        src="@/assets/Portfolio_logo.svg"
-        width="125"
-        height="125"
-      />
-
       <div class="navBar">
         <nav>
           <RouterLink to="/">Home</RouterLink>
@@ -31,16 +23,16 @@ import { RouterLink } from 'vue-router'
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 150;
 }
 
 .header-content {
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-xl) var(--spacing-xl);
 }
 
 .logo {
