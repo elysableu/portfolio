@@ -10,6 +10,7 @@ export interface Personal {
   location: string
   timezone: string
   links: PersonalLinks
+  resume: string
   avatar: string
 }
 
@@ -17,7 +18,6 @@ export interface PersonalLinks {
   github: string
   linkedin: string
   twitter: string
-  resume: string
   portfolio: string
 }
 
@@ -196,3 +196,21 @@ export interface SearchResult {
 }
 
 export type ImageCollection = Record<string, string>
+
+export type RadialItem =
+  | { label: string; type: 'link'; link: string, icon: string }
+  | { label: string; type: 'contact'; contact: string, icon: string }
+  | { label: string; type: 'resume'; resume: string, icon: string }
+
+export interface RadialConfig {
+ headshotRadius: number
+  orbitGap: number
+  startAngle: number
+  endAngle: number
+}
+
+export interface RadialItemWithPosition extends RadialItem {
+  x: number
+  y: number
+  rotation: number
+}

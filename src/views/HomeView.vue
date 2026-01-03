@@ -24,37 +24,53 @@ onMounted(async () => {
   <div class="home-container">
     <div v-if="loading" class="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
-    <div v-else-if="homeData" class="home-content">
+    <div v-else-if="homeData">
       <div class="greeting-header">
         <Greeting :greeting="homeData.home.greeting" />
       </div>
+    <div class="home-content">
       <div class="intro-wrapper">
+        <div class="featured glass-card-dark">
+          <FeaturedProjects :featured="homeData.featuredProjects" />
+        </div>
         <div class="intro">
           <div class="intro-content glass-card-dark">
             <Headline :headline="homeData.home.headline" />
             <Introduction :introduction="homeData.home.introduction" />
           </div>
         </div>
-        <div class="featured glass-card-dark">
-          <FeaturedProjects :featured="homeData.featuredProjects" />
-        </div>
         <!-- <FeaturedBlogPosts /> -->
       </div>
+    </div>
     </div>
   </div>
 </template>
 
 <style scoped>
   .home-container {
-    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
     padding: var(--spacing-md);
     margin: 0 auto;
+    position: relative;
+  }
+
+  .greeting-header {
+    font-size: x-large;
+    text-align: right;
+    position: absolute;
+    top: -50px;
+    right: 100px;
+    left: var(--spacing-sm);
+    z-index: 10;
   }
 
   .home-content {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    padding-top: calc(var(--spacing-lg) + 60px);
   }
 
   .intro-wrapper {
@@ -62,13 +78,9 @@ onMounted(async () => {
     gap: var(--spacing-lg);
   }
 
-  .greeting-header {
-    font-size: larger;
-    text-align: center;
-  }
 
   .intro {
-    flex: 2;
+    flex: 3;
   }
 
   .intro-content {
@@ -79,6 +91,6 @@ onMounted(async () => {
   }
 
   .featured {
-     flex: 1;
+     flex: 2;
   }
 </style>

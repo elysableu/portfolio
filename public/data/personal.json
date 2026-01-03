@@ -7,9 +7,9 @@
   "location": "Boulder, Colorado",
   "timezone": "MST",
   "links": {
-    "github": "https://github.com/elysableu",
-    "linkedin": "https://www.linkedin.com/in/elysa-ward/",
-    "resume": "assets/documents/Elysa_Ward _Resume_2025.pdf"
+    "github": "elysableu",
+    "linkedin": "elysa-ward"
   },
+  "resume": "/documents/Elysa_Ward_Resume_2025.pdf",
   "avatar": "assets/img/avatar.jpg"
 }

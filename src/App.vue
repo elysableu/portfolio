@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Header from './components/layout/Header.vue'
+import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
 </script>
 
 <template>
   <div id="app">
+    <LinkRadial />
     <Header />
     <main class="main-content">
       <RouterView />
@@ -36,5 +38,7 @@ import Header from './components/layout/Header.vue'
   .main-content {
     margin-top: 250px;
     min-height: calc(100vh - 200px);
+    z-index: 100;
+    position: fixed;
   }
 </style>

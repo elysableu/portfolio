@@ -7,7 +7,7 @@
   import Journey from './journey/Journey.vue'
   import Values from './values/Values.vue'
   import Interests from './interests/Interests.vue'
-import CurrentlyLearning from './currentlyLearning/CurrentlyLearning.vue'
+  import CurrentlyLearning from './currentlyLearning/CurrentlyLearning.vue'
 
   interface Props {
     about: About
