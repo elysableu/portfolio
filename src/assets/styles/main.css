@@ -231,6 +231,16 @@ a:focus-visible {
 }
 
 /* ============================================
+   Utility
+   ============================================ */
+
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--color-accent, #666), transparent);
+    margin: var(--spacing-md) 0;
+  }
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 
