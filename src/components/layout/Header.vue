@@ -23,7 +23,7 @@ import { RouterLink } from 'vue-router'
   top: 0;
   left: 0;
   right: 0;
-  z-index: 150;
+  z-index: 15;
 }
 
 .header-content {
