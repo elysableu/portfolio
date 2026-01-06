@@ -10,6 +10,7 @@
 
 <template>
   <div class="currently-learning">
+    <h4>Currently Learning</h4>
     <CurrentlyLearningItem
       v-for="(item, index) in currentlyLearningList"
       :key="index"
@@ -19,5 +20,12 @@
 </template>
 
 <style scoped>
+  .currently-learning {
 
+  }
+
+  .currently-learning h4 {
+    font-size: larger;
+    text-align: center;
+  }
 </style>

@@ -13,5 +13,11 @@
 </template>
 
 <style scoped>
+  .currently-learning-item {
 
+  }
+
+  .currently-learning-item p {
+    text-align: center;
+  }
 </style>

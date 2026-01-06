@@ -13,5 +13,11 @@
 </template>
 
 <style scoped>
+  .interest-item {
 
+  }
+
+  .interest-item p {
+    text-align: center;
+  }
 </style>
