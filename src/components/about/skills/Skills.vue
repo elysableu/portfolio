@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <div class="skills">
+  <div class="skills glass-card-dark">
     <h3>Skills</h3>
     <SkillCategories
       v-for="(category, index) in skills.categories"

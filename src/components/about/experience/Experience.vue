@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <div class="experience">
+  <div class="experience glass-card-dark">
     <ExperienceItem
       v-for="item in experienceList"
       :key="item.id"
