@@ -63,10 +63,16 @@
 
 .about-content-left {
  flex: 3;
+ display: flex;
+ flex-direction: column;
+ gap: var(--spacing-md);
 }
 
 .about-content-right {
   flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 .opening-container {
