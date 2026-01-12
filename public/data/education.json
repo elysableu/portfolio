@@ -6,7 +6,7 @@
     "institution": "Metropolitan State University of Denver",
     "location": "Denver, CO",
     "startDate": "2012-08",
-    "endDate": "2022-12",
+    "graduationDate": "2022-12",
     "gpa": "",
     "honors": [],
     "minors": ["Computer Science"],
@@ -23,10 +23,6 @@
       "Statistics and Probability",
       "Web Application Development"
     ],
-    "projects": [
-      "Turing Consultancy: RepRadar - Congressional tracking application",
-      "Turing CapStone: Tracker - Job hunt tracking app"
-    ],
     "logo": "assets/img/education/msud-logo.png"
   },
   {
@@ -36,11 +32,25 @@
     "institution": "Turing School of Software and Design",
     "location": "Denver, CO",
     "startDate": "2024-10",
-    "endDate": "2025-05",
+    "graduationDate": "2025-05",
     "gpa": "",
     "honors": [],
     "concentration": "Full Stack Development",
     "relevantCoursework": [],
+    "projects": [
+      { 
+        "title": "Turing Consultancy",
+        "name": "RepRadar",
+        "description": "Congressional tracking application",
+        "link": "/projects/repradar"
+      },
+      { 
+        "title": "Turing Capstone",
+        "name": "Tracker",
+        "description": "Job hunt tracking app",
+        "link": "/projects/tracker"
+      }
+    ],
     "logo": "assets/img/education/turing-logo.png"
   }
 ]
