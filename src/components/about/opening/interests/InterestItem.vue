@@ -14,7 +14,10 @@
 
 <style scoped>
   .interest-item {
-
+    background-color: black;
+    padding: 4px;
+    font-size: 14px;
+    border-radius: 5px;
   }
 
   .interest-item p {
