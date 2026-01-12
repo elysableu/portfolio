@@ -88,8 +88,15 @@ export interface EducationType {
   minors?: string[]
   concentration?: string
   relevantCoursework?: string[]
-  projects?: string[]
+  projects?: ProjectBrief[]
   logo?: string
+}
+
+export interface ProjectBrief {
+  title: string,
+  name: string,
+  description: string,
+  link: string
 }
 
 // ============================================================================
