@@ -12,11 +12,16 @@
 <template>
   <div class="skills glass-card-dark">
     <h3>Skills</h3>
-    <SkillCategories
-      v-for="(category, index) in skills.categories"
-      :key="index"
-      :categoryItem="category"
-    />
+    <div class="skills-content">
+      <SkillCategories
+        v-for="(category, index) in skills.categories"
+        :key="index"
+        :categoryItem="category"
+      />
+    </div>
+    <div class="proficiencies">
+      
+    </div>
   </div>
 </template>
 
