@@ -16,10 +16,10 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const buttonIcons = {
-  next: '/img/next.svg',
-  previous: '/img/previous.svg',
-  play: '/img/play.svg',
-  pause: '/img/pause.svg'
+  next: '/img/ticker/next.svg',
+  previous: '/img/ticker/previous.svg',
+  play: '/img/ticker/play.svg',
+  pause: '/img/ticker/pause.svg'
 }
 
 const currentIndex = ref(0)

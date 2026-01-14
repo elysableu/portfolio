@@ -48,29 +48,29 @@ onMounted(async () => {
 
 <style scoped>
   .home-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
-    padding: var(--spacing-md);
-    margin: 0 auto;
-    position: relative;
+    padding: 150px calc(var(--spacing-lg) + 10px);
   }
 
   .greeting-header {
     font-size: x-large;
     text-align: right;
-    position: absolute;
-    top: -50px;
-    right: 100px;
-    left: var(--spacing-sm);
-    z-index: 10;
+    padding: 70px 100px var(--spacing-lg) var(--spacing-sm);
+    z-index: 20;
   }
 
   .home-content {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
-    padding-top: calc(var(--spacing-lg) + 60px);
+    padding-top: calc(var(--spacing-lg) + 30px);
   }
 
   .intro-wrapper {

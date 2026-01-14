@@ -15,10 +15,10 @@
 
   defineProps<Props>()
 
-  const icons = {
-    view: '/img/eye.svg',
-    download: '/img/download.svg'
-  }
+  // const icons = {
+  //   view: '/img/eye.svg',
+  //   download: '/img/download.svg'
+  // }
 
   const images = {
     teach: '/img/about/teach.svg',
@@ -31,8 +31,8 @@
 </script>
 
 <template>
-  <div class="openning">
-    <div class="resume">
+  <div class="opening glass-card-dark">
+    <!-- <div class="resume">
       <DropDown label="Resume" align="left">
         <template #default="{ close }">
           <DropDownItem :icon="icons.view" @click="viewResume(); close()">
@@ -43,27 +43,63 @@
           </DropDownItem>
         </template>
       </DropDown>
-    </div>
+    </div> -->
     <div class="bio">
       <p>{{ about.bio }}</p>
     </div>
-    <div class="journey">
+    <div class="divider"></div>
+    <div class="journey-container">
       <Journey :journey="about.journey" :images="images" />
     </div>
+    <div class="divider"></div>
     <div class="values-container">
       <Values :values="about.values" />
     </div>
-    <div class="interests">
-      <h3>Interests</h3>
-      <Interests :interests="about.interests"/>
-    </div>
-    <div class="currently-learning">
-      <h3>Currently Learning</h3>
-      <CurrentlyLearning :currentlyLearningList="about.currentlyLearning"/>
+    <div class="divider"></div>
+    <div class="interests-learning-container">
+      <div class="interests-container">
+        <Interests :interests="about.interests"/>
+      </div>
+      <div class="currently-learning-container">
+        <CurrentlyLearning :currentlyLearningList="about.currentlyLearning"/>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+  .opening {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
+
+  .bio {
+    text-align: center;
+  }
+
+  .journey-container {
+
+  }
+
+  .values-container {
+
+  }
+
+  .interests-learning-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .interests-container {
+
+  }
+
+  .currently-learning-container {
+
+  }
+
 
 </style>
