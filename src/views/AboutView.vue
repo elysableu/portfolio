@@ -54,6 +54,7 @@
   flex-direction: column;
   padding: calc(var(--spacing-lg) + 110px) calc(var(--spacing-lg) + 10px) var(--spacing-sm) calc(var(--spacing-lg) + 10px);
   margin: 0 auto;
+  min-width: 100%;
 }
 
 .about-content {
@@ -62,14 +63,15 @@
 }
 
 .about-content-left {
- flex: 3;
+ /* flex: 4; */
+ min-width: 0;
  display: flex;
  flex-direction: column;
  gap: var(--spacing-md);
 }
 
 .about-content-right {
-  flex: 5;
+  /* flex: 3; */
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -88,7 +90,9 @@
 }
 
 .skills-container {
-
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
 }
 
 .loading {
