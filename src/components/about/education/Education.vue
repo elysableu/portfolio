@@ -29,15 +29,15 @@
     padding: var(--spacing-lg);
   }
 
-  .education-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .education h2 {
     text-align: right;
     font-size: 30px;
     padding-bottom: 5px;
+  }
+
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 </style>
