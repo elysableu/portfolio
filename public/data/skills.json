@@ -7,12 +7,12 @@
         {
           "name": "CSS",
           "yearsOfExperience": 3,
-          "icon": "/img/skills/css.svg"
+          "icon": "/img/skills/css-3.svg"
         },
         {
           "name": "HTML5",
           "yearsOfExperience": 3,
-          "icon": "/img/skills/html5.svg"
+          "icon": "/img/skills/html-5.svg"
         },
         {
           "name": "Python",
@@ -27,7 +27,7 @@
         {
           "name": "Node.js",
           "yearsOfExperience": 2,
-          "icon": "/img/skills/nodejs.svg"
+          "icon": "/img/skills/node-js.svg"
         },
         {
           "name": "Ruby on Rails",
@@ -42,7 +42,7 @@
         {
           "name": "Next.js",
           "yearsOfExperience": 1,
-          "icon": "/img/skills/nextjs.svg"
+          "icon": "/img/skills/next-js.svg"
         },
         {
           "name": "TypeScript",
@@ -52,7 +52,7 @@
         {
           "name": "Vue.js",
           "yearsOfExperience": 0.5,
-          "icon": "/img/skills/vuejs.svg"
+          "icon": "/img/skills/vue-js.svg"
         }
       ]
     },
@@ -88,7 +88,7 @@
         {
           "name": "Vite",
           "yearsOfExperience": 1,
-          "icon": "/img/skills/vite.svg"
+          "icon": "/img/skills/vite-js.svg"
         },
         {
           "name": "Webpack",
@@ -104,7 +104,7 @@
         {
           "name": "CircleCI",
           "yearsOfExperience": 1,
-          "icon": "/img/skills/circleci.svg"
+          "icon": "/img/skills/circle-ci.svg"
         },
         {
           "name": "Docker",
@@ -114,7 +114,7 @@
         {
           "name": "GitHub Actions",
           "yearsOfExperience": 1,
-          "icon": "/img/skills/github-actions.svg"
+          "icon": "/img/skills/github.svg"
         },
         {
           "name": "Heroku",
