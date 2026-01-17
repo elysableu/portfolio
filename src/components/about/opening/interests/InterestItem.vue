@@ -8,7 +8,7 @@
 
 <template>
   <div class="interest-item">
-    <p>{{ interest }}</p>
+    {{ interest }}
   </div>
 </template>
 
@@ -17,10 +17,8 @@
     background-color: black;
     padding: 4px;
     font-size: 14px;
+    font-weight: bold;
     border-radius: 5px;
-  }
-
-  .interest-item p {
     text-align: center;
   }
 </style>

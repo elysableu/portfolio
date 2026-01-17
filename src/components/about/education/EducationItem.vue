@@ -9,7 +9,6 @@
   defineProps<Props>()
 
   const graduationIcon = '/img/about/graduation.svg'
-
 </script>
 
 <template>
@@ -57,7 +56,7 @@
             class="project-item glass-card-inner"
           >
             <div class="project-header">
-              <h5>{{ project.title }}</h5>
+              <p>{{ project.title }}</p>
             </div>
             <div class="project-content">
               <div class="project-name">{{  project.name }}</div>
@@ -104,7 +103,8 @@
   }
 
   .education-item-heading h3 {
-
+    font-family: 'Dosis';
+    font-size: 24px;
   }
 
   .education-item-heading p {
@@ -113,6 +113,7 @@
 
   .graduation-date {
     font-size: 20px;
+    font-weight: bold;
     margin-left: 50px;
   }
 
@@ -145,6 +146,10 @@
 
   }
 
+  .education-item-relevant h4 {
+    font-size: 18px;
+  }
+
   .education-item-relevant ul {
     display: flex;
     flex-wrap: wrap;
@@ -155,11 +160,17 @@
     background-color: black;
     padding: 4px;
     font-size: 14px;
+    font-weight: bold;
     border-radius: 5px;
   }
 
   .education-item-projects {
 
+  }
+
+  .education-item-projects h4 {
+    font-size: 20px;
+    font-family: 'Dosis';
   }
 
   .projects-container {
@@ -193,12 +204,17 @@
     border-radius: 5px 5px 0px 0px;
   }
 
+  .project-header p {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
   .project-content {
     padding: 5px;
   }
 
   .project-content p {
-
+    font-size: 16px;
   }
 
   .project-name {

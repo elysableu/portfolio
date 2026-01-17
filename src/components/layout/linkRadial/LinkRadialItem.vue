@@ -136,6 +136,7 @@
 
   .radial-link-text {
     color: white;
+    font-family: 'Dosis';
     text-decoration: none;
     padding: 0 16px;
     display: block;

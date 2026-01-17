@@ -77,6 +77,7 @@
 
   .bio {
     text-align: center;
+    font-weight: bold;
   }
 
   .journey-container {
@@ -94,12 +95,10 @@
   }
 
   .interests-container {
-
+    flex: 1;
   }
 
   .currently-learning-container {
-
+    flex: 1;
   }
-
-
 </style>

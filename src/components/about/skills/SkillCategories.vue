@@ -19,7 +19,7 @@
       @click="$emit('toggle')"
     >
       <div class="category-header-content">
-        <span class="category-name">{{ categoryItem.category }}</span>
+        <span class="category-name">{{ categoryItem.category + " " }}</span>
         <span class="skill-count">({{  categoryItem.skills.length }})</span>
       </div>
       <Chevron :isRotated="isExpanded"/>
@@ -66,11 +66,12 @@
   }
 
   .category-header-content {
-
+    font-weight: bold;
+    font-family: 'Dosis';
   }
 
   .category-name {
-
+    font-size: 16px;
   }
 
   .skill-count {

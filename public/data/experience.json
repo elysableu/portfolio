@@ -1,77 +1,55 @@
 [
   {
-    "id": "se-current",
-    "title": "Software Engineer",
-    "company": "Tech Company Name",
-    "location": "Denver, CO",
-    "locationType": "Hybrid",
-    "type": "Full-time",
-    "startDate": "2023-06",
+    "id": "independent_tutor",
+    "title": "Independent Tutor",
+    "company": "Dragonfly Education",
+    "location": "Boulder, CO",
+    "locationType": "Mobile",
+    "type": "Self-Employed",
+    "startDate": "2025-11",
     "endDate": null,
     "current": true,
-    "description": "Developing full-stack web applications using modern frameworks and best practices. Collaborating with cross-functional teams to deliver scalable solutions.",
+    "description": "Provide individualized tutoring specializing in math and computer science, with support across all subjects and executive functioning skills.",
     "responsibilities": [
-      "Built and maintained RESTful APIs using Node.js and Express",
-      "Developed responsive frontend applications with Angular and React",
-      "Implemented automated testing with Jest and Cypress",
-      "Collaborated with UX designers to create intuitive user interfaces",
-      "Participated in code reviews and mentored junior developers"
+      "Provide individualized tutoring specializing in math and computer science, with support across all subjects and executive functioning skills",
+      "Manage all business operations including scheduling, curriculum development, travel coordination, and quarterly tax obligations",
+      "Collaborate with parents and teachers to assess student needs and develop customized, student-centered curricula",
+      "Develop customized, student-centered curricula that strengthen engagement and improve outcomes"
     ],
     "achievements": [
-      "Improved application performance by 40% through optimization",
-      "Led migration from legacy system to modern tech stack",
-      "Reduced bug reports by 30% through comprehensive testing"
+      "Successfully launched and managed independent tutoring business",
+      "Built strong relationships with parents, teachers, and students",
+      "Delivered personalized learning experiences across multiple subjects"
     ],
-    "technologies": ["Angular", "Node.js", "PostgreSQL", "TypeScript", "Docker", "AWS"],
-    "logo": "assets/img/companies/company-logo.png"
+    "skills": ["Curriculum Development", "Student Assessment", "Business Management", "Communication", "Adaptability"],
+    "technologies": ["Miro", "Wolfram Alpha", "Schoology", "Google Classroom"],
+    "logo": "assets/img/companies/dragonfly-logo.png"
   },
   {
-    "id": "teacher",
-    "title": "Mathematics Teacher",
-    "company": "Denver Public Schools",
+    "id": "student_teacher",
+    "title": "Student Teacher",
+    "company": "Denver Public Schools, Cherry Creek Public Schools, Jefferson County Public Schools",
     "location": "Denver, CO",
     "locationType": "On-site",
-    "type": "Full-time",
-    "startDate": "2019-08",
-    "endDate": "2023-05",
-    "current": false,
-    "description": "Taught high school mathematics while developing educational technology tools to enhance student learning.",
-    "responsibilities": [
-      "Designed and delivered engaging mathematics curriculum for 150+ students",
-      "Created interactive learning materials using technology",
-      "Analyzed student data to inform instructional decisions",
-      "Collaborated with colleagues on curriculum development"
-    ],
-    "achievements": [
-      "Increased student test scores by 25% through innovative teaching methods",
-      "Developed custom web-based tools to track student progress",
-      "Received Teacher of the Year nomination"
-    ],
-    "technologies": ["JavaScript", "Python", "Google Apps Script", "Excel"],
-    "logo": "assets/img/companies/dps-logo.png"
-  },
-  {
-    "id": "intern",
-    "title": "Software Engineering Intern",
-    "company": "Startup Name",
-    "location": "Remote",
-    "locationType": "Remote",
     "type": "Internship",
-    "startDate": "2022-05",
-    "endDate": "2022-08",
+    "startDate": "2017-08",
+    "endDate": "2019-12",
     "current": false,
-    "description": "Summer internship focused on frontend development and user experience improvements.",
+    "description": "Completed student teaching placements across three school districts in the Denver metro area, collaborating with educators to analyze student performance data and deliver technical lessons.",
     "responsibilities": [
-      "Implemented new features for customer-facing web application",
-      "Fixed bugs and improved code quality",
-      "Participated in daily standups and sprint planning",
-      "Wrote technical documentation"
+      "Collaborated with teachers, counselors, and administrators across three school districts to analyze student performance data",
+      "Implemented targeted interventions for 20+ students",
+      "Developed and delivered 50+ technical lessons in mathematics",
+      "Translated complex mathematical concepts into accessible knowledge for diverse learners",
+      "Adapted teaching strategies to different school cultures and student populations"
     ],
     "achievements": [
-      "Delivered 3 major features ahead of schedule",
-      "Improved page load time by 50%"
+      "Successfully completed placements in three diverse school districts",
+      "Delivered 50+ comprehensive mathematics lessons across varied student demographics",
+      "Demonstrated adaptability across different educational environments"
     ],
-    "technologies": ["React", "JavaScript", "CSS", "Git"],
-    "logo": "assets/img/companies/startup-logo.png"
+    "skills": ["Data Analysis", "Curriculum Development", "Student Assessment", "Differentiated Instruction", "Collaboration"],
+    "technologies": ["Canvas", "Google Classroom", "Blackboard Learn", "Kahoot!", "Edmodo", "Infinite Campus", "GeoGebra", "Desmos"],
+    "logo": "assets/img/companies/dps-logo.png"
   }
 ]

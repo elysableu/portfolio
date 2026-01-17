@@ -56,6 +56,7 @@
   .skills h2 {
     font-size: 30px;
     padding-bottom: 5px;
+    font-family: 'Metamorphous';
   }
 
   .skills-content {

@@ -8,7 +8,7 @@
 
 <template>
   <div class="currently-learning-item">
-    <p>{{ currentlyLearning }}</p>
+    {{ currentlyLearning }}
   </div>
 </template>
 
@@ -17,10 +17,8 @@
     background-color: black;
     padding: 4px;
     font-size: 14px;
+    font-weight: bold;
     border-radius: 5px;
-  }
-
-  .currently-learning-item p {
     text-align: center;
   }
 </style>

@@ -31,6 +31,7 @@
 
   .education h2 {
     text-align: right;
+    font-family: 'Metamorphous';
     font-size: 30px;
     padding-bottom: 5px;
   }
