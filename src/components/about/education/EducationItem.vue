@@ -9,7 +9,6 @@
   defineProps<Props>()
 
   const graduationIcon = '/img/about/graduation.svg'
-
 </script>
 
 <template>
