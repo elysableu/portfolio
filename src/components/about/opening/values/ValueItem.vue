@@ -46,7 +46,7 @@
 
   .value-heading h4 {
     font-size: larger;
-
+    font-family: 'Dosis';
   }
 
   .value-heading img {

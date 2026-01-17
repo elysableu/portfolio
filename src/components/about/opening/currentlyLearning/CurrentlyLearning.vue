@@ -23,11 +23,12 @@
 
 <style scoped>
   .currently-learning {
-
+    padding-bottom: 10px;
   }
 
   .currently-learning h4 {
-    font-size: larger;
+    font-size: 24px;
+    font-family: 'Dosis';
     text-align: center;
   }
 

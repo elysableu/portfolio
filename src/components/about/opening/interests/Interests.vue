@@ -23,11 +23,12 @@
 
 <style scoped>
   .interests {
-
+    padding-bottom: 10px;
   }
 
   .interests h4 {
-    font-size: larger;
+    font-size: 24px;
+    font-family: 'Dosis';
     text-align: center;
   }
 

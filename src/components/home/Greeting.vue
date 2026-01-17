@@ -14,6 +14,6 @@ defineProps<Props>()
 
 <style scoped>
   .greeting-message {
-    font-family: 'Metamorphous'
+    font-family: 'Metamorphous';
   }
 </style>
