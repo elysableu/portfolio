@@ -11,14 +11,34 @@
 
 <template>
   <div class="experience glass-card-dark">
-    <ExperienceItem
-      v-for="item in experienceList"
-      :key="item.id"
-      :experienceItem="item"
-    />
+    <h2>Experience</h2>
+    <div class="experience-list">
+      <ExperienceItem
+        v-for="item in experienceList"
+        :key="item.id"
+        :experienceItem="item"
+      />
+    </div>
   </div>
 </template>
 
 <style scoped>
+  .experience {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+  }
 
+  .experience h2 {
+    text-align: right;
+    font-family: 'Metamorphous';
+    font-size: 30px;
+    padding-bottom: 5px;
+  }
+
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 </style>
