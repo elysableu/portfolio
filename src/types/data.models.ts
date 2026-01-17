@@ -107,13 +107,14 @@ export interface ExperienceType {
   title: string
   company: string
   location: string
-  locationType: 'Remote' | 'Hybrid' | 'On-site'
+  locationType: 'Remote' | 'Hybrid' | 'On-site' | 'Mobile'
   type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship'
   startDate: string
   endDate: string | null
   current: boolean
   description: string
   responsibilities: string[]
+  skills: string[]
   technologies: string[]
   logo?: string
 }
