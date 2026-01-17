@@ -7,3 +7,22 @@ export function formatExperience(years: number): string{
     return `${years} years of experience`
   }
 }
+
+export function formatDate(date: string | null): string {
+  if (date === null) {
+    return 'Present'
+  }
+
+  const [year, month] = date.split('-')
+
+  if (!year || !month) {
+    return date
+  }
+  
+  const dateObj = new Date(parseInt(year), parseInt(month) - 1)
+
+  return dateObj.toLocaleDateString('en-us', {
+    month: 'short',
+    year: 'numeric'
+  })
+}
