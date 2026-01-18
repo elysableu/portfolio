@@ -174,7 +174,7 @@ export interface ProjectMetrics {
 }
 
 export interface ProjectBriefType {
-  id: string
+  id?: string
   title: string,
   name?: string,
   description: string,
