@@ -88,15 +88,8 @@ export interface EducationType {
   minors?: string[]
   concentration?: string
   relevantCoursework?: string[]
-  projects?: ProjectBrief[]
+  projects?: ProjectBriefType[]
   logo?: string
-}
-
-export interface ProjectBrief {
-  title: string,
-  name: string,
-  description: string,
-  link: string
 }
 
 // ============================================================================
@@ -159,6 +152,7 @@ export interface Project {
   status: ProjectStatus
   startDate: string
   endDate: string | null
+  current: boolean
   featured: boolean
   priority: number
   role: string
@@ -177,6 +171,15 @@ export interface ProjectMetrics {
   uptime?: string
   apiCalls?: string
   [key: string]: string | undefined
+}
+
+export interface ProjectBriefType {
+  id: string
+  title: string,
+  name?: string,
+  description: string,
+  url: string,
+  thumbnail?: string
 }
 
 // ============================================================================

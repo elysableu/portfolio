@@ -6,6 +6,7 @@ import type {
   ExperienceType,
   SkillsType,
   Project,
+  ProjectBriefType,
   ProjectStatus,
   TickerItemType,
 } from '@/types/data.models'
@@ -72,6 +73,21 @@ export const getFeaturedProjects = async (): Promise<TickerItemType[]> => {
       thumbnail: project.thumbnail,
       url: `/projects/${project.id}`,
     }))
+}
+
+export const getCurrentProject = async (): Promise<ProjectBriefType | undefined> => {
+  const projects = await getProjects()
+  const currentProjects = projects
+    .filter((project) => project.current === true)
+    .map((project) => ({
+      id: project.id,
+      title: project.title,
+      description: project.shortDescription,
+      url: `/projects/${project.id}`,
+      thumbnail: project.thumbnail
+    }))
+
+  return currentProjects[0]
 }
 
 export const getProjectById = async (id: string): Promise<Project | undefined> => {
@@ -192,14 +208,18 @@ export const getAboutPageData = async () => {
 }
 
 export const getProjectsPageData = async () => {
-  const [projects, tags, technologies] = await Promise.all([
+  const [projects, featured, current, tags, technologies] = await Promise.all([
     getProjects(),
+    getFeaturedProjects(),
+    getCurrentProject(),
     getAllProjectTags(),
     getAllTechnologies(),
   ])
 
   return {
     projects,
+    featured,
+    current,
     tags,
     technologies,
   }
