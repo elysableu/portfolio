@@ -11,6 +11,8 @@ import type {
   TickerItemType,
 } from '@/types/data.models'
 
+import { serializeProjectBrief } from '@/utils/serializer'
+
 const DATA_PATH = `/data`
 
 // =========================
@@ -77,17 +79,9 @@ export const getFeaturedProjects = async (): Promise<TickerItemType[]> => {
 
 export const getCurrentProject = async (): Promise<ProjectBriefType | undefined> => {
   const projects = await getProjects()
-  const currentProjects = projects
-    .filter((project) => project.current === true)
-    .map((project) => ({
-      id: project.id,
-      title: project.title,
-      description: project.shortDescription,
-      url: `/projects/${project.id}`,
-      thumbnail: project.thumbnail
-    }))
+  const currentProject = projects.find((project) => project.current === true)
 
-  return currentProjects[0]
+  return currentProject ? serializeProjectBrief(currentProject) : undefined
 }
 
 export const getProjectById = async (id: string): Promise<Project | undefined> => {
