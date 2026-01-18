@@ -52,7 +52,7 @@
           <RouterLink
             v-for="(project, index) in educationItem.projects"
             :key="index"
-            :to="project.link"
+            :to="project.url"
             class="project-item glass-card-inner"
           >
             <div class="project-header">
