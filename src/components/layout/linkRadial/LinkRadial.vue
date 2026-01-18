@@ -18,8 +18,6 @@ const radialItemsWithPositons = computed(() =>
   })
 )
 
-console.log(radialItemsWithPositons)
-
 onMounted(async () => {
   const data = await getPersonal()
   if (data) {

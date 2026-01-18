@@ -6,9 +6,12 @@ import type {
   ExperienceType,
   SkillsType,
   Project,
+  ProjectBriefType,
   ProjectStatus,
   TickerItemType,
 } from '@/types/data.models'
+
+import { serializeProjectBrief } from '@/utils/serializer'
 
 const DATA_PATH = `/data`
 
@@ -72,6 +75,13 @@ export const getFeaturedProjects = async (): Promise<TickerItemType[]> => {
       thumbnail: project.thumbnail,
       url: `/projects/${project.id}`,
     }))
+}
+
+export const getCurrentProject = async (): Promise<ProjectBriefType | undefined> => {
+  const projects = await getProjects()
+  const currentProject = projects.find((project) => project.current === true)
+
+  return currentProject ? serializeProjectBrief(currentProject) : undefined
 }
 
 export const getProjectById = async (id: string): Promise<Project | undefined> => {
@@ -192,14 +202,18 @@ export const getAboutPageData = async () => {
 }
 
 export const getProjectsPageData = async () => {
-  const [projects, tags, technologies] = await Promise.all([
+  const [projects, featured, current, tags, technologies] = await Promise.all([
     getProjects(),
+    getFeaturedProjects(),
+    getCurrentProject(),
     getAllProjectTags(),
     getAllTechnologies(),
   ])
 
   return {
     projects,
+    featured,
+    current,
     tags,
     technologies,
   }

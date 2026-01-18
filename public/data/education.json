@@ -42,13 +42,13 @@
         "title": "Turing Consultancy",
         "name": "RepRadar",
         "description": "Congressional tracking application",
-        "link": "/projects/repradar"
+        "url": "/projects/repradar"
       },
       { 
         "title": "Turing Capstone",
         "name": "Tracker",
         "description": "Job hunt tracking app",
-        "link": "/projects/tracker"
+        "url": "/projects/tracker"
       }
     ],
     "logo": "assets/img/education/turing-logo.png"
