@@ -129,10 +129,10 @@
       }
     ],
     "images": [
-      "assets/img/project_screenshots/portfolio-home.png",
+      "assets/img/project_screenshots/portfolio.png",
       "assets/img/project_screenshots/portfolio-projects.png"
     ],
-    "thumbnail": "assets/img/project_screenshots/portfolio-home.png",
+    "thumbnail": "/img/project_screenshots/portfolio.png",
     "githubUrl": "https://github.com/yourusername/portfolio",
     "liveUrl": "https://elysaward.com",
     "demoVideo": null,
