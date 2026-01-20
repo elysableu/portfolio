@@ -144,7 +144,7 @@ export interface Project {
   technologies: string[]
   features: string[]
   challenges: Challenge[]
-  images: string[]
+  images: TickerImageType[]
   thumbnail: string
   githubUrl?: string
   liveUrl?: string
@@ -185,12 +185,21 @@ export interface ProjectBriefType {
 // ============================================================================
 // TICKER (for Ticker component)
 // ============================================================================
-export interface TickerItemType {
+export interface TickerProjectType {
   id: string
-  title: string
+  title?: string
   thumbnail: string
-  url: string
+  url?: string
 }
+
+export interface TickerImageType {
+  id: string
+  src: string
+  alt: string
+  caption?: string
+}
+
+export type TickerItemType = TickerProjectType | TickerImageType
 
 // ============================================================================
 // UTILITY TYPES
