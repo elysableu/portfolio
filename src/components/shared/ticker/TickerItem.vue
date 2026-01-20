@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { TickerItemType } from '@/types/data.models'
+import { isTickerImage, isTickerProject } from '@/utils/typeGuards'
 
 interface Props {
   item: TickerItemType
@@ -10,11 +11,17 @@ defineProps<Props>()
 
 <template>
   <div class="ticker-item">
-    <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link">
-      <img :alt="item.title" :src="item.thumbnail" class="ticker-thumbnail" />
-    </a>
-    <div class="ticker-label">
-      <h3>{{ item.title }}</h3>
+    <div v-if="isTickerProject(item)" class="project-item">
+      <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link">
+        <img :alt="item.title" :src="item.thumbnail" class="ticker-thumbnail" />
+      </a>
+      <div class="ticker-label">
+        <h3>{{ item.title }}</h3>
+      </div>
+    </div>
+    <div v-else-if="isTickerImage(item)" class="image-item">
+      <img :alt="item.alt" :src="item.src" class="ticker-thumbnail" />
+      <div v-if="item.caption" class="caption">{{ item.caption }}</div>
     </div>
   </div>
 </template>

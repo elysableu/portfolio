@@ -4,11 +4,12 @@ import TickerItem from './TickerItem.vue'
 import type { TickerItemType } from '@/types/data.models'
 
 interface Props {
-  title: string
+  title?: string
   items: TickerItemType[]
   autoPlay?: boolean
   interval?: number
 }
+
 
 const props = withDefaults(defineProps<Props>(), {
   autoPlay: true,
