@@ -32,7 +32,13 @@
         "solution": "Created AI data scraper to create summaries as each detailed view loaded in"
       }
     ],
-    "images": ["/img/project_screenshots/repradar.png"],
+    "images": [
+      {
+        "src": "/img/project_screenshots/repradar.png",
+        "alt": "homepage",
+        "caption": "homepage"
+      }
+    ],
     "thumbnail": "/img/project_screenshots/repradar.png",
     "githubUrl": "https://github.com/RedRadar-WT-Team",
     "liveUrl": "https://repradar.example.com",
@@ -87,8 +93,16 @@
       }
     ],
     "images": [
-      "/img/project_screenshots/tracker.png",
-      "/img/project_screenshots/tracker-dashboard.png"
+      {
+        "src": "/img/project_screenshots/tracker.png",
+        "alt": "homepage",
+        "caption": "homepage"
+      },
+      {
+        "src": "/img/project_screenshots/tracker-dashboard.png",
+        "alt": "homepage",
+        "caption": "homepage"
+      } 
     ],
     "thumbnail": "/img/project_screenshots/tracker.png",
     "githubUrl-fe": "https://github.com/turingschool/tracker-crm-fe",
@@ -129,8 +143,16 @@
       }
     ],
     "images": [
-      "assets/img/project_screenshots/portfolio.png",
-      "assets/img/project_screenshots/portfolio-projects.png"
+      {
+        "src": "/img/project_screenshots/portfolio.png",
+        "alt": "homepage",
+        "caption": "homepage"
+      },
+      {
+        "src": "/img/project_screenshots/portfolio-projects.png",
+        "alt": "projects",
+        "caption": "projects"
+      }
     ],
     "thumbnail": "/img/project_screenshots/portfolio.png",
     "githubUrl": "https://github.com/yourusername/portfolio",
