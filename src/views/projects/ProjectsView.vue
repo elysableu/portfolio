@@ -26,7 +26,7 @@
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else-if="projectsData">
       <div class="projects">
-        <h1>Projects</h1>
+        <!-- <h1>Projects</h1> -->
         <div class="projects-library">
          <ProjectsLibrary
           :projects="projectsData.projects"
@@ -51,12 +51,16 @@
 
   }
 
-  .projects h1 {
+  /* .projects h1 {
+    position: absolute;
     text-align: right;
-  }
+    font-size: 50px;
+    top: 150px;
+    right: 50px;
+  } */
 
   .projects-library {
-    padding-top: 10px;
+    padding-top: 80px;
   }
 
 /* @media (min-width: 1024px) {

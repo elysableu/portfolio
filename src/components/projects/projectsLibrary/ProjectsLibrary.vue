@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <div class="library-container">
+  <div class="library-container glass-card-dark">
     <div class="library">
       <ProjectBrief
         v-for="item in projects"
@@ -34,7 +34,8 @@
 
   .library {
     display: flex;
-    gap: 10px;
+    gap: 30px;
+    justify-content: space-around;
   }
 </style>
 
