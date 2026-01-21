@@ -20,5 +20,20 @@
 </template>
 
 <style scoped>
+.loading {
 
+}
+
+.error {
+
+}
+
+.notFound {
+
+}
+
+.project {
+  padding: var(--spacing-lg);
+  padding-top: 100px;
+}
 </style>
