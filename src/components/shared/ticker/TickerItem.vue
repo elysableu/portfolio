@@ -55,7 +55,11 @@ defineProps<Props>()
   display: block;
 }
 
-.ticker-label {
+.ticker-label,
+.caption {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
   position: absolute;
   bottom: 0;
   left: 0;

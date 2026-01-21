@@ -27,18 +27,32 @@ const currentIndex = ref(0)
 const isAutoPlaying = ref(props.autoPlay)
 let autoPlayTimer: number | null = null
 
+const validItems = computed(() => {
+  return props.items.filter(item => {
+    if('src' in item && item.src) return true
+    if('thumbnail' in item && item.thumbnail) return true
+    return false
+  })
+})
+
+const hasMultipleItems = computed(() => validItems.value.length > 1)
+
 const nextSlide = () => {
-  currentIndex.value = (currentIndex.value + 1) % props.items.length
+  if (!hasMultipleItems.value) return
+
+  currentIndex.value = (currentIndex.value + 1) % validItems.value.length
   resetAutoPlay()
 }
 
 const previousSlide = () => {
-  currentIndex.value = (currentIndex.value - 1 + props.items.length) % props.items.length
+  if (!hasMultipleItems.value) return
+
+  currentIndex.value = (currentIndex.value - 1 + validItems.value.length) % validItems.value.length
   resetAutoPlay()
 }
 
 const startAutoPlay = () => {
-  if (!isAutoPlaying.value) return
+  if (!isAutoPlaying.value || !hasMultipleItems.value) return
 
   stopAutoPlay()
   autoPlayTimer = window.setInterval(() => {
@@ -59,6 +73,7 @@ const resetAutoPlay = () => {
 }
 
 const toggleAutoPlay = () => {
+  if(!hasMultipleItems.value) return
   isAutoPlaying.value = !isAutoPlaying.value
 
   if (isAutoPlaying.value) {
@@ -69,12 +84,17 @@ const toggleAutoPlay = () => {
 }
 
 const currentItem = computed(() => {
-  if (props.items.length === 0) return null
-  return props.items[currentIndex.value]
+  if (validItems.value.length === 0) return null
+  return validItems.value[currentIndex.value]
 })
 
 onMounted(() => {
-  startAutoPlay()
+  if (hasMultipleItems.value) {
+    startAutoPlay()
+  } else {
+    stopAutoPlay()
+    isAutoPlaying.value = false
+  }
 })
 
 onUnmounted(() => {
@@ -84,7 +104,7 @@ onUnmounted(() => {
 
 <template>
   <div class="ticker-container">
-    <div class="ticker-label">
+    <div v-if="title" class="ticker-label">
       <h4>{{ title }}</h4>
     </div>
     <div class="ticker-content">
@@ -92,14 +112,29 @@ onUnmounted(() => {
         <TickerItem :key="currentItem.id" :item="currentItem" />
       </div>
       <div v-if="currentItem" class="ticker-controls">
-        <button @click="previousSlide" class="ticker-button">
+        <button
+          @click="previousSlide"
+          class="ticker-button"
+          :class="{'ticker-button-disabled': !hasMultipleItems }"
+          :disabled="!hasMultipleItems"
+        >
           <img :src="buttonIcons.previous" alt="previous" class="button-icon" />
         </button>
-        <button @click="toggleAutoPlay" class="ticker-button">
+        <button
+          @click="toggleAutoPlay"
+          class="ticker-button"
+          :class="{'ticker-button-disabled': !hasMultipleItems }"
+          :disabled="!hasMultipleItems"
+        >
           <img :src="isAutoPlaying ? buttonIcons.pause : buttonIcons.play" alt="play/pause toggle" class="button-icon"/>
         </button>
-        <button @click="nextSlide" class="ticker-button">
-           <img :src="buttonIcons.next" alt="previous" class="button-icon" />
+        <button
+          @click="nextSlide"
+          class="ticker-button"
+          :class="{'ticker-button-disabled': !hasMultipleItems }"
+          :disabled="!hasMultipleItems"
+        >
+          <img :src="buttonIcons.next" alt="previous" class="button-icon" />
         </button>
       </div>
     </div>
@@ -174,6 +209,22 @@ onUnmounted(() => {
 
  .ticker-button:active {
     transform: scale(0.95);
+  }
+
+  .ticker-button-disabled {
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
+    filter: grayscale(100%) brightness(0.7);
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .ticker-button-disabled:hover {
+    transform: none !important;
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .ticker-button-disabled .button-icon {
+    opacity: 0.6;
   }
 
   .button-icon {
