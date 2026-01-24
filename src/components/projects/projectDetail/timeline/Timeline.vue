@@ -2,7 +2,7 @@
   import { toRefs } from 'vue'
   import type { TimelineType } from '@/types/data.models'
 
-  import TimelineChapter from './TimelineChapter.vue'
+  import TimelineChapter from './chapters/TimelineChapter.vue'
 
   interface Props {
     timeline: TimelineType
@@ -87,7 +87,7 @@
 </template>
 
 <style scoped>
-  .timeline-contianer {
+  .timeline-container {
 
   }
 
