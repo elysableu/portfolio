@@ -115,11 +115,18 @@ export const getAllProjectTags = async (): Promise<string[]> => {
 
 export const getAllTechnologies = async (): Promise<string[]> => {
   const projects = await getProjects()
-  const technologies = new Set<string>()
+  const techSet = new Set<string>()
   projects.forEach((project) => {
-    project.technologies?.forEach((technology) => technologies.add(technology))
+    if (project.technologies) {
+      Object.values(project.technologies).forEach(techArray => {
+        if (Array.isArray(techArray)) {
+          techArray.forEach(tech => techSet.add(tech))
+        }
+      })
+    }
   })
-  return Array.from(technologies).sort()
+
+  return Array.from(techSet).sort()
 }
 
 export const getCurrentExperience = async (): Promise<ExperienceType[]> => {
