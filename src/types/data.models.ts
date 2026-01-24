@@ -1,5 +1,8 @@
 // ============================================================================
 // PERSONAL
+
+import type { ProjectReference } from "typescript"
+
 // ============================================================================
 export interface Personal {
   name: string
@@ -141,10 +144,11 @@ export interface Project {
   shortDescription: string
   fullDescription: string
   motivation: string
-  technologies: string[]
-  features: string[]
+  projectPlan: string
+  technologies: Technologies
+  features: Feature[]
   challenges: Challenge[]
-  images: string[]
+  images: TickerImageType[]
   thumbnail: string
   githubUrl?: string
   liveUrl?: string
@@ -182,15 +186,82 @@ export interface ProjectBriefType {
   thumbnail?: string
 }
 
+export interface ProjectHeader {
+  title: string,
+  current: boolean,
+  tagline: string,
+  liveUrl?: string,
+  githubUrl?: string,
+  tags: string[]
+  images: TickerImageType[]
+}
+
+export interface TimelineType {
+  motivation: string,
+  fullDescription: string,
+  features: Feature[],
+  projectPlan: string,
+  technologies: Technologies,
+  challenges: Challenge[],
+  status: ProjectStatus,
+  teamSize: number,
+  startDate: string,
+  endDate: string | null,
+  demoVideo?: string,
+  thumbnail?: string
+}
+
+export interface ChapterType {
+  chapterNum: string,
+  chapterTitle: string,
+  chapterSubtitle: string,
+  chapterContent: string | string[] | Challenge[] | VisionPacket | ResultPacket | Feature[] | Technologies
+}
+
+export interface ResultPacket {
+  status: ProjectStatus,
+  teamSize: number,
+  startDate: string,
+  endDate: string | null,
+  demoVideo?: string,
+  thumbnail?: string
+}
+
+export interface VisionPacket {
+  description: string,
+  projectPlan: string
+}
+
+export interface Feature {
+  title: string,
+  description: string
+}
+
+export interface Technologies {
+  frontend?: string[],
+  backend?: string[],
+  database?: string[],
+  other?: string[]
+}
+
 // ============================================================================
 // TICKER (for Ticker component)
 // ============================================================================
-export interface TickerItemType {
+export interface TickerProjectType {
   id: string
-  title: string
+  title?: string
   thumbnail: string
-  url: string
+  url?: string
 }
+
+export interface TickerImageType {
+  id: string
+  src: string
+  alt: string
+  caption?: string
+}
+
+export type TickerItemType = TickerProjectType | TickerImageType
 
 // ============================================================================
 // UTILITY TYPES

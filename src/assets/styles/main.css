@@ -246,6 +246,14 @@ a:focus-visible {
     margin: var(--spacing-md) 0;
   }
 
+  .divider-short {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--color-accent, #666), transparent);
+    margin: var(--spacing-md) auto;
+    width: 60%;
+    max-width: 400px;
+  }
+
 /* ============================================
    RESPONSIVE
    ============================================ */
