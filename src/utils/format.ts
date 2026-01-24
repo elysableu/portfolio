@@ -18,11 +18,22 @@ export function formatDate(date: string | null): string {
   if (!year || !month) {
     return date
   }
-  
+
   const dateObj = new Date(parseInt(year), parseInt(month) - 1)
 
   return dateObj.toLocaleDateString('en-us', {
     month: 'short',
     year: 'numeric'
   })
+}
+
+export function formatDuration(startDate: string, endDate: string | null): string {
+  const start = new Date(startDate + '-01')
+  const end = endDate ? new Date(endDate + '-01') : new Date()
+
+  const difference = end.getTime() - start.getTime()
+
+  const diffInWeeks = Math.floor(difference / (1000* 60 * 60 * 24 * 7))
+
+  return `${diffInWeeks} Weeks`
 }
