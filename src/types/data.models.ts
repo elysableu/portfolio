@@ -291,7 +291,7 @@ export interface RadialConfig {
   endAngle: number
 }
 
-export interface RadialItemWithPosition extends RadialItem {
+export type RadialItemWithPosition = RadialItem & {
   x: number
   y: number
   rotation: number
