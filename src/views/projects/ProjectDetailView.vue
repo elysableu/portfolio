@@ -35,5 +35,7 @@
 .project {
   padding: var(--spacing-lg);
   padding-top: 100px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 </style>
