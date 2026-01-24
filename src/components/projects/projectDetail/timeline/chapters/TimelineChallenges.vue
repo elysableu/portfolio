@@ -39,6 +39,7 @@
 
   th {
     border-bottom: 3px solid #49CCA4;
+    font-size: 24px;
   }
 
   .challenges-container th:not(:last-child),

@@ -38,7 +38,7 @@
   }
 
   .technologies-container table {
-    border-collaspe: separate;
+    border-collapse: separate;
     border-spacing: 0 1.5rem;
   }
   .technologies-container tbody {
