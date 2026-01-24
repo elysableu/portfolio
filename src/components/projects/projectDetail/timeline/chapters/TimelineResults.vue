@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { computed } from 'vue'
   import type { ResultPacket } from '@/types/data.models'
+  import { formatDuration } from '@/utils/format'
 
   interface Props {
     content: ResultPacket
@@ -21,11 +22,11 @@
     </span>
     <span class="result team-size">
       <label class="result-label">Team Size: </label>
-      {{ (content as ResultPacket).teamSize }}
+      {{(content as ResultPacket).teamSize > 1 ? ` ${(content as ResultPacket).teamSize} People` : ` ${(content as ResultPacket).teamSize} Person` }}
     </span>
     <span class="result duration">
       <label class="result-label">Duration: </label>
-      {{ (content as ResultPacket).startDate }} - {{ (content as ResultPacket).endDate }}
+      {{ formatDuration((content as ResultPacket).startDate, (content as ResultPacket).endDate) }}
     </span>
     <div v-if="hasValidDemoVideo" class="demoVideo">
       <h3>Demo Video</h3>
@@ -44,5 +45,36 @@
   .results-container {
     display: flex;
     gap: 80px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .result-label {
+    width: 100%;
+    border-bottom: 2px solid #49CCA4;
+    text-align: center;
+    font-size: 24px !important;
+  }
+
+  .status {
+
+  }
+
+  .team-size {
+
+  }
+
+  .duration {
+
   }
 </style>
