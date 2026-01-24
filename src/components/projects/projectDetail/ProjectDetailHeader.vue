@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { toRefs } from 'vue'
+  import { RouterLink } from 'vue-router'
 
   import type { ProjectHeader } from '@/types/data.models'
 
@@ -18,6 +19,12 @@
   <div class="project-header-container">
     <div class="detail-hero-container glass-card-inner">
       <div class="detail-hero">
+        <RouterLink
+          to="/projects"
+          class="library-return"
+        >
+          Back To Projects
+        </RouterLink>
         <div class="title-current">
           <div v-if="current" class="project-current">Current</div>
           <h2>{{ title }}</h2>
@@ -50,14 +57,14 @@
     position: relative;
     overflow: visible;
     gap: 1rem;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
   }
 
   .detail-ticker {
     flex: 1.5;
     width: auto;
     height: 500px;
-    border-radius: 20px;
+    border-radius: 0 20px 0 0;
     overflow: hidden;
     padding: 10px;
     justify-content: center;
@@ -70,7 +77,7 @@
     flex-direction: column;
     justify-content: center;
     padding: var(--spacing-lg) 40px;
-    border-radius: 20px;
+    border-radius: 20px 0 0 0;
     height: 500px;
   }
 
@@ -80,6 +87,17 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+  }
+
+  .library-return {
+    font-family: 'Metamorphous';
+    font-size: 15px;
+    position: absolute;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    top: 30px;
+    left: 30px;
   }
 
   .title-current {

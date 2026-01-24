@@ -4,7 +4,6 @@
   import ProjectDetailHeader from './ProjectDetailHeader.vue'
   import Timeline from './timeline/Timeline.vue'
 
-
   interface Props {
     project: Project
   }
@@ -52,8 +51,8 @@
 <style scoped>
   .project-detail-container {
     padding: 10px;
-    overflow: visible;
-    border-radius: 20px;
+    overflow: hidden;
+    border-radius: 20px !important;
   }
 
   .detail-header {
