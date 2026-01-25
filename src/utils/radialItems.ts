@@ -1,17 +1,11 @@
 import type { Personal, RadialItem, RadialConfig, RadialItemWithPosition } from '@/types/data.models'
 
-import GitHubIcon from '/img/radial/GitHub_Logo.svg'
-import LinkedInIcon from '/img/radial/LinkedIn_Logo.svg'
-import MailIcon from '/img/radial/Mail_Icon.svg'
-import PhoneIcon from '/img/radial/Call_Icon.svg'
-import FileTextIcon from '/img/radial/Reader_Icon.svg'
-
 const iconMap: Record<string, string> = {
-  'github': GitHubIcon,
-  'linkedin': LinkedInIcon,
-  'email': MailIcon,
-  'phone': PhoneIcon,
-  'resume': FileTextIcon
+  'github': '/img/radial/GitHub_Logo.svg',
+  'linkedin': '/img/radial/LinkedIn_Logo.svg',
+  'email': '/img/radial/Mail_Icon.svg',
+  'phone': '/img/radial/Call_Icon.svg',
+  'resume': '/img/radial/Reader_Icon.svg'
 }
 
 export function extractRadialItems(data: Personal): RadialItem[] {
