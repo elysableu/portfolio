@@ -26,7 +26,6 @@
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else-if="projectsData">
       <div class="projects">
-        <!-- <h1>Projects</h1> -->
         <div class="projects-library">
          <ProjectsLibrary
           :projects="projectsData.projects"
