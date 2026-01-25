@@ -55,8 +55,8 @@
         teamSize: teamSize.value,
         startDate: startDate.value,
         endDate: endDate.value,
-        demoVideo: demoVideo.value,
-        thumbnail: thumbnail.value
+        demoVideo: demoVideo?.value,
+        thumbnail: thumbnail?.value
       }
     }
   }
