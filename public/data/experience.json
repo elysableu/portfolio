@@ -1,0 +1,53 @@
+[
+  {
+    "id": "independent_tutor",
+    "title": "Independent Tutor",
+    "company": "Dragonfly Education",
+    "location": "Boulder, CO",
+    "locationType": "Mobile",
+    "type": "Self-Employed",
+    "startDate": "2025-11",
+    "endDate": null,
+    "current": true,
+    "description": "Deliver personalized one-on-one instruction with primary focus on mathematics and computer science, while offering comprehensive academic support and organizational skill development.",
+    "responsibilities": [
+     "Oversee full scope of independent business functions including appointment coordination, lesson planning, logistics management, and quarterly tax compliance",
+    "Partner with families and educators to evaluate academic challenges and create tailored learning strategies aligned with student goals",
+    "Design individualized lesson plans that foster active participation and drive measurable academic progress"
+    ],
+    "achievements": [
+      "Built strong relationships with parents, teachers, and students",
+      "Delivered personalized learning experiences across multiple subjects"
+    ],
+    "skills": ["Universal Design", "Curriculum Development", "Student Assessment", "Business Management", "Communication", "Adaptability"],
+    "technologies": ["Miro", "Wolfram Alpha", "Schoology", "Google Classroom"],
+    "logo": "assets/img/companies/dragonfly-logo.png"
+  },
+  {
+    "id": "student_teacher",
+    "title": "Student Teacher",
+    "company": "Denver Public Schools, Cherry Creek Public Schools, Jefferson County Public Schools",
+    "location": "Denver, CO",
+    "locationType": "On-site",
+    "type": "Internship",
+    "startDate": "2017-08",
+    "endDate": "2019-12",
+    "current": false,
+    "description": "Completed student teaching placements across three school districts in the Denver metro area, collaborating with educators to analyze student performance data and deliver technical lessons.",
+    "responsibilities": [
+      "Collaborated with educators, counselors, and administrators across three districts to design personalized pathways for student achievement",
+      "Implemented targeted interventions for 20+ students",
+      "Developed and delivered 50+ technical lessons in mathematics",
+      "Translated complex mathematical concepts into accessible knowledge for diverse learners",
+      "Adapted teaching strategies to different school cultures and student populations"
+    ],
+    "achievements": [
+      "Successfully completed placements in three diverse school districts",
+      "Delivered 50+ comprehensive mathematics lessons across varied student demographics",
+      "Demonstrated adaptability across different educational environments"
+    ],
+    "skills": ["Data Analysis", "Curriculum Development", "Student Assessment", "Differentiated Instruction", "Universal Design", "Collaboration"],
+    "technologies": ["Canvas", "Google Classroom", "Blackboard Learn", "Kahoot!", "Edmodo", "Infinite Campus", "GeoGebra", "Desmos"],
+    "logo": "assets/img/companies/dps-logo.png"
+  }
+]
