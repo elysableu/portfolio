@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { toRefs } from 'vue'
-  import type { ChapterType, Feature, Technologies, Challenge, VisionPacket, ResultPacket } from '@/types/data.models'
+  import type { ChapterType, Feature, Technologies, Challenge, VisionPacket } from '@/types/data.models'
+  import { getAssetPath } from '@/utils/assets'
   import TimelineFeature from './TimelineFeature.vue'
   import TimelineTechnologies from './TimelineTechnologies.vue'
   import TimelineChallenges from './TimelineChallenges.vue'
@@ -32,7 +33,7 @@
 
         <div v-if="chapterNum === '02'" class="vision">
           <span v-if="(chapterContent as VisionPacket).projectPlan">
-            <img alt="projectPlan" :src="(chapterContent as VisionPacket).projectPlan"/>
+            <img alt="projectPlan" :src="getAssetPath((chapterContent as VisionPacket).projectPlan)"/>
           </span>
           {{ (chapterContent as VisionPacket).description }}
         </div>
@@ -157,6 +158,6 @@
   }
 
   .results {
-    
+
   }
 </style>

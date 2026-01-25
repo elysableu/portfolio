@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { getAssetPath } from '@/utils/assets'
+
   interface Props {
     image: string
     paragraph: string
@@ -11,7 +13,7 @@
   <div class="journey-item">
     <img
       alt="journey-icon"
-      :src="image"
+      :src="getAssetPath(image)"
       width="75"
       height="75"
     />

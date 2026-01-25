@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { getAssetPath } from '@/utils/assets'
   import type { Skill } from '@/types/data.models'
 
   import { formatExperience } from '@/utils/format'
@@ -17,12 +18,17 @@
     :data-experience="formatExperience(skill.yearsOfExperience)"
   >
     <img
-    :alt="skill.name"
-    class="skill-icon"
-    :src="skill.icon"
-    width="60"
-    height="60"
+      v-if="skill.icon"
+      :alt="skill.name"
+      class="skill-icon"
+      :src="getAssetPath(skill.icon)"
+      width="60"
+      height="60"
     />
+
+    <div v-else class="skill-icon-placeholder">
+      {{ skill.name.charAt(0) }}
+    </div>
   </div>
 </template>
 

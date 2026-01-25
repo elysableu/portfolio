@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import type { ExperienceType } from '@/types/data.models';
-  import { formatDate } from '@/utils/format';
+  import type { ExperienceType } from '@/types/data.models'
+  import { formatDate } from '@/utils/format'
+  import { getAssetPath } from '@/utils/assets'
 
   interface Props {
     experienceItem: ExperienceType
@@ -22,7 +23,7 @@
 <template>
   <div class="experience-item">
     <div class="experience-item-banner">
-      <img class="experience-icon" alt="experienceItem.title" :src="xpIcons.gem" width="60" height="60" />
+      <img class="experience-icon" alt="experienceItem.title" :src="getAssetPath(xpIcons.gem)" width="60" height="60" />
       <div class="experience-banner-content">
         <div class="experience-item-heading">
           <h3>{{ experienceItem.title }}</h3>
@@ -34,19 +35,19 @@
           <h4>{{ experienceItem.company }}</h4>
           <div class="experience-heading-details">
             <span class="xp-heading-detail location">
-              <img class="experience-mini-icon" alt="locationIcon" :src="xpIcons.location" />
+              <img class="experience-mini-icon" alt="locationIcon" :src="getAssetPath(xpIcons.location)" />
               <p>{{ experienceItem.location }}</p>
             </span>
             <span class="xp-heading-detail location-type">
-              <img class="experience-mini-icon" alt="locationTypeIcon" :src="xpIcons.locationType" />
+              <img class="experience-mini-icon" alt="locationTypeIcon" :src="getAssetPath(xpIcons.locationType)" />
               <p>{{ experienceItem.locationType }}</p>
             </span>
             <span class="xp-heading-detail xp-type">
-              <img class="experience-mini-icon" alt="xpTypeIcon" :src="xpIcons.xpType" />
+              <img class="experience-mini-icon" alt="xpTypeIcon" :src="getAssetPath(xpIcons.xpType)" />
               <p>{{ experienceItem.type }}</p>
             </span>
             <span class="xp-heading-detail start-end">
-              <img class="experience-mini-icon" alt="startEndIcon" :src="xpIcons.startEnd" />
+              <img class="experience-mini-icon" alt="startEndIcon" :src="getAssetPath(xpIcons.startEnd)" />
               <p>{{ formatDate(experienceItem.startDate) }} - {{ formatDate(experienceItem.endDate) }}</p>
             </span>
           </div>
@@ -61,7 +62,7 @@
         <h4>Responsibilities:</h4>
         <ul>
           <li v-for="(item, index) in experienceItem.responsibilities" :key="index">
-            <img class="check experience-mini-icon" alt="checkIcon" :src="xpIcons.check" />
+            <img class="check experience-mini-icon" alt="checkIcon" :src="getAssetPath(xpIcons.check)" />
             {{ item }}
           </li>
         </ul>

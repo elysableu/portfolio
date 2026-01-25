@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getAssetPath } from '@/utils/assets'
 import type { TickerItemType } from '@/types/data.models'
 import { isTickerImage, isTickerProject } from '@/utils/typeGuards'
 
@@ -13,14 +14,14 @@ defineProps<Props>()
   <div class="ticker-item">
     <div v-if="isTickerProject(item)" class="project-item">
       <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link">
-        <img :alt="item.title" :src="item.thumbnail" class="ticker-thumbnail" />
+        <img :alt="item.title" :src="getAssetPath(item.thumbnail)" class="ticker-thumbnail" />
       </a>
       <div class="ticker-label">
         <h3>{{ item.title }}</h3>
       </div>
     </div>
     <div v-else-if="isTickerImage(item)" class="image-item">
-      <img :alt="item.alt" :src="item.src" class="ticker-thumbnail" />
+      <img :alt="item.alt" :src="getAssetPath(item.src)" class="ticker-thumbnail" />
       <div v-if="item.caption" class="caption">{{ item.caption }}</div>
     </div>
   </div>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { getAssetPath } from '@/utils/assets'
+
   interface Props {
     title: string,
     description: string,
@@ -13,7 +15,7 @@
     <div class="value-heading">
       <img
       alt="value-icon"
-      :src="icon"
+      :src="getAssetPath(icon)"
       width="75"
       height="75"
       />
