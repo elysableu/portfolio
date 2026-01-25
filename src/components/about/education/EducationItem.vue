@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { RouterLink } from 'vue-router'
   import type { EducationType } from '@/types/data.models'
+  import { getAssetPath } from '@/utils/assets'
 
   interface Props {
     educationItem: EducationType
@@ -14,7 +15,7 @@
 <template>
   <div class="education-item">
     <div class="education-item-banner">
-      <img alt="education-icon" :src="graduationIcon" />
+      <img alt="education-icon" :src="getAssetPath(graduationIcon)" />
       <div class="education-item-heading">
         <h3>{{ educationItem.institution }}</h3>
         <p>{{ educationItem.location }}</p>
