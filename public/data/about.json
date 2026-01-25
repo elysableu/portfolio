@@ -3,8 +3,8 @@
   "journey": {
     "title": "My Journey",
     "paragraphs": [
-      "My path to software engineering wasn't traditional, but it was intentional. As a mathematics teacher, I saw firsthand how technology could transform learning and solve real-world problems.",
-      "This realization led me to pursue Computer Science at MSU Denver, where I combined my love for problem-solving with technical skills. Today, I bring that same passion for education and empowerment to every line of code I write."
+      "My path to software engineering wasn't traditional, but it was intentional. As a mathematics student teacher, I saw firsthand how technology could transform learning and solve real-world problems.",
+      "This realization led me to pivot and pursue Computer Science at MSU Denver, where I combined my love for problem-solving with technical skills. Today, I bring that same passion for education and empowerment to every line of code I write."
     ]
   },
   "values": [
@@ -30,11 +30,13 @@
     }
   ],
   "interests": [
-    "Open Source Contributions",
     "Teaching & Mentoring",
     "Civic Technology",
-    "Data Visualization",
-    "Educational Software"
+    "EdTech",
+    "Accessibility engineering",
+    "Security best practices",
+    "Attend tech conferences",
+    "User Experience"
   ],
-  "currentlyLearning": ["GraphQL", "Microservices Architecture", "Machine Learning Basics"]
+  "currentlyLearning": ["Vue.js framework", "Next.js framework", "Redis caching", "Javascript animation"]
 }

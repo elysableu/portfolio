@@ -100,4 +100,17 @@
     height: 40px;
     object-fit: contain;
   }
+
+  .skill-icon-placeholder {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3B82F6;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
 </style>

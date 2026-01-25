@@ -9,19 +9,17 @@
     "startDate": "2025-11",
     "endDate": null,
     "current": true,
-    "description": "Provide individualized tutoring specializing in math and computer science, with support across all subjects and executive functioning skills.",
+    "description": "Deliver personalized one-on-one instruction with primary focus on mathematics and computer science, while offering comprehensive academic support and organizational skill development.",
     "responsibilities": [
-      "Provide individualized tutoring specializing in math and computer science, with support across all subjects and executive functioning skills",
-      "Manage all business operations including scheduling, curriculum development, travel coordination, and quarterly tax obligations",
-      "Collaborate with parents and teachers to assess student needs and develop customized, student-centered curricula",
-      "Develop customized, student-centered curricula that strengthen engagement and improve outcomes"
+     "Oversee full scope of independent business functions including appointment coordination, lesson planning, logistics management, and quarterly tax compliance",
+    "Partner with families and educators to evaluate academic challenges and create tailored learning strategies aligned with student goals",
+    "Design individualized lesson plans that foster active participation and drive measurable academic progress"
     ],
     "achievements": [
-      "Successfully launched and managed independent tutoring business",
       "Built strong relationships with parents, teachers, and students",
       "Delivered personalized learning experiences across multiple subjects"
     ],
-    "skills": ["Curriculum Development", "Student Assessment", "Business Management", "Communication", "Adaptability"],
+    "skills": ["Universal Design", "Curriculum Development", "Student Assessment", "Business Management", "Communication", "Adaptability"],
     "technologies": ["Miro", "Wolfram Alpha", "Schoology", "Google Classroom"],
     "logo": "assets/img/companies/dragonfly-logo.png"
   },
@@ -37,7 +35,7 @@
     "current": false,
     "description": "Completed student teaching placements across three school districts in the Denver metro area, collaborating with educators to analyze student performance data and deliver technical lessons.",
     "responsibilities": [
-      "Collaborated with teachers, counselors, and administrators across three school districts to analyze student performance data",
+      "Collaborated with educators, counselors, and administrators across three districts to design personalized pathways for student achievement",
       "Implemented targeted interventions for 20+ students",
       "Developed and delivered 50+ technical lessons in mathematics",
       "Translated complex mathematical concepts into accessible knowledge for diverse learners",
@@ -48,7 +46,7 @@
       "Delivered 50+ comprehensive mathematics lessons across varied student demographics",
       "Demonstrated adaptability across different educational environments"
     ],
-    "skills": ["Data Analysis", "Curriculum Development", "Student Assessment", "Differentiated Instruction", "Collaboration"],
+    "skills": ["Data Analysis", "Curriculum Development", "Student Assessment", "Differentiated Instruction", "Universal Design", "Collaboration"],
     "technologies": ["Canvas", "Google Classroom", "Blackboard Learn", "Kahoot!", "Edmodo", "Infinite Campus", "GeoGebra", "Desmos"],
     "logo": "assets/img/companies/dps-logo.png"
   }
