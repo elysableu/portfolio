@@ -1,0 +1,265 @@
+{
+  "categories": [
+    {
+      "category": "Languages/Frameworks",
+      "icon": "code",
+      "skills": [
+        {
+          "name": "CSS",
+          "yearsOfExperience": 3,
+          "icon": "/img/skills/css-3.svg"
+        },
+        {
+          "name": "HTML5",
+          "yearsOfExperience": 3,
+          "icon": "/img/skills/html-5.svg"
+        },
+        {
+          "name": "Python",
+          "yearsOfExperience": 2,
+          "icon": "/img/skills/python.svg"
+        },
+        {
+          "name": "React.js",
+          "yearsOfExperience": 2.5,
+          "icon": "/img/skills/react.svg"
+        },
+        {
+          "name": "Node.js",
+          "yearsOfExperience": 2,
+          "icon": "/img/skills/node-js.svg"
+        },
+        {
+          "name": "Ruby on Rails",
+          "yearsOfExperience": 3,
+          "icon": "/img/skills/rails.svg"
+        },
+        {
+          "name": "JavaScript",
+          "yearsOfExperience": 2,
+          "icon": "/img/skills/javascript.svg"
+        },
+        {
+          "name": "Next.js",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/next-js.svg"
+        },
+        {
+          "name": "TypeScript",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/typescript.svg"
+        },
+        {
+          "name": "Vue.js",
+          "yearsOfExperience": 0.5,
+          "icon": "/img/skills/vue-js.svg"
+        }
+      ]
+    },
+    {
+      "category": "Development Tools",
+      "icon": "tool",
+      "skills": [
+        {
+          "name": "Git",
+          "yearsOfExperience": 3,
+          "icon": "/img/skills/git.svg"
+        },
+        {
+          "name": "Chrome DevTools",
+          "yearsOfExperience": 2,
+          "icon": "/img/skills/chrome-devtools.svg"
+        },
+        {
+          "name": "GitHub",
+          "yearsOfExperience": 2,
+          "icon": "/img/skills/github.svg"
+        },
+        {
+          "name": "npm",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/npm.svg"
+        },
+        {
+          "name": "Postman",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/postman.svg"
+        },
+        {
+          "name": "Vite",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/vite-js.svg"
+        },
+        {
+          "name": "Webpack",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/webpack.svg"
+        }
+      ]
+    },
+    {
+      "category": "Infrastructure & DevOps",
+      "icon": "server",
+      "skills": [
+        {
+          "name": "CircleCI",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/circle-ci.svg"
+        },
+        {
+          "name": "Docker",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/docker.svg"
+        },
+        {
+          "name": "GitHub Actions",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/github.svg"
+        },
+        {
+          "name": "Heroku",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/heroku.svg"
+        }
+      ]
+    },
+    {
+      "category": "Design & Collaboration",
+      "icon": "users",
+      "skills": [
+        {
+          "name": "Figma",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/figma.svg"
+        },
+        {
+          "name": "JIRA",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/jira.svg"
+        }
+      ]
+    },
+    {
+      "category": "Databases & APIs",
+      "icon": "database",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "yearsOfExperience": 2,
+          "icon": "/img/skills/postgresql.svg"
+        },
+        {
+          "name": "RESTful API",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/api.svg"
+        },
+        {
+          "name": "MySQL",
+          "yearsOfExperience": 1.5,
+          "icon": "/img/skills/mysql.svg"
+        },
+        {
+          "name": "JSON",
+          "yearsOfExperience": 2,
+          "icon": "/img/skills/json.svg"
+        },
+        {
+          "name": "Redis",
+          "yearsOfExperience": 0.5,
+          "icon": "/img/skills/redis.svg"
+        },
+        {
+          "name": "SQLite",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/sqlite.svg"
+        },
+        {
+          "name": "XML",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/xml.svg"
+        }
+      ]
+    },
+    {
+      "category": "Testing/Quality Assurance",
+      "icon": "check-circle",
+      "skills": [
+        {
+          "name": "Unit Testing",
+          "yearsOfExperience": 1.5,
+          "icon": "/img/skills/unit-testing.svg"
+        },
+        {
+          "name": "Cypress",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/cypress.svg"
+        },
+        {
+          "name": "FactoryBot",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/factorybot.svg"
+        },
+        {
+          "name": "RSpec",
+          "yearsOfExperience": 1,
+          "icon": "/img/skills/rspec.svg"
+        },
+        {
+          "name": "Test Driven Development (TDD)",
+          "yearsOfExperience": 1.5,
+          "icon": "/img/skills/tdd.svg"
+        }
+      ]
+    }
+  ],
+  "proficiencies": [
+    {
+      "name": "Agile/Scrum",
+      "description": "Working effectively in agile development environments"
+    },
+    {
+      "name": "Object-Oriented Programming (OOP)",
+      "description": "Building maintainable software using OOP principles"
+    },
+    {
+      "name": "Pair Programming",
+      "description": "Collaborating effectively with team members on code development"
+    },
+    {
+      "name": "Code Reviews",
+      "description": "Providing constructive feedback and maintaining code quality"
+    },
+    {
+      "name": "CI/CD Pipelines",
+      "description": "Implementing and maintaining continuous integration and deployment"
+    },
+    {
+      "name": "Performance Optimization",
+      "description": "Improving application speed and efficiency"
+    },
+    {
+      "name": "Cross-Browser Compatibility",
+      "description": "Ensuring consistent functionality across different browsers"
+    },
+    {
+      "name": "WCAG Standards",
+      "description": "Implementing web accessibility best practices"
+    },
+    {
+      "name": "Observability & Monitoring",
+      "description": "Implementing systems for tracking application health and performance"
+    },
+    {
+      "name": "API Integration",
+      "description": "Integrating and working with third-party APIs"
+    },
+    {
+      "name": "Problem Solving",
+      "description": "Breaking down complex problems into manageable solutions"
+    },
+    {
+      "name": "Technical Writing",
+      "description": "Creating clear documentation and technical specifications"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 // ============================================================================
 // PERSONAL
+
 // ============================================================================
 export interface Personal {
   name: string
@@ -10,6 +11,7 @@ export interface Personal {
   location: string
   timezone: string
   links: PersonalLinks
+  resume: string
   avatar: string
 }
 
@@ -17,7 +19,6 @@ export interface PersonalLinks {
   github: string
   linkedin: string
   twitter: string
-  resume: string
   portfolio: string
 }
 
@@ -29,7 +30,6 @@ export interface Home {
   headline: string
   introduction: string
   callToAction: CallToAction
-  featuredProjects: TickerItem[]
   stats: Stat[]
 }
 
@@ -53,15 +53,20 @@ export interface Stat {
 // ============================================================================
 export interface About {
   bio: string
-  journey: Journey
+  journey: JourneyType
   values: Value[]
   interests: string[]
   currentlyLearning: string[]
 }
 
-export interface Journey {
+export interface JourneyType {
   title: string
   paragraphs: string[]
+}
+
+export interface AboutImages {
+  teach: string
+  computer: string
 }
 
 export interface Value {
@@ -73,7 +78,7 @@ export interface Value {
 // ============================================================================
 // EDUCATION
 // ============================================================================
-export interface Education {
+export interface EducationType {
   id: string
   degree: string
   field: string
@@ -81,31 +86,29 @@ export interface Education {
   location: string
   startDate: string
   graduationDate: string
-  gpa?: string
-  honors?: string[]
   minors?: string[]
   concentration?: string
   relevantCoursework?: string[]
-  projects?: string[]
+  projects?: ProjectBriefType[]
   logo?: string
 }
 
 // ============================================================================
 // EXPERIENCE
 // ============================================================================
-export interface Experience {
+export interface ExperienceType {
   id: string
   title: string
   company: string
   location: string
-  locationType: 'Remote' | 'Hybrid' | 'On-site'
+  locationType: 'Remote' | 'Hybrid' | 'On-site' | 'Mobile'
   type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship'
   startDate: string
   endDate: string | null
   current: boolean
   description: string
   responsibilities: string[]
-  achievements: string[]
+  skills: string[]
   technologies: string[]
   logo?: string
 }
@@ -113,7 +116,7 @@ export interface Experience {
 // ============================================================================
 // SKILLS
 // ============================================================================
-export interface Skills {
+export interface SkillsType {
   categories: SkillCategory[]
 }
 
@@ -125,7 +128,6 @@ export interface SkillCategory {
 
 export interface Skill {
   name: string
-  level: number
   yearsOfExperience: number
   icon?: string
 }
@@ -140,10 +142,11 @@ export interface Project {
   shortDescription: string
   fullDescription: string
   motivation: string
-  technologies: string[]
-  features: string[]
+  projectPlan: string
+  technologies: Technologies
+  features: Feature[]
   challenges: Challenge[]
-  images: string[]
+  images: TickerImageType[]
   thumbnail: string
   githubUrl?: string
   liveUrl?: string
@@ -151,6 +154,7 @@ export interface Project {
   status: ProjectStatus
   startDate: string
   endDate: string | null
+  current: boolean
   featured: boolean
   priority: number
   role: string
@@ -171,15 +175,91 @@ export interface ProjectMetrics {
   [key: string]: string | undefined
 }
 
+export interface ProjectBriefType {
+  id?: string
+  title: string,
+  name?: string,
+  description: string,
+  url: string,
+  thumbnail?: string
+}
+
+export interface ProjectHeader {
+  title: string,
+  current: boolean,
+  tagline: string,
+  liveUrl?: string,
+  githubUrl?: string,
+  tags: string[]
+  images: TickerImageType[]
+}
+
+export interface TimelineType {
+  motivation: string,
+  fullDescription: string,
+  features: Feature[],
+  projectPlan: string,
+  technologies: Technologies,
+  challenges: Challenge[],
+  status: ProjectStatus,
+  teamSize: number,
+  startDate: string,
+  endDate: string | null,
+  demoVideo?: string,
+  thumbnail?: string
+}
+
+export interface ChapterType {
+  chapterNum: string,
+  chapterTitle: string,
+  chapterSubtitle: string,
+  chapterContent: string | string[] | Challenge[] | VisionPacket | ResultPacket | Feature[] | Technologies
+}
+
+export interface ResultPacket {
+  status: ProjectStatus,
+  teamSize: number,
+  startDate: string,
+  endDate: string | null,
+  demoVideo?: string,
+  thumbnail?: string
+}
+
+export interface VisionPacket {
+  description: string,
+  projectPlan: string
+}
+
+export interface Feature {
+  title: string,
+  description: string
+}
+
+export interface Technologies {
+  frontend?: string[],
+  backend?: string[],
+  database?: string[],
+  other?: string[]
+}
+
 // ============================================================================
 // TICKER (for Ticker component)
 // ============================================================================
-export interface TickerItem {
+export interface TickerProjectType {
   id: string
-  title: string
+  title?: string
   thumbnail: string
-  url: string
+  url?: string
 }
+
+export interface TickerImageType {
+  id: string
+  src: string
+  alt: string
+  caption?: string
+}
+
+export type TickerItemType = TickerProjectType | TickerImageType
 
 // ============================================================================
 // UTILITY TYPES
@@ -193,4 +273,24 @@ export interface SearchResult {
   title: string
   description: string
   url: string
+}
+
+export type ImageCollection = Record<string, string>
+
+export type RadialItem =
+  | { label: string; type: 'link'; link: string, icon: string }
+  | { label: string; type: 'contact'; contact: string, icon: string }
+  | { label: string; type: 'resume'; resume: string, icon: string }
+
+export interface RadialConfig {
+ headshotRadius: number
+  orbitGap: number
+  startAngle: number
+  endAngle: number
+}
+
+export type RadialItemWithPosition = RadialItem & {
+  x: number
+  y: number
+  rotation: number
 }

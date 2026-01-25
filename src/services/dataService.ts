@@ -2,16 +2,20 @@ import type {
   Personal,
   Home,
   About,
-  Education,
-  Experience,
-  Skills,
+  EducationType,
+  ExperienceType,
+  SkillsType,
   Project,
-  ProjectStatus
+  ProjectBriefType,
+  ProjectStatus,
+  TickerItemType,
 } from '@/types/data.models'
 
-const BASE_PATH = '@/assets'
-const DATA_PATH = `${BASE_PATH}/data`
-// const DOC_PATH = `${BASE_PATH}/data`
+import { serializeProjectBrief } from '@/utils/serializer'
+
+const DATA_PATH = import.meta.env.DEV ? '/data' : `${import.meta.env.BASE_URL}data`
+
+
 
 // =========================
 // BASIC DATA RETRIEVAL
@@ -35,19 +39,19 @@ export const getAbout = async (): Promise<About> => {
   return response.json()
 }
 
-export const getEducation = async (): Promise<Education[]> => {
+export const getEducation = async (): Promise<EducationType[]> => {
   const response = await fetch(`${DATA_PATH}/education.json`)
   if (!response.ok) throw new Error('Failed to fetch education data')
   return response.json()
 }
 
-export const getExperience = async (): Promise<Experience[]> => {
+export const getExperience = async (): Promise<ExperienceType[]> => {
   const response = await fetch(`${DATA_PATH}/experience.json`)
   if (!response.ok) throw new Error('Failed to fetch experience data')
   return response.json()
 }
 
-export const getSkills = async (): Promise<Skills> => {
+export const getSkills = async (): Promise<SkillsType> => {
   const response = await fetch(`${DATA_PATH}/skills.json`)
   if (!response.ok) throw new Error('Failed to fetch skills data')
   return response.json()
@@ -59,60 +63,87 @@ export const getProjects = async (): Promise<Project[]> => {
   return response.json()
 }
 
-
 // ==============================
 // FILTERED/COMPUTED DATA
 // ==============================
 
-export const getFeaturedProjects = async (): Promise<Project[]> => {
+export const getFeaturedProjects = async (): Promise<TickerItemType[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.featured === true)
+  return projects
+    .filter((project) => project.featured === true)
+    .map((project) => ({
+      id: project.id,
+      title: project.title,
+      thumbnail: project.thumbnail,
+      url: `/projects/${project.id}`,
+    }))
+}
+
+export const getCurrentProject = async (): Promise<ProjectBriefType | undefined> => {
+  const projects = await getProjects()
+  const currentProject = projects.find((project) => project.current === true)
+
+  return currentProject ? serializeProjectBrief(currentProject) : undefined
 }
 
 export const getProjectById = async (id: string): Promise<Project | undefined> => {
   const projects = await getProjects()
-  return projects.find(project => project.id === id)
+  return projects.find((project) => project.id === id)
 }
 
 export const getProjectsByStatus = async (status: ProjectStatus): Promise<Project[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.status === status)
+  return projects.filter((project) => project.status === status)
 }
 
 export const getProjectsByTag = async (tag: string): Promise<Project[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.tags?.includes(tag))
+  return projects.filter((project) => project.tags?.includes(tag))
 }
 
 export const getProjectsByTechnology = async (technology: string): Promise<Project[]> => {
   const projects = await getProjects()
-  return projects.filter(project => project.technologies?.includes(technology))
+  return projects.filter((project) => {
+    if (project.technologies.frontend?.includes(technology)
+      || project.technologies.backend?.includes(technology)
+      || project.technologies.database?.includes(technology)
+      || project.technologies.other?.includes(technology)) {
+        return project
+    }
+  })
 }
 
 export const getAllProjectTags = async (): Promise<string[]> => {
   const projects = await getProjects()
   const tags = new Set<string>()
-  projects.forEach(project =>{
-    project.tags?.forEach(tag => tags.add(tag))
+  projects.forEach((project) => {
+    project.tags?.forEach((tag) => tags.add(tag))
   })
   return Array.from(tags).sort()
 }
 
 export const getAllTechnologies = async (): Promise<string[]> => {
   const projects = await getProjects()
-  const technologies = new Set<string>()
-  projects.forEach(project =>{
-    project.technologies?.forEach(technology => technologies.add(technology))
+  const techSet = new Set<string>()
+  projects.forEach((project) => {
+    if (project.technologies) {
+      Object.values(project.technologies).forEach(techArray => {
+        if (Array.isArray(techArray)) {
+          techArray.forEach(tech => techSet.add(tech))
+        }
+      })
+    }
   })
-  return Array.from(technologies).sort()
+
+  return Array.from(techSet).sort()
 }
 
-export const getCurrentExperience = async (): Promise<Experience[]> => {
+export const getCurrentExperience = async (): Promise<ExperienceType[]> => {
   const experiences = await getExperience()
-  return experiences.filter( exp => !exp.endDate || exp.endDate === 'Present')
+  return experiences.filter((exp) => !exp.endDate || exp.endDate === 'Present')
 }
 
-export const getExperienceSorted = async (): Promise<Experience[]> => {
+export const getExperienceSorted = async (): Promise<ExperienceType[]> => {
   const experiences = await getExperience()
   return experiences.sort((a, b) => {
     const dateA = new Date(a.startDate).getTime()
@@ -121,7 +152,7 @@ export const getExperienceSorted = async (): Promise<Experience[]> => {
   })
 }
 
-export const getEducationSorted = async (): Promise<Education[]> => {
+export const getEducationSorted = async (): Promise<EducationType[]> => {
   const education = await getEducation()
   return education.sort((a, b) => {
     const dateA = new Date(a.graduationDate).getTime()
@@ -130,22 +161,20 @@ export const getEducationSorted = async (): Promise<Education[]> => {
   })
 }
 
-
 // =====================================
 // BULK DATA LOADING
 // =====================================
 
 export const getAllData = async () => {
-  const [personal, home, about, education, experience, skills, projects] =
-    await Promise.all([
-      getPersonal(),
-      getHome(),
-      getAbout(),
-      getEducation(),
-      getExperience(),
-      getSkills(),
-      getProjects()
-    ])
+  const [personal, home, about, education, experience, skills, projects] = await Promise.all([
+    getPersonal(),
+    getHome(),
+    getAbout(),
+    getEducation(),
+    getExperience(),
+    getSkills(),
+    getProjects(),
+  ])
 
   return {
     personal,
@@ -154,7 +183,7 @@ export const getAllData = async () => {
     education,
     experience,
     skills,
-    projects
+    projects,
   }
 }
 
@@ -162,45 +191,46 @@ export const getHomePageData = async () => {
   const [home, personal, featuredProjects] = await Promise.all([
     getHome(),
     getPersonal(),
-    getFeaturedProjects()
+    getFeaturedProjects(),
   ])
 
   return {
     home,
     personal,
-    featuredProjects
+    featuredProjects,
   }
 }
 
 export const getAboutPageData = async () => {
-  const [about, personal, education, experience, skills] = await Promise.all([
+  const [about, education, experience, skills] = await Promise.all([
     getAbout(),
-    getPersonal(),
     getEducation(),
     getExperience(),
-    getSkills()
+    getSkills(),
   ])
 
   return {
     about,
-    personal,
     education,
     experience,
-    skills
+    skills,
   }
 }
 
 export const getProjectsPageData = async () => {
-  const [projects, tags, technologies] = await Promise.all([
+  const [projects, featured, current, tags, technologies] = await Promise.all([
     getProjects(),
+    getFeaturedProjects(),
+    getCurrentProject(),
     getAllProjectTags(),
-    getAllTechnologies()
+    getAllTechnologies(),
   ])
 
   return {
     projects,
+    featured,
+    current,
     tags,
-    technologies
+    technologies,
   }
 }
-

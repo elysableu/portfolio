@@ -1,0 +1,42 @@
+{
+  "bio": "I'm a software engineer with a unique background in education and mathematics. After years of teaching, I discovered my passion for building technology that makes a difference. I combine analytical problem-solving with a deep understanding of user needs to create applications that truly serve their communities.",
+  "journey": {
+    "title": "My Journey",
+    "paragraphs": [
+      "My path to software engineering wasn't traditional, but it was intentional. As a mathematics student teacher, I saw firsthand how technology could transform learning and solve real-world problems.",
+      "This realization led me to pivot and pursue Computer Science at MSU Denver, where I combined my love for problem-solving with technical skills. Today, I bring that same passion for education and empowerment to every line of code I write."
+    ]
+  },
+  "values": [
+    {
+      "title": "User-Centered Design",
+      "description": "Every application should serve its users' needs first and foremost.",
+      "icon": "/img/about/users.svg"
+    },
+    {
+      "title": "Clean Code",
+      "description": "Writing maintainable, well-documented code is just as important as making it work.",
+      "icon": "/img/about/code.svg"
+    },
+    {
+      "title": "Continuous Learning",
+      "description": "Technology evolves rapidly, and so should I. I'm always learning new tools and techniques.",
+      "icon": "/img/about/book.svg"
+    },
+    {
+      "title": "Community Impact",
+      "description": "The best projects are those that make a positive difference in people's lives.",
+      "icon": "/img/about/heart.svg"
+    }
+  ],
+  "interests": [
+    "Teaching & Mentoring",
+    "Civic Technology",
+    "EdTech",
+    "Accessibility engineering",
+    "Security best practices",
+    "Attend tech conferences",
+    "User Experience"
+  ],
+  "currentlyLearning": ["Vue.js framework", "Next.js framework", "Redis caching", "Javascript animation"]
+}

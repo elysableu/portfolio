@@ -4,51 +4,87 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <header class="header">
-    <img
-      alt="Portfolio logo"
-      class="logo"
-      src="@/assets/Portfolio_logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="navBar">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-      </nav>
+    <div class="header-content">
+      <div class="navBar">
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/projects">Projects</RouterLink>
+        </nav>
+      </div>
     </div>
   </header>
 </template>
 
 <style scoped>
 .header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+}
+
+.header-content {
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
-  padding: 1rem 2rem;
-  background: #1a1a1a;
+  padding: var(--spacing-xl) var(--spacing-xl);
 }
 
-.logo {
-  display: block;
-}
-
-.nav {
+.navBar nav {
   display: flex;
-  gap: 2rem;
+  gap: var(--spacing-xl);
+  align-items: center;
+  padding-top: var(--spacing-xl);
 }
 
-.nav a {
-  color: white;
+.navBar a {
+  color: var(--color-text-inverse);
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  position: relative;
 }
 
-.nav a:hover,
-.nav a.router-link-active {
-  color: #3498db;
+.navBar a:hover {
+  color: var(--color-accent-teal);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navBar a.router-link-active {
+  color: var(--color-accent-teal);
+}
+
+.navBar a.router-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent-teal);
+  border-radius: var(--radius-full);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-md);
+  }
+
+  .navBar nav {
+    gap: var(--spacing-md);
+  }
+
+  .navBar a {
+    font-size: 1rem;
+  }
 }
 </style>

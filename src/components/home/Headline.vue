@@ -1,13 +1,21 @@
-<script lang="ts">
+<script setup lang="ts">
+interface Props {
+  headline: string
+}
 
+defineProps<Props>()
 </script>
 
 <template>
-  <div>
-    <h3>Headline</h3>
+  <div class="headline">
+    <h3>{{ headline }}</h3>
   </div>
 </template>
 
 <style scoped>
-
+  .headline {
+    font-family: 'Dosis';
+    font-weight: 700;
+    text-align: right;
+  }
 </style>
