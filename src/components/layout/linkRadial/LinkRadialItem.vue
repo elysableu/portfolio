@@ -19,7 +19,7 @@
   }">
   <div class="radial-content">
     <div class="radial-icon-container">
-      <img alt="{{ item.label }}" :src="getAssetPath(item.icon)" class="radial-icon"/>
+      <img :alt="item.label" :src="getAssetPath(item.icon)" class="radial-icon"/>
     </div>
     <div class="radial-full-value">
       <a

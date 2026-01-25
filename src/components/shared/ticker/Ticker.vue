@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { getAssetPath } from '@/utils/assets'
 import TickerItem from './TickerItem.vue'
 import type { TickerItemType } from '@/types/data.models'
 
@@ -118,7 +119,7 @@ onUnmounted(() => {
           :class="{'ticker-button-disabled': !hasMultipleItems }"
           :disabled="!hasMultipleItems"
         >
-          <img :src="buttonIcons.previous" alt="previous" class="button-icon" />
+          <img :src="getAssetPath(buttonIcons.previous)" alt="previous" class="button-icon" />
         </button>
         <button
           @click="toggleAutoPlay"
@@ -126,7 +127,7 @@ onUnmounted(() => {
           :class="{'ticker-button-disabled': !hasMultipleItems }"
           :disabled="!hasMultipleItems"
         >
-          <img :src="isAutoPlaying ? buttonIcons.pause : buttonIcons.play" alt="play/pause toggle" class="button-icon"/>
+          <img :src="isAutoPlaying ? getAssetPath(buttonIcons.pause) : getAssetPath(buttonIcons.play)" alt="play/pause toggle" class="button-icon"/>
         </button>
         <button
           @click="nextSlide"
@@ -134,7 +135,7 @@ onUnmounted(() => {
           :class="{'ticker-button-disabled': !hasMultipleItems }"
           :disabled="!hasMultipleItems"
         >
-          <img :src="buttonIcons.next" alt="previous" class="button-icon" />
+          <img :src="getAssetPath(buttonIcons.next)" alt="previous" class="button-icon" />
         </button>
       </div>
     </div>

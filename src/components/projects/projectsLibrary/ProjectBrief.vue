@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { RouterLink } from 'vue-router'
+  import { getAssetPath } from '@/utils/assets'
   import type {ProjectBriefType} from '@/types/data.models'
 
   interface Props {
@@ -17,7 +18,14 @@
       class="brief-link-card"
     >
       <div class="brief-thumbnail">
-        <img :alt="project.title" :src="project.thumbnail"/>
+        <img
+          v-if="project.thumbnail"
+          :alt="project.title"
+          :src="getAssetPath(project.thumbnail)"
+          />
+          <div v-else class="thumbnail-placeholder">
+            <span class="placeholdder-icon">💫</span>
+          </div>
       </div>
       <div class="brief-banner">
         <h3>{{ project.title }}</h3>

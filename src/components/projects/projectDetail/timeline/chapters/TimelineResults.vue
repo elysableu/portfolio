@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { computed } from 'vue'
+  import { getAssetPath } from '@/utils/assets'
   import type { ResultPacket } from '@/types/data.models'
   import { formatDuration } from '@/utils/format'
 
@@ -35,7 +36,7 @@
         width="50%"
         :poster="(content as ResultPacket).thumbnail"
       >
-        <source :src="(content as ResultPacket).demoVideo" type="video/mp4">
+        <source :src="getAssetPath(content.demoVideo || '')" type="video/mp4">
       </video>
     </div>
   </div>
@@ -58,7 +59,7 @@
     font-size: 20px;
     font-weight: bold;
   }
-  
+
   .result-label {
     width: 100%;
     border-bottom: 2px solid #49CCA4;
