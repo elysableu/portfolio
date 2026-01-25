@@ -13,7 +13,7 @@ import type {
 
 import { serializeProjectBrief } from '@/utils/serializer'
 
-const DATA_PATH = `/data`
+const DATA_PATH = `${import.meta.env.BASE_URL}/data`
 
 // =========================
 // BASIC DATA RETRIEVAL
