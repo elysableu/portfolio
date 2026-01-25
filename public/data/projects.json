@@ -2,39 +2,43 @@
   {
     "id": "repradar",
     "title": "RepRadar",
-    "tagline": "Track your representatives, stay informed",
-    "shortDescription": "A comprehensive tool for tracking congressional representatives and current executive orders.",
-    "fullDescription": "RepRadar is a full-stack web application that helps citizens stay informed about their congressional representatives. Users can search for representatives by location, and view the most recent executive orders. Built with a focus on civic engagement, transparency, and user experience.",
+    "tagline": "Track executive orders; Contact your representative; Stay informed",
+    "shortDescription": "A comprehensive tool for tracking the most up-to-date executive orders and find contacts for your local representative.",
+    "fullDescription": "RepRadar is a full-stack web application that helps citizens stay informed about the current state of affairs. Users can search for representatives by location, view the most recent executive orders, and get AI summarizations of those executive orders. Built with a focus on civic engagement, transparency, and user experience.",
     "motivation": "Inspired by the need for greater civic engagement and transparency in government, RepRadar makes it easy for everyday citizens to understand current executire orders and find representatives to contact",
-    "projectPlan": "",
+    "projectPlan": "https://embed.figma.com/board/wzG4kiosKh0WlHoW9DrUKE/Rep-Radar-Planning?node-id=0-1&embed-host=share",
     "technologies": {
-      "frontend": ["React", "Node.js"],
-      "backend": ["Ruby on Rails"],
+      "frontend": ["React", "Node.js", "Cypress"],
+      "backend": ["Ruby on Rails", "RSpec"],
       "database": ["PostgreSQL"],
-      "other":["5 Calls API", "Federal Register API"]
+      "other":["5 Calls API", "Federal Register API", "Render"]
     },
     "features": [
       {
-        "title": "Title",
-        "description": "Real-time representative lookup by zip code"
+        "title": "Find your representatives",
+        "description": "Instantly discover your local, state, and federal representatives with a simple zip code search"
       },
       {
-        "title": "Title",
-        "description": "Up to date executive orders and ai generated summaries"
+        "title": "Track Executive Orders",
+        "description": "Stay informed with real-time executive order updates and AI-generated summaries that translate policy into plain language"
+      },
+      {
+        "title": "Personalized Political Insights",
+        "description": "Connect government action to your community with representative profiles and accessible policy explanations"
       }
     ],
     "challenges": [
       {
         "challenge": "Integrating multiple government APIs with inconsistent data formats",
-        "solution": "Built a data normalization layer to standardize information from different sources"
+        "solution": "Built a data normalization layer (i.e. gateways, serializers, and models) to standardize information from different sources"
       },
       {
-        "challenge": "Handling large datasets efficiently",
-        "solution": "Implemented pagination, caching, and database indexing strategies"
+        "challenge": "Handling Both fetched data and database data",
+        "solution": "Created endpoint parameter that dynamically changed if data was directly fetched from api or from the users saves in the database"
       },
       {
         "challenge": "Finding an API that provided up to date summaries of each executive order",
-        "solution": "Created AI data scraper to create summaries as each detailed view loaded in"
+        "solution": "Adjusted our MVP to provide links to the official pdfs of executive orders and then updated this to use an AI scrapper to generate summaries"
       }
     ],
     "images": [
@@ -46,14 +50,14 @@
     ],
     "thumbnail": "/img/project_screenshots/repradar.png",
     "githubUrl": "https://github.com/RedRadar-WT-Team",
-    "liveUrl": "https://repradar.example.com",
+    "liveUrl": "https://frontend-9cax.onrender.com",
     "demoVideo": "",
     "status": "completed",
     "startDate": "2025-04",
     "endDate": "2025-04",
     "current": false,
     "featured": true,
-    "priority": 1,
+    "priority": 3,
     "role": "Full-Stack Developer",
     "teamSize": 6,
     "tags": ["civic-tech", "full-stack", "API-integration", "data-visualization"],
@@ -79,61 +83,61 @@
     },
     "features": [
       {
-      "title": "Title",
-      "description": "Contact management with notes and interaction history"
+        "title": "Contact Hub",
+        "description": "Maintain detailed profiles for each contact with timestamped interaction logs and personal notes to keep relationships warm"
       },
       {
-      "title": "Title",
-      "description": "Company profiles with interest levels and research notes"
+        "title": "Company Intelligence",
+        "description": "Track target companies with custom interest ratings, research findings, and culture notes to prioritize your outreach"
       },
-       {
-      "title": "Title",
-      "description": "Application tracking with customizable status stages"
+      {
+        "title": "Application Pipeline",
+        "description": "Monitor every application from initial interest through offer stage with customizable workflow statuses that match your process"
       },
-       {
-      "title": "Title",
-      "description": "Network mapping connecting contacts to companies and applications"
+      {
+        "title": "Relationship Mapping",
+        "description": "Visualize connections between your contacts, their companies, and your applications to leverage your network strategically"
       },
-       {
-      "title": "Title",
-      "description": "Visual pipeline dashboard showing application progress"
+      {
+        "title": "Progress Dashboard",
+        "description": "Get a bird's-eye view of your entire job search with interactive visualizations showing where each opportunity stands"
       }
     ],
     "challenges": [
       {
-        "challenge": "Designing a relational data model that connects contacts, companies, and applications",
-        "solution": "Implemented a flexible schema with junction tables to support many-to-many relationships"
+        "challenge": "Selecting and integrating a rich text editor that balanced functionality with simplicity",
+        "solution": "Evaluated multiple libraries and implemented a lightweight rich text solution that provided essential formatting without overwhelming users or bloating the application"
       },
       {
-        "challenge": "Creating an intuitive interface for complex relationship mapping",
-        "solution": "Built interactive visualizations showing connections between entities with clear visual hierarchies"
+        "challenge": "Managing pointer events in the rich text editor to prevent conflicts with drag-and-drop features",
+        "solution": "Implemented strategic pointer-events CSS and event propagation controls to isolate editor interactions from surrounding UI elements"
       }
     ],
     "images": [
       {
         "src": "/img/project_screenshots/tracker.png",
         "alt": "homepage",
-        "caption": "homepage"
+        "caption": "Homepage"
       },
       {
-        "src": "",
-        "alt": "homepage",
-        "caption": "homepage"
+        "src": "/img/project_screenshots/tracker-dashboard.png",
+        "alt": "dashboard",
+        "caption": "Dashboard"
       } 
     ],
     "thumbnail": "/img/project_screenshots/tracker.png",
     "githubUrl-fe": "https://github.com/turingschool/tracker-crm-fe",
     "githubUrl-be": "https://github.com/turingschool/tracker-crm",
-    "liveUrl": null,
+    "liveUrl": "https://tracker-crm-fe-38f7cf1aaca5.herokuapp.com/",
     "demoVideo": null,
     "status": "in-progress",
     "startDate": "2024-08",
-    "endDate": null,
+    "endDate": "2025-06",
     "current": false,
     "featured": true,
     "priority": 2,
-    "role": "Solo Developer",
-    "teamSize": 1,
+    "role": "Frontend Developer",
+    "teamSize": 39,
     "tags": ["productivity", "full-stack", "data-visualization", "job-search"],
     "metrics": null
   },
@@ -141,46 +145,54 @@
     "id": "portfolio",
     "title": "Personal Portfolio",
     "tagline": "Showcasing my work with modern web tech",
-    "shortDescription": "This portfolio website built with Angular and modern web technologies.",
-    "fullDescription": "A modern, responsive portfolio website showcasing my projects, skills, and experience. Built with Angular 19 and featuring server-side rendering, custom reusable components, a clean design system using SCSS variables, and dynamic content loading. Demonstrates proficiency in modern web development practices and attention to detail.",
+    "shortDescription": "This portfolio website built with Vue and modern web technologies.",
+    "fullDescription": "A modern, responsive portfolio website showcasing my projects, skills, and experience. Built with Vue 3.5 and featuring server-side rendering, custom reusable components, a clean design system using CSS variables, and dynamic content loading. Demonstrates proficiency in modern web development practices and attention to detail.",
     "motivation": "To create a professional online presence that showcases both my technical skills and design sensibility.",
     "projectPlan": "",
     "technologies": {
-      "frontend": ["Angular","TypeScript", "SCSS", "Tailwind CSS", "Angular SSR", "RxJS"],
+      "frontend": ["Vue.js","TypeScript", "CSS"],
       "backend": [],
       "database": [],
       "other": []
     },
     "features": [
       {
-        "title": "Title",
-        "description": "Server-side rendering for better SEO and performance"
+        "title": "Optimized Performance",
+        "description": "Server-side rendering implementation ensures fast initial page loads and improved search engine visibility"
       },
       {
-        "title": "Title",
-        "description": "Fully responsive design across all devices"
+        "title": "Mobile-First Design",
+        "description": "Seamless experience across desktop, tablet, and mobile devices with fluid responsive layouts"
       },
       {
-        "title": "Title",
-        "description": "Custom reusable components (ticker, cards, etc.)"
+        "title": "Reusable Component Library",
+        "description": "Custom-built Vue components including animated tickers, interactive cards, and modular UI elements"
       },
       {
-        "title": "Title",
-        "description": "Dynamic content loading from JSON files"
+        "title": "Content Management",
+        "description": "JSON-driven architecture enables easy content updates without touching code"
       },
       {
-        "title": "Title",
-        "description": "Design system with SCSS variables"
-      },
-      {
-        "title": "Title",
-        "description": "Smooth animations and transitions"
+        "title": "Consistent Design System",
+        "description": "Centralized CSS variables create a cohesive visual language with maintainable theming"
       }
     ],
     "challenges": [
       {
         "challenge": "Making components SSR-compatible",
-        "solution": "Used platform detection and conditional rendering"
+        "solution": "Used platform detection and conditional rendering" 
+      },
+      {
+        "challenge": "Implementing complex CSS animations for radial menu navigation",
+        "solution": "Studied existing CSS library examples and reverse-engineered the approach, adapting it to work with Vue's reactive system"
+      },
+      {
+        "challenge": "Creating a fully dynamic, template-driven architecture",
+        "solution": "Designed a JSON-based content system where all site data lives in configuration files, enabling complete content updates without code changes"
+      },
+      {
+        "challenge": "Maintaining type safety across dynamic JSON content",
+        "solution": "Created comprehensive TypeScript interfaces that validate data structure and provide autocomplete throughout the application"
       }
     ],
     "images": [
@@ -188,26 +200,21 @@
         "src": "/img/project_screenshots/portfolio.png",
         "alt": "homepage",
         "caption": "homepage"
-      },
-      {
-        "src": "",
-        "alt": "projects",
-        "caption": "projects"
       }
     ],
     "thumbnail": "/img/project_screenshots/portfolio.png",
-    "githubUrl": "https://github.com/yourusername/portfolio",
-    "liveUrl": "https://elysaward.com",
+    "githubUrl": "https://github.com/elysableu/portfolio",
+    "liveUrl": "https://elysableu.github.io/portfolio/",
     "demoVideo": null,
-    "status": "completed",
+    "status": "in-progress",
     "startDate": "2024-12",
     "endDate": "2025-01",
     "current": true,
     "featured": false,
-    "priority": 3,
+    "priority": 1,
     "role": "Designer & Developer",
     "teamSize": 1,
-    "tags": ["frontend", "Angular", "web-design", "SSR"],
+    "tags": ["frontend", "Vue", "web-design", "SSR"],
     "metrics": null
   }
 ]
