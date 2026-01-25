@@ -101,7 +101,14 @@ export const getProjectsByTag = async (tag: string): Promise<Project[]> => {
 
 export const getProjectsByTechnology = async (technology: string): Promise<Project[]> => {
   const projects = await getProjects()
-  return projects.filter((project) => project.technologies?.includes(technology))
+  return projects.filter((project) => {
+    if (project.technologies.frontend?.includes(technology)
+      || project.technologies.backend?.includes(technology)
+      || project.technologies.database?.includes(technology)
+      || project.technologies.other?.includes(technology)) {
+        return project
+    }
+  })
 }
 
 export const getAllProjectTags = async (): Promise<string[]> => {

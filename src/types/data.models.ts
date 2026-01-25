@@ -1,8 +1,6 @@
 // ============================================================================
 // PERSONAL
 
-import type { ProjectReference } from "typescript"
-
 // ============================================================================
 export interface Personal {
   name: string
