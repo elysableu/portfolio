@@ -58,7 +58,7 @@ body {
   --color-surface-dark: #1A1A1A;      /* Dark surfaces */
 
   /* ===== TEXT COLORS (WCAG AAA Compliant) ===== */
-  --color-text: #1A1A1A;              /* Primary text - almost black (21:1 ratio) */
+  --color-text: #ffffff;              /* Primary text - almost black (21:1 ratio) */
   --color-text-secondary: #4A4A4A;    /* Secondary text - dark gray (9.7:1 ratio) */
   --color-text-muted: #6B7280;        /* Muted text - medium gray (4.6:1 ratio) */
   --color-text-light: #9CA3AF;        /* Light text for dark backgrounds */
