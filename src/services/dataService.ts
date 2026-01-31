@@ -9,6 +9,7 @@ import type {
   ProjectBriefType,
   ProjectStatus,
   TickerItemType,
+  NSFeatured,
 } from '@/types/data.models'
 
 import { serializeProjectBrief } from '@/utils/serializer'
@@ -31,6 +32,12 @@ export const getHome = async (): Promise<Home> => {
   const response = await fetch(`${DATA_PATH}/home.json`)
   if (!response.ok) throw new Error('Failed to fetch home data')
   return response.json()
+}
+
+export const getNSContent = async (): Promise<NSFeatured> => {
+  const response = await fetch(`${DATA_PATH}/new_soon.json`)
+  if (!response.ok) throw new Error('Failed to fetch new_soon data')
+    return response.json()
 }
 
 export const getAbout = async (): Promise<About> => {
@@ -166,9 +173,10 @@ export const getEducationSorted = async (): Promise<EducationType[]> => {
 // =====================================
 
 export const getAllData = async () => {
-  const [personal, home, about, education, experience, skills, projects] = await Promise.all([
+  const [personal, home, nsContent, about, education, experience, skills, projects] = await Promise.all([
     getPersonal(),
     getHome(),
+    getNSContent(),
     getAbout(),
     getEducation(),
     getExperience(),
@@ -179,6 +187,7 @@ export const getAllData = async () => {
   return {
     personal,
     home,
+    nsContent,
     about,
     education,
     experience,
@@ -188,16 +197,18 @@ export const getAllData = async () => {
 }
 
 export const getHomePageData = async () => {
-  const [home, personal, featuredProjects] = await Promise.all([
+  const [home, personal, featuredProjects, nsContent] = await Promise.all([
     getHome(),
     getPersonal(),
     getFeaturedProjects(),
+    getNSContent(),
   ])
 
   return {
     home,
     personal,
     featuredProjects,
+    nsContent,
   }
 }
 
