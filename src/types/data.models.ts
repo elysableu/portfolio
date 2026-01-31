@@ -48,6 +48,31 @@ export interface Stat {
   value: string
 }
 
+interface BaseFeature {
+  id: string,
+  type: 'porfolio' | 'project' | 'blog' | 'other',
+  project: string,
+  title: string,
+  content: featureContent
+}
+export interface newFeature extends BaseFeature {
+  dataCompleted: string
+}
+
+export interface soonFeature extends BaseFeature {
+  dataAdded: string,
+}
+
+export interface featureContent {
+  tagline: string,
+  link: string,
+  icon: string
+}
+
+export interface SoonFeatureContent {
+  status: 'planned' | 'in progress'
+}
+
 // ============================================================================
 // ABOUT
 // ============================================================================
