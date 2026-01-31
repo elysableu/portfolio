@@ -48,6 +48,10 @@ export interface Stat {
   value: string
 }
 
+export interface NSFeatured {
+  new: NewFeature[],
+  soon: SoonFeature[]
+}
 interface BaseFeature {
   id: string,
   type: 'porfolio' | 'project' | 'blog' | 'other',
@@ -55,11 +59,11 @@ interface BaseFeature {
   title: string,
   content: featureContent
 }
-export interface newFeature extends BaseFeature {
+export interface NewFeature extends BaseFeature {
   dataCompleted: string
 }
 
-export interface soonFeature extends BaseFeature {
+export interface SoonFeature extends BaseFeature {
   dataAdded: string,
 }
 
