@@ -6,7 +6,8 @@ import type { Personal, Home, TickerItemType } from '@/types/data.models'
 import Greeting from '@/components/home/Greeting.vue'
 import Headline from '@/components/home/Headline.vue'
 import Introduction from '@/components/home/Introduction.vue'
-import FeaturedProjects from '@/components/home/FeaturedProjects.vue'
+import FeaturedProjects from '@/components/home/featured/FeaturedProjects.vue'
+import FeaturedNSContainer from '@/components/home/featured/FeaturedNSContainer.vue'
 
 const { loading, error, getHomePageData } = useData()
 const homeData = ref<{
@@ -39,7 +40,9 @@ onMounted(async () => {
             <Introduction :introduction="homeData.home.introduction" />
           </div>
         </div>
-        <!-- <FeaturedBlogPosts /> -->
+        <div class="new-soon">
+          <FeaturedNSContainer />
+        </div>
       </div>
     </div>
     </div>
