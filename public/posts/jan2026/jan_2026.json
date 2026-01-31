@@ -1,0 +1,67 @@
+[
+    {
+        "id": "01-29-26",
+        "postFormat": "comparison",
+        "datePublished": "2026-01-29",
+        "title": "New Year, New Me!",
+        "tagline": "Also a new portfolio",
+        "thumbnail": "",
+        "content": { 
+            "images": [
+                "/img/project_screenshots/portfolio.png",
+                "/posts/jan2026/old_portfolio.png"
+            ],
+            "video": [
+                "/posts/jan2026/old_portfolio_demo.png"
+            ],
+            "links": [
+                {
+                    "label": "Current Portfolio Repository",
+                    "link": "https://github.com/elysableu/portfolio"
+                },
+                {
+                    "label": "Old Portfolio Repository",
+                    "link": "https://github.com/elysableu/old_portfolio"
+                }  
+            ],
+            "texts": [
+                {
+                    "subtitle": "",
+                    "text": [
+                        "It's finally 2026! (Better late than never but this portfolio had to be finished first 😂) Last year was a whirlwind with all the ups and downs that came along with it. I've always been fascinated with technology and the seemingly magical intricacies behind its outward functionalities. There's always some level of abstraction that hides all the complexity, making me want to continue peeling layers back until I find its core.",
+                        "My old portfolio created this same dilemma for me. So much of the app was abstracted out so that a user would only need to alter YAML files to update the site, but I initially wanted to alter elements that were buried deep and inaccessible within the abstraction of the Jekyll template. It's been sufficient enough to get my information out there, but certainly nothing eye-catching or memorable. Yes, it is very neat and the color palette is subdued and well-balanced, but being unable to alter these aspects of the site left much to be desired. The color palette doesn't even closely represent who I am, so being locked into that was disappointing.",
+                        "A portfolio is supposed to be your first impression with other professionals, and what does my old portfolio say? \"I'm safe and know how to draw inside the lines.\" I live happily outside the box! So my new portfolio reflects this—I decided to incorporate a doorway illuminated by neon lights into my background. Although I'm certain a new portfolio was necessary, I couldn't let go of the radial surrounding the profile image; it provides a unique way to interact with displayed elements. It's now a permanent fixture in the top corner of my new portfolio. It'll be perfect once I get a new headshot taken!",
+                        "Everything is rendered automatically based on internal JSON files (much like my old portfolio relied on YAML files) and dynamically renders elements based on various pieces of data. My old portfolio barely did this—I was able to add new sections, but they would render based on some abstracted HTML template. This new portfolio, though, will check for different pieces of data and format entirely different Vue components based on those pieces of data."
+                    ]
+                },
+                {
+                    "subtitle": "New",
+                    "text": [
+                        "35+ custom Vue components, full creative control",
+                        "Technologies: Vue, Vite, AWS Amplify",
+                        "Views: Home, About, Projects, Blog"
+                    ]
+                },
+                {
+                    "subtitle": "Old",
+                    "text": [
+                        "Template-based, limited customization",
+                        "Technologies: Jekyll, Ruby, GitHub Pages",
+                        "Views: Home"
+                    ]
+                },
+                {
+                    "subtitle": "What Comes Next",
+                    "text": [
+                        "Finishing responsive display",
+                        "Adding a drop down to the link radial for the resume tab to allow for view and download options",
+                        "Add a headshot to link radial",
+                        "Add demo videos to individual projects",
+                        "Add embedded figma/miro boards to individual projects",
+                        "Add a leave a comment or contact me feature"
+                    ]
+                }
+            ]
+        } 
+    }
+]
