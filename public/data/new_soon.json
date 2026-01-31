@@ -1,0 +1,197 @@
+{
+    "new": [
+        {
+            "id": "n-01",
+            "type": "portfolio",
+            "project": "",
+            "title": "Vue Portfolio",
+            "dateCompleted": "2026-01-24",
+            "content": {
+                "tagline": "A complete rebuild from the ground up",
+                "link": "https://github.com/elysableu/portfolio",
+                "icon": ""
+            }
+        },
+        {
+            "id": "n-02",
+            "type": "portfolio",
+            "project": "",
+            "title": "Dynamic Vue Component Rendering",
+            "dateCompleted": "2026-01-24",
+            "content": {
+                "tagline": "35+ components rendered dynamically from JSON data",
+                "link": "",
+                "icon": ""
+            }
+        },
+        {
+            "id": "n-03",
+            "type": "portfolio",
+            "project": "",
+            "title": "Deployed on GitHub Pages & AWS Amplify",
+            "dateCompleted": "2026-01-31",
+            "content": {
+                "tagline": "Dual deployment with a custom domain configured on AWS via Route 53",
+                "link": "",
+                "icon": ""
+            }
+        },
+        {
+            "id": "n-04",
+            "type": "portfolio",
+            "project": "",
+            "title": "What's New & What's Coming",
+            "dateCompleted": "2026-01-31",
+            "content": {
+                "tagline": "A homepage section showcasing recent updates and upcoming features",
+                "link": "",
+                "icon": ""
+            }
+        }
+    ],
+    "soon": [
+        {
+            "id": "s-01",
+            "type": "portfolio",
+            "project": "",
+            "title": "Responsive Display",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Full responsiveness across all screen sizes, from desktop to mobile",
+                "link": "",
+                "status": "in progress",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-02",
+            "type": "portfolio",
+            "project": "",
+            "title": "Headshot",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Adding a headshot to the link radial",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-03",
+            "type": "portfolio",
+            "project": "",
+            "title": "Blog",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Comparison-style posts documenting my journey",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-04",
+            "type": "portfolio",
+            "project": "",
+            "title": "Resume Download",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "View and download options from the link radial resume tab",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-05",
+            "type": "portfolio",
+            "project": "",
+            "title": "Embedded Figma/Miro Boards",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Interactive design boards embedded in individual projects",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-06",
+            "type": "portfolio",
+            "project": "",
+            "title": "Project Demo Videos",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Demo videos added to individual projects",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-07",
+            "type": "portfolio",
+            "project": "",
+            "title": "Comments",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Leave a comment feature for blog posts",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-08",
+            "type": "project",
+            "project": "silverguild",
+            "title": "Introduce Project Silverguild",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "A new project coming soon — stay tuned!",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-09",
+            "type": "project",
+            "project": "silverguild",
+            "title": "Deploy Silverguild Backend",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Phase 1: Getting the backend up and running",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-10",
+            "type": "project",
+            "project": "silverguild",
+            "title": "Finish CharacterView",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Completing the character view component for Silverguild",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        },
+        {
+            "id": "s-11",
+            "type": "project",
+            "project": "silverguild",
+            "title": "Deploy Silverguild Frontend",
+            "dateAdded": "2026-01-31",
+            "content": {
+                "tagline": "Phase 1: Initial frontend deployment",
+                "link": "",
+                "status": "planned",
+                "icon": ""
+            }
+        }
+    ]
+}
