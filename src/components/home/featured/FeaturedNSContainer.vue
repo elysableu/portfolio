@@ -1,8 +1,9 @@
 <script setup lang="ts">
   import type { NSFeatured } from '@/types/data.models'
 
-  import FeaturedNew from './FeaturedNew.vue'
+  // import FeaturedNew from './FeaturedNew.vue'
   import FeaturedSoon from './FeaturedSoon.vue'
+  import FeaturedCard from './FeaturedCard.vue';
 
   interface Props {
     nsContent: NSFeatured
@@ -15,20 +16,20 @@
     <div class="content-container left">
       <h3>What's New</h3>
       <div class="content">
-        <FeaturedNew
+         <FeaturedCard
           v-for="item in nsContent.new"
           :key="item.id"
-          :nContent="item"
+          :cardContent="item"
         />
       </div>
     </div>
     <div class="content-container right">
       <h3>What's Coming</h3>
       <div class="content">
-        <FeaturedSoon
+        <FeaturedCard
           v-for="item in nsContent.soon"
           :key="item.id"
-          :sContent="item"
+          :cardContent="item"
         />
       </div>
     </div>
@@ -50,6 +51,7 @@
   }
 
   .content-container h3 {
+    font-size: 24px;
     padding-bottom: var(--spacing-md);
   }
 
