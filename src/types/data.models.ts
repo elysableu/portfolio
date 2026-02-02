@@ -54,27 +54,28 @@ export interface NSFeatured {
 }
 interface BaseFeature {
   id: string,
-  type: 'porfolio' | 'project' | 'blog' | 'other',
+  type: 'portfolio' | 'project' | 'blog' | 'other',
   project: string,
   title: string,
-  content: featureContent
+  content: FeatureContent
 }
 export interface NewFeature extends BaseFeature {
-  dataCompleted: string
+  dateCompleted: string
 }
 
 export interface SoonFeature extends BaseFeature {
-  dataAdded: string,
+  dateAdded: string,
+  content: SoonFeatureContent
 }
 
-export interface featureContent {
+export interface FeatureContent {
   tagline: string,
   link: string,
   icon: string
 }
 
-export interface SoonFeatureContent {
-  status: 'planned' | 'in progress'
+export interface SoonFeatureContent extends FeatureContent {
+   status: 'planned' | 'in progress'
 }
 
 // ============================================================================
