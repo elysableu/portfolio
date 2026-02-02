@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useData } from '@/composables/useData'
-import type { Personal, Home, TickerItemType } from '@/types/data.models'
+import type { Personal, Home, TickerItemType, NSFeatured } from '@/types/data.models'
 
 import Greeting from '@/components/home/Greeting.vue'
 import Headline from '@/components/home/Headline.vue'
 import Introduction from '@/components/home/Introduction.vue'
 import FeaturedProjects from '@/components/home/featured/FeaturedProjects.vue'
 import FeaturedNSContainer from '@/components/home/featured/FeaturedNSContainer.vue'
+import { getNSContent } from '@/services/dataService'
 
 const { loading, error, getHomePageData } = useData()
 const homeData = ref<{
   home: Home
   personal: Personal
-  featuredProjects: TickerItemType[]
+  featuredProjects: TickerItemType[],
+  nsContent: NSFeatured
 } | null>(null)
 
 onMounted(async () => {
@@ -34,14 +36,14 @@ onMounted(async () => {
         <div class="featured glass-card-dark">
           <FeaturedProjects :featured="homeData.featuredProjects" />
         </div>
-        <div class="intro">
+        <div class="intro-ns-container">
           <div class="intro-content glass-card-dark">
             <Headline :headline="homeData.home.headline" />
             <Introduction :introduction="homeData.home.introduction" />
           </div>
-        </div>
-        <div class="new-soon">
-          <FeaturedNSContainer />
+          <div class="new-soon glass-card-dark">
+            <FeaturedNSContainer :nsContent="homeData.nsContent"/>
+          </div>
         </div>
       </div>
     </div>
@@ -74,26 +76,42 @@ onMounted(async () => {
     flex-direction: column;
     gap: var(--spacing-xl);
     padding-top: calc(var(--spacing-lg) + 30px);
+    /* flex: 1; */
+    min-height: 0;
   }
 
   .intro-wrapper {
     display: flex;
     gap: var(--spacing-lg);
+    /* flex: 1; */
+    min-height: 0;
   }
 
 
-  .intro {
+  .intro-ns-container {
     flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
   }
 
   .intro-content {
+    /* flex: 1; */
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
     padding: var(--spacing-xl);
+    min-height: 0;
+  }
+
+  .new-soon {
+   display: flex;
   }
 
   .featured {
      flex: 2;
+     min-height: 0;
   }
+
 </style>
