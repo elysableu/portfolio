@@ -24,18 +24,14 @@
   <div class="projects-container">
     <div v-if="loading" class="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
-    <div v-else-if="projectsData">
-      <div class="projects">
-        <div class="projects-library">
-         <ProjectsLibrary
-          :projects="projectsData.projects"
-          :featured="projectsData.featured"
-          :current="projectsData.current"
-          :tags="projectsData.tags"
-          :technologies="projectsData.technologies"
-         />
-        </div>
-      </div>
+    <div v-else-if="projectsData" class="projects-content">
+      <ProjectsLibrary
+      :projects="projectsData.projects"
+      :featured="projectsData.featured"
+      :current="projectsData.current"
+      :tags="projectsData.tags"
+      :technologies="projectsData.technologies"
+      />
     </div>
   </div>
 </template>
@@ -43,23 +39,19 @@
 <style>
 
   .projects-container {
-    padding: var(--spacing-lg);
+    padding-top: 130px;
+    padding-left: calc(var(--spacing-lg) + 10px);
+    padding-right: calc(var(--spacing-lg) + 10px);
+    min-height: 100vh;
+    display: flex;
   }
 
-  .projects {
-
-  }
-
-  /* .projects h1 {
-    position: absolute;
-    text-align: right;
-    font-size: 50px;
-    top: 150px;
-    right: 50px;
-  } */
-
-  .projects-library {
-    padding-top: 80px;
+  .projects-content {
+    margin-top: calc(121.719px + 40px + 24px);
+    padding-top: calc(var(--spacing-lg) + 10px);
+    padding-bottom: 35px;
+    flex: 1;
+    overflow: auto;
   }
 
 /* @media (min-width: 1024px) {

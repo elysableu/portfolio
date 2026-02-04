@@ -25,23 +25,21 @@
   <div class="about-container">
     <div v-if="loading" class="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
-    <div v-else-if="aboutData">
-      <div class="about-content">
-        <div class="about-content-left">
-          <div class="opening-container">
-            <OpeningDetails :about="aboutData.about"/>
-          </div>
-          <div class="skills-container">
-            <Skills :skills="aboutData.skills"/>
-          </div>
+    <div v-else-if="aboutData" class="about-content">
+      <div class="about-content-left">
+        <div class="opening-container">
+          <OpeningDetails :about="aboutData.about"/>
         </div>
-        <div class="about-content-right">
-          <div class="education-container">
-            <Education :educationList="aboutData.education"/>
-          </div>
-          <div class="experience-container">
-            <Experience :experienceList="aboutData.experience"/>
-          </div>
+        <div class="skills-container">
+          <Skills :skills="aboutData.skills"/>
+        </div>
+      </div>
+      <div class="about-content-right">
+        <div class="education-container">
+          <Education :educationList="aboutData.education"/>
+        </div>
+        <div class="experience-container">
+          <Experience :experienceList="aboutData.experience"/>
         </div>
       </div>
     </div>
@@ -52,14 +50,21 @@
 .about-container {
   display: flex;
   flex-direction: column;
-  padding: calc(var(--spacing-lg) + 110px) calc(var(--spacing-lg) + 10px) var(--spacing-sm) calc(var(--spacing-lg) + 10px);
+  padding-top: 130px;
+  padding-left: calc(var(--spacing-lg) + 10px);
+  padding-right: calc(var(--spacing-lg) + 10px);
   margin: 0 auto;
   min-width: 100%;
+  min-height: 100vh;
 }
 
 .about-content {
   display: flex;
   gap: var(--spacing-md);
+  margin-top: calc(121.719px + 24px + 40px);
+  padding-top: calc(var(--spacing-lg) + 10px);
+  padding-bottom: 35px;
+  overflow: auto;
 }
 
 .about-content-left {
