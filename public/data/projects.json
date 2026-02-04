@@ -216,5 +216,81 @@
     "teamSize": 1,
     "tags": ["frontend", "Vue", "web-design", "SSR"],
     "metrics": null
+  },
+  {
+    "id": "sguild",
+    "title": "SilverGuild",
+    "tagline": "Your complete D&D toolkit, from character sheets to campaign management",
+    "shortDescription": "A comprehensive D&D toolkit application starting with intelligent character sheet creation and management.",
+    "fullDescription": "SilverGuild is a full-stack D&D companion application designed to streamline tabletop gaming for players and dungeon masters alike. Currently featuring an intuitive character sheet creator and manager, the app aims to become a complete toolkit with dice rolling, interactive dungeon maps, GM mode for campaign management, beginner-friendly tutorials, and toggleable tooltips for rules clarification. Built with a focus on reducing the barrier to entry for new players while providing powerful tools that experienced gamers need to manage complex campaigns.",
+    "motivation": "To create an accessible, all-in-one platform that makes D&D more approachable for newcomers while providing the depth and tools that experienced players need to manage complex campaigns.",
+    "projectPlan": "",
+    "technologies": {
+      "frontend": ["React", "TypeScript", "Next.js"],
+      "backend": ["Ruby on Rails", "RSpec"],
+      "database": ["PostgreSQL"],
+      "other": ["D&D 5e API", "AWS"]
+    },
+    "features": [
+      {
+        "title": "Character Sheet Creator",
+        "description": "Streamlined character creation with guided workflows that help both new and experienced players build D&D characters quickly and accurately"
+      },
+      {
+        "title": "Character Management",
+        "description": "Centralized hub for managing multiple characters with easy tracking of stats, inventory, and progression"
+      },
+      {
+        "title": "Dice Roller (Planned)",
+        "description": "Integrated dice rolling system with customizable options and roll history tracking"
+      },
+      {
+        "title": "Dungeon Maps (Planned)",
+        "description": "Interactive map builder and viewer for visualizing combat encounters and exploration"
+      },
+      {
+        "title": "GM Mode (Planned)",
+        "description": "Specialized tools for dungeon masters to manage campaigns, NPCs, and encounter tracking"
+      },
+      {
+        "title": "Beginner Mode (Planned)",
+        "description": "Simplified interface with contextual guidance and rule explanations for players new to D&D"
+      },
+      {
+        "title": "Smart Tooltips (Planned)",
+        "description": "Toggleable rule clarifications and mechanic explanations throughout the interface"
+      }
+    ],
+    "challenges": [
+      {
+        "challenge": "Determining how to break down character creation into a logical, user-friendly workflow",
+        "solution": "Used Miro for user journey mapping and database schema tools to visualize the relationships between character attributes, creating a step-by-step flow that mirrors the natural progression of character building"
+      },
+      {
+        "challenge": "Preventing scope creep and avoiding overwhelm on a complex, multi-feature project",
+        "solution": "Broke the MVP into smaller, achievable phases with clear milestones—completed Backend Phase 1 and currently working on Frontend Phase 1, allowing for iterative development and regular wins"
+      }
+    ],
+    "images": [
+      {
+        "src": "/img/project_screenshots/silverguild.png",
+        "alt": "homepage",
+        "caption": "homepage"
+      }
+    ],
+    "thumbnail": "",
+    "githubUrl": "https://github.com/SilverGuild",
+    "liveUrl": "",
+    "demoVideo": null,
+    "status": "in-progress",
+    "startDate": "2024-04",
+    "endDate": "",
+    "current": true,
+    "featured": false,
+    "priority": 2,
+    "role": "Founder & Full-Stack Developer",
+    "teamSize": 1,
+    "tags": ["full-stack", "gaming", "passion-project", "D&D", "toolkit"],
+    "metrics": null
   }
 ]
