@@ -112,7 +112,7 @@ onUnmounted(() => {
       <div v-if="currentItem" class="ticker-wrapper">
         <TickerItem :key="currentItem.id" :item="currentItem" />
       </div>
-      <div v-if="currentItem" class="ticker-controls">
+      <div v-if="currentItem && items.length > 1" class="ticker-controls">
         <button
           @click="previousSlide"
           class="ticker-button"
@@ -144,10 +144,13 @@ onUnmounted(() => {
 
 <style scoped>
   .ticker-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    min-height: 0;
     align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
   }
 
   .ticker-label {
@@ -157,6 +160,7 @@ onUnmounted(() => {
     margin-bottom: var(--spacing-sm);
     background: black;
     text-align: center;
+    flex-shrink: 0;
   }
 
   .ticker-label h4 {
@@ -167,29 +171,39 @@ onUnmounted(() => {
   }
 
   .ticker-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
+    min-height: 0;
+    overflow: hidden;
+    padding: var(--spacing-sm) 0;
   }
 
   .ticker-wrapper {
     position: relative;
     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .ticker-controls {
     position: absolute;
-    right: var(--spacing-lg);
-    bottom: var(--spacing-lg);
+    right: var(--spacing-xl);
+    bottom: var(--spacing-xl);
     z-index: 300;
     display: flex;
     gap: var(--spacing-sm);
   }
 
   .ticker-button {
-    width: 48px;
-    height: 48px;
+    width: 65px;
+    height: 65px;
     background: transparent;
     border: none;
     padding: 0;
@@ -229,8 +243,8 @@ onUnmounted(() => {
   }
 
   .button-icon {
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
 
     display: block;
     pointer-events: none;

@@ -10,9 +10,17 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div>
+  <div class="featured-projects-container">
     <Ticker title="Featured Projects" :items="featured" />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .featured-projects-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+</style>
