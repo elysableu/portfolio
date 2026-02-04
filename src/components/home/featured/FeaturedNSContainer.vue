@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ref, watch } from 'vue'
+  import { ref } from 'vue'
   import type { NSFeatured } from '@/types/data.models'
   import FeaturedCard from './FeaturedCard.vue';
 
@@ -7,34 +7,38 @@
     nsContent: NSFeatured
   }
 
-  defineProps<Props>()
+  const props = defineProps<Props>()
+
+  const newCards = ref([...props.nsContent.new])
+  const soonCards = ref([...props.nsContent.soon])
 
   const activeNewIndex = ref(0)
   const activeSoonIndex = ref(0)
 
-  // const setActiveNew = (index: number) => {
-  //   console.log('Setting active new to:', index)
-  //   activeNewIndex.value = index
-  // }
-
-  // const setActiveSoon = (index: number) => {
-  //   console.log('Setting active soon to:', index)
-  //   activeSoonIndex.value = index
-  // }
-
-  // DEBUG: Watch for changes
-  watch(activeNewIndex, (newVal) => {
-    console.log('activeNewIndex changed to:', newVal)
-  })
-
   const setActiveNew = (index: number) => {
-    console.log('Setting active new to:', index)
-    activeNewIndex.value = index
+    if (activeNewIndex.value === index) return
+
+    const clickedCard = newCards.value[index]
+    if(!clickedCard) return
+
+    const beforeClicked = newCards.value.slice(0, index)
+    const afterClicked = newCards.value.slice(index + 1)
+
+    newCards.value = [clickedCard, ...beforeClicked, ...afterClicked]
+    activeNewIndex.value = 0
   }
 
   const setActiveSoon = (index: number) => {
-    console.log('Setting active soon to:', index)
-    activeSoonIndex.value = index
+    if (activeSoonIndex.value === index) return
+
+    const clickedCard = soonCards.value[index]
+    if(!clickedCard) return
+
+    const beforeClicked = soonCards.value.slice(0, index)
+    const afterClicked = soonCards.value.slice(index + 1)
+
+    soonCards.value = [clickedCard, ...beforeClicked, ...afterClicked]
+    activeSoonIndex.value = 0
   }
 </script>
 
@@ -44,7 +48,7 @@
       <h3>What's New</h3>
       <div class="content card-stack">
          <FeaturedCard
-          v-for="(item, index) in nsContent.new"
+          v-for="(item, index) in newCards"
           :key="item.id"
           :cardContent="item"
           :isActive="activeNewIndex === index"
@@ -61,7 +65,7 @@
       <h3>Coming Soon</h3>
       <div class="content card-stack">
         <FeaturedCard
-          v-for="(item, index) in nsContent.soon"
+          v-for="(item, index) in soonCards"
           :key="item.id"
           :cardContent="item"
           :isActive="activeSoonIndex === index"

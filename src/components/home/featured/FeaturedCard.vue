@@ -27,8 +27,8 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     const zIndex = props.isActive ? props.totalCards + 10 : props.totalCards - props.stackPosition
 
     const baseOffset = 180
-    const stackOffset = props.stackPosition * 35
-    const translateY = props.isActive ? 0 : baseOffset + stackOffset // 30px offset per card
+    const stackOffset = props.stackPosition * 45
+    const translateY = props.isActive ? 0 : baseOffset + stackOffset - 80
 
     return {
       zIndex,
@@ -126,14 +126,19 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     backdrop-filter: blur(3px) !important;
     -webkit-backdrop-filter: blur(3px) !important;
     min-height: 70px;
+    justify-content: flex-end;
   }
 
   .card-peek {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
     font-size: 0.95rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     padding: 5px 0;
     line-height: 1.3;
+
   }
 
   .ns-banner {
