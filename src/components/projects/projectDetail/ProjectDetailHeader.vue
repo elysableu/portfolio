@@ -39,8 +39,8 @@
         </ul>
       </div>
       <div class="project-links">
-        <a :href="liveUrl">Live Site</a>
-        <a :href="githubUrl">Github Repo</a>
+        <a v-if="liveUrl" :href="liveUrl">Live Site</a>
+        <a v-if="githubUrl" :href="githubUrl">Github Repo</a>
       </div>
     </div>
     <div class="detail-ticker glass-card-inner">
@@ -53,9 +53,8 @@
   .project-header-container {
     display: flex;
     align-items: stretch;
-    max-height: 500px;
+    min-height: 400px;
     position: relative;
-    overflow: visible;
     gap: 1rem;
     border-radius: 20px 20px 0 0;
   }
@@ -63,7 +62,7 @@
   .detail-ticker {
     flex: 1.5;
     width: auto;
-    height: 500px;
+    min-height: 400px;
     border-radius: 0 20px 0 0;
     overflow: hidden;
     padding: 10px;
@@ -78,7 +77,7 @@
     justify-content: center;
     padding: var(--spacing-lg) 40px;
     border-radius: 20px 0 0 0;
-    height: 500px;
+    min-height: 400px;
   }
 
   .detail-hero {

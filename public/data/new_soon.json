@@ -47,6 +47,18 @@
                 "link": "",
                 "icon": ""
             }
+        },
+        {
+            "id": "n-05",
+            "type": "project",
+            "project": "silverguild",
+            "title": "Introduce Project Silverguild",
+            "dateCompleted": "2026-02-04",
+            "content": {
+                "tagline": "A D&D toolkit app starting with character sheet creation and management",
+                "link": "",
+                "icon": ""
+            }
         }
     ],
     "soon": [
@@ -145,19 +157,6 @@
             "id": "s-08",
             "type": "project",
             "project": "silverguild",
-            "title": "Introduce Project Silverguild",
-            "dateAdded": "2026-01-31",
-            "content": {
-                "tagline": "A new project coming soon — stay tuned!",
-                "link": "",
-                "status": "planned",
-                "icon": ""
-            }
-        },
-        {
-            "id": "s-09",
-            "type": "project",
-            "project": "silverguild",
             "title": "Deploy Silverguild Backend",
             "dateAdded": "2026-01-31",
             "content": {
@@ -168,7 +167,7 @@
             }
         },
         {
-            "id": "s-10",
+            "id": "s-09",
             "type": "project",
             "project": "silverguild",
             "title": "Finish CharacterView",
@@ -181,7 +180,7 @@
             }
         },
         {
-            "id": "s-11",
+            "id": "s-10",
             "type": "project",
             "project": "silverguild",
             "title": "Deploy Silverguild Frontend",
