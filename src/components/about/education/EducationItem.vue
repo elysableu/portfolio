@@ -49,7 +49,7 @@
       </div>
       <div v-if="educationItem.projects" class="education-item-projects">
         <h4>Projects:</h4>
-        <div class="projects-container">
+        <div class="ed-projects-container">
           <RouterLink
             v-for="(project, index) in educationItem.projects"
             :key="index"
@@ -174,7 +174,7 @@
     font-family: 'Dosis';
   }
 
-  .projects-container {
+  .ed-projects-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
