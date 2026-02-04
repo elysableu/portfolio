@@ -11,10 +11,10 @@ const radialItemData = ref<RadialItem[]>([])
 
 const radialItemsWithPositons = computed(() =>
   calculateRadialPostions(radialItemData.value, {
-    headshotRadius: 150,
-    orbitGap: 20,
-    startAngle: 70,
-    endAngle: 195
+    headshotRadius: 115,
+    orbitGap: 40,
+    startAngle: 60,
+    endAngle: 205
   })
 )
 
@@ -79,7 +79,7 @@ onMounted(async () => {
       inset 0 1px 0 rgba(255, 255, 255, 0.1),
       inset 0 -1px 0 rgba(0, 0, 0, 0.3),
       inset 0 0 12px 6px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    z-index: 101;
   }
 
   .headshot-background::before {

@@ -7,11 +7,13 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div>
-    <p>
+  <div class="introduction-container">
       {{ introduction }}
-    </p>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .introduction-container {
+    margin-bottom: 45px;
+  }
+</style>

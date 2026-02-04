@@ -150,7 +150,7 @@ onUnmounted(() => {
     min-height: 0;
     align-items: center;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
   }
 
   .ticker-label {

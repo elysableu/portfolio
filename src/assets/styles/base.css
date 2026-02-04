@@ -38,7 +38,7 @@ body {
   --color-primary-dark: #341B38;      /* Dark Purple - Headers, footer */
   --color-secondary: #D91E98;         /* Hot Pink - CTAs, highlights */
   --color-accent-teal: #49CCA4;       /* Teal - Success, links */
-  --color-accent-orange: #FFCA7B;     /* Orange - Warnings, highlights */
+  --color-accent-orange: #ffca7b;     /* Orange - Warnings, highlights */
 
   /* ===== PRIMARY SHADES ===== */
   --color-primary-light: #7D5BB8;     /* Lighter purple for hover states */
