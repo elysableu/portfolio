@@ -48,6 +48,36 @@ export interface Stat {
   value: string
 }
 
+export interface NSFeatured {
+  new: NewFeature[],
+  soon: SoonFeature[]
+}
+interface BaseFeature {
+  id: string,
+  type: 'portfolio' | 'project' | 'blog' | 'other',
+  project: string,
+  title: string,
+  content: FeatureContent
+}
+export interface NewFeature extends BaseFeature {
+  dateCompleted: string
+}
+
+export interface SoonFeature extends BaseFeature {
+  dateAdded: string,
+  content: SoonFeatureContent
+}
+
+export interface FeatureContent {
+  tagline: string,
+  link: string,
+  icon: string
+}
+
+export interface SoonFeatureContent extends FeatureContent {
+   status: 'planned' | 'in progress'
+}
+
 // ============================================================================
 // ABOUT
 // ============================================================================

@@ -36,9 +36,8 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
 <style scoped>
 
   .main-content {
-    margin-top: 250px;
-    min-height: calc(100vh - 200px);
+    min-height: 100vh;
     z-index: 100;
-    /* position: fixed;  */
+    position: relative;
   }
 </style>
