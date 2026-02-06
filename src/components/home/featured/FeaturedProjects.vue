@@ -22,6 +22,6 @@ defineProps<Props>()
     flex-direction: column;
     min-height: 0;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: var(--radius-3xl);
   }
 </style>

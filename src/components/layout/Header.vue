@@ -43,7 +43,7 @@ import { RouterLink } from 'vue-router'
 }
 
 .navBar a {
-  color: var(--color-text-inverse);
+  color: var(--color-text);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
