@@ -17,24 +17,23 @@
 
 <style scoped>
   .feature-container {
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    border-left: 4px solid #49CCA4;
-    border-top: 1px solid white;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+    padding: var(--spacing-lg);
+    background: var(--glass-dark-bg-subtle);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-accent-teal);border-left: 4px solid #49CCA4;
+    border-top: 0.5px solid var(--color-white);
+    border-right: 0.5px solid var(--color-white);
+    border-bottom: 0.5px solid var(--color-white);
   }
 
   .feature-container h4 {
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .feature-container p {
     line-height: 1.6;
     color: white;
-    font-size: 18px;
+    font-size: var(--font-size-base);
   }
 </style>

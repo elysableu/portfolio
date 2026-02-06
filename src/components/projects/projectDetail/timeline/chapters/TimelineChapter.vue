@@ -64,29 +64,29 @@
 
 <style scoped>
   .chapter-container {
-    margin: 2rem;
-    margin-bottom: 3rem;
+    margin: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
     position: relative;
-    padding-left: 5rem;
+    padding-left: var(--spacing-4xl);
   }
 
   .chapter-num-wrapper {
     position: absolute;
-    left: -40px;
+    left: -2.5rem;
     top: 0;
   }
 
   .chapter-num {
-    width: 6rem;
-    height: 6rem;
+   width: var(--spacing-5xl);
+    height: var(--spacing-5xl);
     background: linear-gradient(135deg, var(--color-secondary), var(--color-primary-dark));
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: var(--spacing-hlg);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: var(--font-size-xl);
     font-family: 'Metamorphous';
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -102,12 +102,13 @@
   }
 
   .chapter-content-container h2 {
-    font-size: 34px;
+    font-size: var(--font-size-3xl);
   }
 
   .chapter-content-container h3 {
-    font-size: 24px;
-    padding-bottom: 20px;
+    font-family: 'Dosis';
+    font-size: var(--font-size-xl);
+    padding-bottom: var(--spacing-lg);
   }
 
   .chapter-content {
@@ -115,9 +116,9 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-size: 20px;
-    padding: calc(var(--spacing-lg) + 10px);
-    border-radius: 20px;
+    font-size: var(--font-size-lg);
+    padding: calc(var(--spacing-lg) + var(--spacing-2sm));
+    border-radius: var(--radius-3xl);
     z-index: 2;
     margin-bottom: var(--spacing-lg);
   }
@@ -135,18 +136,18 @@
   }
 
   .timeline-list {
-    padding: 0px 10px;
+    padding: 0 var(--spacing-2sm);
   }
 
   .timeline-list li {
-    padding: 3px;
+    padding: var(--spacing-xs);
   }
 
   .features {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: var(--spacing-md);
   }
 
   .technologies {

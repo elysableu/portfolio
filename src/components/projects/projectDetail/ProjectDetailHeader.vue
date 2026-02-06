@@ -53,19 +53,19 @@
   .project-header-container {
     display: flex;
     align-items: stretch;
-    min-height: 400px;
+    min-height: 25rem;
     position: relative;
-    gap: 1rem;
-    border-radius: 20px 20px 0 0;
+    gap: var(--spacing-md);
+    border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
   }
 
   .detail-ticker {
     flex: 1.5;
     width: auto;
-    min-height: 400px;
-    border-radius: 0 20px 0 0;
+    min-height: 25rem;
+    border-radius: 0 var(--radius-3xl) 0 0;
     overflow: hidden;
-    padding: 10px;
+    padding: var(--spacing-2sm);
     justify-content: center;
     align-items: center;
   }
@@ -75,9 +75,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--spacing-lg) 40px;
-    border-radius: 20px 0 0 0;
-    min-height: 400px;
+    padding: var(--spacing-lg) 2.5rem;
+    border-radius: var(--radius-3xl) 0 0 0;
+    min-height: 25rem;
   }
 
   .detail-hero {
@@ -85,7 +85,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: var(--spacing-hlg);
   }
 
   .library-return {
@@ -95,40 +95,40 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
-    top: 30px;
-    left: 30px;
+    top: var(--spacing-1.5lg);
+    left: var(--spacing-1.5lg);
   }
 
   .title-current {
     display: flex;
-    gap: 10px;
+    gap: var(--spacing-2sm);
     justify-content: center;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: var(--spacing-2sm);
   }
 
   .title-current h2 {
     font-family: 'Metamorphous';
-    font-size: 40px;
+    font-size: var(--font-size-4xl);
     font-weight: bold;
   }
 
   .project-tagline {
-    font-size: 20px;
+    font-size: var(--font-size-lg);
   }
 
   .project-current {
     background: var(--color-accent-teal);
-    color: black;
+    color: var(--color-text-inverse);
     font-weight: bold;
     text-align: center;
-    padding: 3px 5px;
-    border-radius: 50px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
   }
 
   .project-tags {
     padding: var(--spacing-sm);
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-2sm);
   }
 
   .project-tags ul {
@@ -136,37 +136,37 @@
     list-style: none;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: var(--spacing-2sm);
   }
 
   .project-tags li {
-    background-color: black;
-    padding: 4px;
-    font-size: 14px;
+     background-color: var(--color-black);
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-sm);
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: var(--radius-xs);
   }
 
   .project-links {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    gap: 90px;
+    margin-top: var(--spacing-hlg);
+    gap: 5.625rem;
     padding: var(--spacing-md);
   }
 
   .project-links a {
     background-color: var(--color-accent-orange);
-    color: black;
-    font-size: 16px;
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-base);
     font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 15px;
+    padding: var(--spacing-2sm) var(--spacing-md);
+    border-radius: var(--radius-1.5xl);
   }
 
   .project-links a:hover {
-    background-color: #d8ad6b;
-    color: white;
+    background-color: var(--color-accent-orange-dark);
+    color: var(--color-text);
     transform: scale(1.1);
   }
 </style>
