@@ -92,49 +92,49 @@
   .experience-item {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--spacing-2sm);
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+    border: 1px solid var(--glass-border-medium);
+    border-radius: var(--radius-3xl);
   }
 
   .experience-item-banner {
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: black;
-    padding: 20px;
-    border-radius: 18px 18px 0px 0px;
+    background-color: var(--color-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   }
 
   .experience-icon {
-    width: 60px;
-    height: 60px;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
   }
 
   .experience-banner-content {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: var(--spacing-lg);
   }
 
   .experience-item-heading {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--spacing-2sm);
   }
 
   .experience-item-heading h3 {
     font-family: 'Dosis';
-    font-size: 24px;
+    font-size: var(--font-size-xl);
   }
 
   .is-current {
     background-color: var(--color-accent-teal);
-    color: black;
-    padding: 3px 5px;
-    border-radius: 15px;
-    font-size: 12px;
+    color: var(--color-text-inverse);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-hxl);
+    font-size: var(--font-size-xs);
   }
 
   .is-current:hover {
@@ -148,14 +148,14 @@
   }
 
   .experience-heading-content h4 {
-    padding-bottom: 5px;
+    padding-bottom: var(--spacing-sm);
   }
 
   .experience-heading-details {
     width: 100%;
     display: flex;
-    gap: 15px;
-    font-size: 14px;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
   }
 
   .xp-heading-detail {
@@ -164,9 +164,9 @@
   }
 
   .experience-mini-icon {
-    width: 25px;
-    height: 25px;
-    padding-right: 5px;
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    padding-right: var(--spacing-sm);
   }
 
   .location {
@@ -188,19 +188,19 @@
   .experience-item-details {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 10px;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-2sm);
   }
 
   .experience-item-details h4 {
     font-family: 'Dosis';
-    font-size: 20px;
+    font-size: var(--font-size-lg);
     font-weight: bold;
-    padding-bottom: 5px;
+    padding-bottom: var(--spacing-sm);
   }
 
   .description {
-    padding-bottom: 5px;
+    padding-bottom: var(--spacing-sm);
   }
 
   .responsibilities {
@@ -210,7 +210,7 @@
   .responsibilities ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--spacing-2sm);
   }
 
   .responsibilities li {
@@ -219,7 +219,7 @@
   }
 
   .check {
-    margin: 0px 10px;
+    margin: 0px var(--spacing-2sm);
   }
 
   .skills {
@@ -253,14 +253,14 @@
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--spacing-2sm);
   }
 
   .tags li {
-    background-color: black;
-    padding: 4px;
-    font-size: 14px;
+    background-color: var(--color-background);
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-sm);
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: var(--radius-xs);
   }
 </style>

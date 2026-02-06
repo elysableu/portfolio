@@ -40,29 +40,29 @@
 <style scoped>
   .skills-category {
     width: 100%;
-    margin-bottom: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.5rem;
+    margin-bottom: var(--spacing-sm);
+    background: var(--glass-bg-light);
+    border: 1px solid var(--glass-border-light);
+    border-radius: var(--radius-lg);
     overflow: visible;
   }
 
   .skills-category:first-child {
-    border-radius: 20px 20px 0.5rem 0.5rem; /* ← Match parent's top corners */
+    border-radius: var(--radius-3xl) var(--radius-3xl) var(--radius-lg) var(--radius-lg);
   }
 
   .skills-category-header {
     width: 100%;
-    height: 30px;
+    height: 1.875rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-    background-color: black;
-    color: white;
+    margin-bottom: var(--spacing-2sm);
+    background-color: var(--color-black);
+    color: var(--color-white);
     border: none;
     cursor: pointer;
-    border-radius: 0.5rem 0.5rem 0 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
 
   .category-header-content {
@@ -71,7 +71,7 @@
   }
 
   .category-name {
-    font-size: 16px;
+    font-size: var(--font-size-base);
   }
 
   .skill-count {
@@ -83,10 +83,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding: 1.5rem;
-    padding-top: 3rem;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    padding-top: var(--spacing-2xl);
     background: rgba(255, 255, 255, 0.03);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--glass-border-light);
   }
 </style>

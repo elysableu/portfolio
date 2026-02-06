@@ -52,8 +52,8 @@
   }
 
   .value-heading img {
-    width: 60px;
+    width: var(--icon-lg);
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-2sm);
   }
 </style>

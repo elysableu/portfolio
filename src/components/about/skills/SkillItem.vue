@@ -36,10 +36,10 @@
   .skill-container {
     display: flex;
     position: relative;
-    background-color: white;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
+    background-color: var(--color-white);
+    padding: var(--spacing-2sm);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-xs);
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -53,16 +53,16 @@
   .skill-container::before {
     content: attr(data-skill-name) "\A" attr(data-experience);
     position: fixed;
-    bottom: calc(100% + 12px);
+    bottom: calc(100% + var(--spacing-xl));
     left: 50%;
     transform: translateX(-50%) translateY(-5px);
-    background-color: #1F2937;
-    color: white;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
+    background-color: var(--color-gray-tooltip);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
     white-space: pre;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: var(--font-size-sm);
     line-height: 1.4;
     opacity: 0;
     pointer-events: none;
@@ -75,11 +75,11 @@
   .skill-container::after {
     content: '';
     position: absolute;
-    bottom: calc(100% + 6px);
+    bottom: calc(100% + var(--spacing-sm));
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: #1f2937;
+    border-top-color: var(--color-gray-tooltip);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease-in-out;
@@ -96,21 +96,21 @@
   }
 
   .skill-icon {
-    width: 40px;
-    height: 40px;
+    width: var(--icon-md);
+    height: var(--icon-md);
     object-fit: contain;
   }
 
   .skill-icon-placeholder {
-    width: 40px;
-    height: 40px;
+    width: var(--icon-md);
+    height: var(--icon-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3B82F6;
-    color: white;
-    font-size: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-lg);
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: var(--radius-xs);
   }
 </style>

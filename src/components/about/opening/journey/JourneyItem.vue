@@ -29,8 +29,8 @@
   }
 
   .journey-item img {
-    margin-right: 20px;
-    width: 60px;
+    margin-right: var(--spacing-lg);
+    width: var(--icon-lg);
     height: auto;
   }
 
