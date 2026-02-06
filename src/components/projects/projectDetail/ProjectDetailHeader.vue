@@ -95,8 +95,8 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
-    top: var(--spacing-1.5lg);
-    left: var(--spacing-1.5lg);
+    top: var(--spacing-hlg);
+    left: var(--spacing-hlg);
   }
 
   .title-current {

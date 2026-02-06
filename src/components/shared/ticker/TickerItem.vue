@@ -34,7 +34,7 @@ defineProps<Props>()
   justify-content: center;
   border-radius: var(--radius-lg);
   transform: translateY(-30px);
-  padding: 0px 15px;
+  padding: 0 var(--spacing-md);
 }
 
 .ticker-link {
@@ -55,20 +55,20 @@ defineProps<Props>()
 .image-item {
   position: relative;
   width: 100%;
-  max-height: 500px;
+  max-height: 31.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: var(--spacing-2sm);
   overflow: hidden;
 }
 
 .ticker-thumbnail {
   width: 100%;
   height: auto;
-  max-height: 450px;
+  max-height: 28.125rem;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: var(--spacing-2sm);
   box-shadow: var(--shadow-md);
   display: block;
 }
@@ -76,16 +76,16 @@ defineProps<Props>()
 .ticker-label,
 .caption {
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: bold;
   position: absolute;
-  bottom: -6.5px;
+  bottom: -0.40625rem;
   left: 0;
   right: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.6) 50%,
+    var(--glass-dark-bg-card) 0%,
+    var(--glass-dark-bg-strong) 50%,
     transparent 100%
   );
   padding: var(--spacing-md) var(--spacing-lg);
@@ -101,7 +101,7 @@ defineProps<Props>()
 
 h3 {
   margin: var(--spacing-lg);
-  font-size: 1.5rem;
+  font-size: var(--font-size-xl);
   color: var(--color-text-inverse);
   text-align: left;
   font-weight: 600;
