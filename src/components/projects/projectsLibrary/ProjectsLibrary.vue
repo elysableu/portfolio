@@ -29,12 +29,12 @@
 
 <style scoped>
   .library-container {
-    padding: 20px;
+    padding: var(--spacing-lg);
   }
 
   .library {
     display: flex;
-    gap: 30px;
+    gap: var(--spacing-hlg);
     justify-content: space-around;
   }
 </style>

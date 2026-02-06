@@ -39,8 +39,8 @@
   .project-brief-container {
     width: 100%;
     height: auto;
-    max-width: 500px;
-    border-radius: 20px;
+    max-width: 31.25rem;
+    border-radius: var(--radius-3xl);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
   }
@@ -48,13 +48,12 @@
   .project-brief-container:hover {
     cursor: pointer;
     transform: translateY(-4px);
-    background: rgba(0, 0, 0, 0.45);
+    background: var(--glass-dark-bg-medium);
     box-shadow:
       0 8px 24px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(102, 126, 234, 0.2);
+      0 0 20px var(--color-accent-purple-blue-glow);
     border-left-color: var(--color-accent-teal);
   }
-
 
   .brief-link-card {
     width: 100%;
@@ -63,13 +62,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    border-radius: 18px 18px 0px 0px;
+    gap: var(--spacing-md);
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   }
 
   .brief-thumbnail {
     width: 100%;
-    border-radius: 18px 18px 0px 0px;
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
     overflow: hidden;
   }
 
@@ -78,14 +77,14 @@
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: center;
-    border-radius: 18px 18px 0px 0px;
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   }
 
   .brief-banner {
-    padding: 10px var(--spacing-lg);
-    padding-bottom: 20px;
+   padding: var(--spacing-2sm) var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
     text-align: center;
-    color: white;
+    color: var(--color-text);
   }
 
   .brief-banner h3 {

@@ -39,17 +39,17 @@
 <style>
 
   .projects-container {
-    padding-top: 130px;
-    padding-left: calc(var(--spacing-lg) + 10px);
-    padding-right: calc(var(--spacing-lg) + 10px);
+    padding-top: var(--page-padding-top);
+    padding-left: var(--page-padding-horizontal);
+    padding-right: var(--page-padding-horizontal);
     min-height: 100vh;
     display: flex;
   }
 
   .projects-content {
-    margin-top: calc(121.719px + 40px + 24px);
-    padding-top: calc(var(--spacing-lg) + 10px);
-    padding-bottom: 35px;
+    margin-top: var(--content-offset);
+    padding-top: calc(var(--spacing-lg) + var(--spacing-2sm));
+    padding-bottom: var(--page-padding-bottom);
     flex: 1;
     overflow: auto;
   }
