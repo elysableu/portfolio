@@ -55,9 +55,9 @@ onMounted(async () => {
 <style scoped>
   .radial-content {
     position: fixed;
-    bottom: var(--spacing-xl);
-    left: var(--spacing-xl);
-    z-index: 9999;
+    top: calc(-1 * var(--spacing-xl) + 2.25rem);
+    left: calc(-1 * var(--spacing-xl) + 2.25rem);
+    z-index: 9001;
   }
 
   .radial-container {
@@ -66,6 +66,7 @@ onMounted(async () => {
     width: 21.875rem;
     height: 21.875rem;
     cursor: pointer;
+    pointer-events: none;
   }
 
   .headshot-background {
@@ -84,7 +85,7 @@ onMounted(async () => {
       inset 0 1px 0 var(--glass-bg-medium),
       inset 0 -1px 0 rgba(0, 0, 0, 0.3),
       inset 0 0 12px 6px var(--glass-dark-bg-subtle);
-    z-index: 101;
+    z-index: 1;
   }
 
   .headshot-background::before {
@@ -119,13 +120,14 @@ onMounted(async () => {
 
   .headshot {
     position: absolute;
-    top: 0.9375rem;
-    left: 0.9375rem;;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 18.75rem;
     height: 18.75rem;
     border-radius: 50%;
     overflow: hidden;
-    z-index: 200;
+    z-index: 2;
   }
 
   .headshot-image {
@@ -135,11 +137,16 @@ onMounted(async () => {
   }
 
   .radial-items {
-    position: fixed;
+    position: absolute;
     top: 7.8125rem;
     left: 7.8125rem;
     width: 0;
     height: 0;
-    z-index: 300;
+    z-index: 10;
+  }
+
+  .radial-items ul {
+    position: relative;
+    z-index: 10;
   }
 </style>

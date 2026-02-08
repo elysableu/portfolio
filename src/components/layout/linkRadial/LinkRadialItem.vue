@@ -54,7 +54,7 @@
   .radial-item-container {
     position: absolute;
     list-style: none;
-    z-index: 300;
+    z-index: 9001;
     pointer-events: auto;
   }
 
