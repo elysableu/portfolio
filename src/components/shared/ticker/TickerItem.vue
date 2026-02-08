@@ -38,12 +38,11 @@ defineProps<Props>()
 }
 
 .ticker-item-image {
-  border-radius: 0 var(--radius-lg) 0 0;
-   padding: var(--spacing-md) var(--spacing-sm);
+  border-radius: 0 var(--radius-3xl) 0 0;
+  padding: var(--spacing-md) var(--spacing-sm);
 }
 
 .ticker-item-project {
-
 }
 
 .ticker-link {
@@ -116,9 +115,17 @@ defineProps<Props>()
     transparent 100%
   );
   padding: var(--spacing-xl) var(--spacing-lg);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   pointer-events: none;
   margin: 0;
+  border-radius: 0;
+}
+
+.ticker-label {
+  border-radius: 0;
+}
+
+.caption {
+  border-radius: 0;
 }
 
 .ticker-label h3,
