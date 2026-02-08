@@ -181,7 +181,6 @@ onUnmounted(() => {
     position: relative;
     width: 100%;
     min-height: 0;
-    overflow: hidden;
     padding: var(--spacing-sm) 0;
   }
 
@@ -189,6 +188,7 @@ onUnmounted(() => {
     position: relative;
     width: 100%;
     height: 100%;
+    max-height: 31.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,8 +204,8 @@ onUnmounted(() => {
   }
 
   .ticker-button {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
     border-radius: 50%;
     background: transparent;
     border: none;
@@ -246,8 +246,8 @@ onUnmounted(() => {
   }
 
   .button-icon {
-    width: var(--icon-xl);
-    height: var(--icon-xl);
+    width: var(--icon-lg);
+    height: var(--icon-lg);
 
     display: block;
     pointer-events: none;

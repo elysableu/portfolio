@@ -52,6 +52,8 @@
 <style scoped>
   .project-header-container {
     display: flex;
+    width: 100%;
+    height: 100%;
     align-items: stretch;
     min-height: 25rem;
     position: relative;
@@ -63,9 +65,13 @@
     flex: 1.5;
     width: auto;
     min-height: 25rem;
+    max-height: 25rem;
+    height: 25rem;
     border-radius: 0 var(--radius-3xl) 0 0;
     overflow: hidden;
     padding: var(--spacing-2sm);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -161,7 +167,7 @@
     font-size: var(--font-size-base);
     font-weight: bold;
     padding: var(--spacing-2sm) var(--spacing-md);
-    border-radius: var(--radius-1.5xl);
+    border-radius: var(--radius-hxl);
   }
 
   .project-links a:hover {

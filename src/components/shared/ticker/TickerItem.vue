@@ -11,14 +11,14 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="ticker-item">
+  <div class="ticker-item" :class="{ 'ticker-item-image': isTickerImage(item), 'ticker-item-project': isTickerProject(item) }">
     <div v-if="isTickerProject(item)" class="project-item">
-      <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link">
-        <img :alt="item.title" :src="getAssetPath(item.thumbnail)" class="ticker-thumbnail" />
+      <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link ticker-link-project">
+        <img :alt="item.title" :src="getAssetPath(item.thumbnail)" class="ticker-thumbnail ticker-thumbnail-project" />
       </a>
     </div>
     <div v-else-if="isTickerImage(item)" class="image-item">
-      <img :alt="item.alt" :src="getAssetPath(item.src)" class="ticker-thumbnail" />
+      <img :alt="item.alt" :src="getAssetPath(item.src)" class="ticker-thumbnail ticker-thumbnail-image" />
       <div v-if="item.caption" class="caption">{{ item.caption }}</div>
     </div>
   </div>
@@ -32,19 +32,28 @@ defineProps<Props>()
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-lg);
-  transform: translateY(-30px);
+  transform: translateY(-10px);
   padding: 0 var(--spacing-md);
+  overflow: visible;
+}
+
+.ticker-item-image {
+  border-radius: 0 var(--radius-lg) 0 0;
+   padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.ticker-item-project {
+
 }
 
 .ticker-link {
   position: relative;
   display: block;
   width: 100%;
+  height: 100%;
   text-decoration: none;
   transition: transform var(--transition-base);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ticker-link:hover {
@@ -55,22 +64,40 @@ defineProps<Props>()
 .image-item {
   position: relative;
   width: 100%;
-  max-height: 31.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--spacing-2sm);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ticker-thumbnail {
   width: 100%;
-  height: auto;
-  max-height: 28.125rem;
-  object-fit: contain;
-  border-radius: var(--spacing-2sm);
   box-shadow: var(--shadow-md);
   display: block;
+}
+
+.project-item {
+  height: auto;
+}
+
+.ticker-link-project {
+  overflow: hidden;
+}
+
+.ticker-thumbnail-project {
+  height: auto;
+  object-fit: contain;
+}
+
+.image-item{
+  height: 100%;
+  border-radius: 0 var(--radius-3xl) 0 0;
+}
+
+.ticker-thumbnail-image {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 var(--radius-3xl) 0 0;
 }
 
 .ticker-label,
@@ -88,7 +115,7 @@ defineProps<Props>()
     var(--glass-dark-bg-strong) 50%,
     transparent 100%
   );
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   pointer-events: none;
   margin: 0;
