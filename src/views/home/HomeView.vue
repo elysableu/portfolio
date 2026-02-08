@@ -58,9 +58,9 @@ onMounted(async () => {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding-top: 130px;
-    padding-left: calc(var(--spacing-lg) + 10px);
-    padding-right: calc(var(--spacing-lg) + 10px);
+    padding-top: var(--page-padding-top);
+    padding-left: var(--page-padding-horizontal);
+    padding-right: var(--page-padding-horizontal);
   }
 
   .home {
@@ -74,7 +74,7 @@ onMounted(async () => {
   .greeting-header {
     font-size: x-large;
     text-align: right;
-    padding: 40px 100px var(--spacing-lg) var(--spacing-sm);
+    padding: 2.5rem 6.25rem var(--spacing-lg) var(--spacing-sm);
     z-index: 20;
     flex-shrink: 0;
   }
@@ -82,8 +82,8 @@ onMounted(async () => {
   .home-content {
     display: flex;
     gap: var(--spacing-xl);
-    padding-top: calc(var(--spacing-lg) + 10px);
-    padding-bottom: 35px;
+    padding-top: calc(var(--spacing-lg) + var(--spacing-2sm));
+    padding-bottom: var(--page-padding-bottom);
     min-height: 0;
     flex: 1;
     overflow: hidden;
@@ -93,8 +93,8 @@ onMounted(async () => {
     flex: 3;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    gap: 10px;
+    border-radius: var(--radius-3xl);
+    gap: var(--spacing-2sm);
     min-height: 0;
     overflow: hidden;
   }
@@ -120,6 +120,6 @@ onMounted(async () => {
      flex: 2;
      min-height: 0;
      overflow: hidden;
-     border-radius: 20px;
+     border-radius: var(--radius-3xl);
   }
 </style>

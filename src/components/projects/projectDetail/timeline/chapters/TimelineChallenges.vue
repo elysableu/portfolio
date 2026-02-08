@@ -10,7 +10,7 @@
 
 <template>
   <div class="challenges-container">
-     <table>
+     <table class="challenges-table">
         <thead>
           <tr class="heading">
             <th>Challenge</th>
@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in (content as Challenge[])" :key="index" class="row">
+          <tr v-for="(item, index) in (content as Challenge[])" :key="index" class="challenge-item">
             <td class="challenge">{{ item.challenge }}</td>
             <td class="solution">{{ item.solution }}</td>
           </tr>
@@ -29,47 +29,41 @@
 
 <style scoped>
   .challenges-container {
-
-  }
-
-  .challenges-container table {
-    border-collapse: collapse;
     width: 100%;
+    overflow-x: auto;
   }
 
-  th {
-    border-bottom: 3px solid #49CCA4;
-    font-size: 24px;
+  .challenges-table {
+    width: 100%;
+    border-collapse: collapse;
   }
 
-  .challenges-container th:not(:last-child),
-  .challenges-container td:not(:last-child) {
+  .challenges-table thead th {
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 3px solid var(--color-accent-teal);
+  }
+
+  .challenges-table th:not(:last-child),
+  .challenges-table td:not(:last-child) {
     border-right: 1px solid #6B7280;
   }
 
-  .challenges-container tr:not(:last-child) {
+  .challenges-table tr:not(:last-child) {
     border-bottom: 1px solid #4B5563;
   }
 
-  .challenges-container th,
-  .challenges-container td {
+  .challenges-table th,
+  .challenges-table td {
     padding: 1rem;
   }
-
-   /* td:not(:last-child), th:not(:last-child) {
-    border-right: 1px solid white;
-  }
-
-  tr:not(:last-child) td,
-  tr:not(:last-child) th {
-    border-bottom: 1px solid white;
-  } */
 
   .challenges-container tbody {
 
   }
 
-  .row {
+  .challenge-item {
 
   }
 

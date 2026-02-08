@@ -14,6 +14,6 @@ defineProps<Props>()
 
 <style scoped>
   .introduction-container {
-    margin-bottom: 45px;
+    margin-bottom: 2.8125rem;
   }
 </style>

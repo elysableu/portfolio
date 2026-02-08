@@ -32,13 +32,13 @@
   .education h2 {
     text-align: right;
     font-family: 'Metamorphous';
-    font-size: 30px;
-    padding-bottom: 5px;
+    font-size: var(--font-size-2xl);
+    padding-bottom: var(--spacing-sm);
   }
 
   .education-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--spacing-2sm);
   }
 </style>

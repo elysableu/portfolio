@@ -34,12 +34,13 @@
 
 <style scoped>
   .technologies-container {
-
+    width: 100%;
+    overflow-x: auto;
   }
 
   .technologies-container table {
-    border-collapse: separate;
-    border-spacing: 0 1.5rem;
+    border-collapse: collaspe;
+    border-spacing: 0 var(--spacing-lg);
   }
   .technologies-container tbody {
 
@@ -50,20 +51,20 @@
   }
 
   .category-label{
-    padding-right: 35px;
+    padding-right: 2.1875rem;
     border-right: 3px solid #49CCA4;
     font-size: larger;
   }
 
   .tech-items {
-    padding-left: 35px;
+    padding-left: 2.1875rem;
   }
 
   .tech-tag {
     background: black;
-    padding: 6px 7px;
-    margin-right: 10px;
-    border-radius: 12.5px;
-    font-size: 16px;
+    padding: 0.375rem 0.4375rem;
+    margin-right: var(--spacing-2sm);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-base);
   }
 </style>

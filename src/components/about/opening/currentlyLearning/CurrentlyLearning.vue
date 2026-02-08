@@ -23,11 +23,11 @@
 
 <style scoped>
   .currently-learning {
-    padding-bottom: 10px;
+   padding-bottom: var(--spacing-2sm);
   }
 
   .currently-learning h4 {
-    font-size: 24px;
+    font-size: var(--font-size-xl);
     font-family: 'Dosis';
     text-align: center;
   }
@@ -35,8 +35,8 @@
   .currently-learning-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--spacing-2sm);
     justify-content: center;
-    padding-top: 5px;
+    padding-top: var(--spacing-sm);
   }
 </style>

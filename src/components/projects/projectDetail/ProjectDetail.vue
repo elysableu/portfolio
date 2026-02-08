@@ -50,14 +50,14 @@
 
 <style scoped>
   .project-detail-container {
-    padding: 10px;
+    padding: var(--spacing-2sm);
     overflow: hidden;
-    border-radius: 20px !important;
+    border-radius: var(--radius-3xl) !important;
   }
 
   .detail-header {
     width: 100%;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
   }
 
   .timeline {

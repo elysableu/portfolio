@@ -86,8 +86,8 @@
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 15px;
-    border-radius: 10px;
+    padding: var(--spacing-md);
+    border-radius: var(--spacing-2sm);
     overflow: hidden;
   }
 
@@ -95,19 +95,19 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: var(--spacing-2sm);
     overflow: hidden;
   }
 
   .content-container h3 {
-    font-size: 24px;
+    font-size: var(--font-size-xl);
     padding-bottom: var(--spacing-md);
     flex-shrink: 0;
   }
 
   .card-stack {
     position: relative;
-    min-height: 350px;
+    min-height: 21.875rem;
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
@@ -117,21 +117,21 @@
   }
 
   .left {
-    padding-right: 15px;
-    border-right: solid 2px grey;
-    border-radius: 20px 0px 0px 20px;
+    padding-right: var(--spacing-md);
+    border-right: 2px solid var(--color-border);
+    border-radius: var(--radius-3xl) 0 0 var(--radius-3xl);
   }
 
   .right {
-    padding-left: 15px;
-    border-left: solid 2px grey;
-    border-radius: 0px 20px 20px 0px;
+    padding-left: var(--spacing-md);
+    border-left: 2px solid var(--color-border);
+    border-radius: 0 var(--radius-3xl) var(--radius-3xl) 0;
   }
 
   .stack-indicator {
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-sm);
     opacity: 0.7;
     font-weight: 500;
     flex-shrink: 0;

@@ -188,47 +188,32 @@ The portfolio uses a JSON-based data system for easy content management. All dat
 
 ### Color Palette
 
-#### Primary Colors
-```css
---color-primary:        <!-- Add your primary color hex -->
---color-secondary:      <!-- Add your secondary color hex -->
---color-accent-teal:    <!-- Add your teal accent hex -->
-```
+#### Brand Colors
+- **Primary Purple**: `#5A3896` - Main brand color
+- **Hot Pink**: `#D91E98` - CTAs and highlights
+- **Teal**: `#49CCA4` - Success states and links
+- **Orange**: `#ffca7b` - Warnings and accents
 
-#### Background Colors
-```css
---color-background:     <!-- Add your background color hex -->
---color-surface:        <!-- Add your surface color hex -->
-```
+#### Theme
+- **Background**: Black (`#000000`)
+- **Text**: White (`#FFFFFF`)
+- **Glass Effects**: Semi-transparent overlays with backdrop blur
 
-#### Text Colors
-```css
---color-text-primary:   <!-- Add your primary text color hex -->
---color-text-secondary: <!-- Add your secondary text color hex -->
-```
+### Design Tokens
 
-#### UI Colors
-```css
---color-border:         <!-- Add your border color hex -->
---color-hover:          <!-- Add your hover state color hex -->
-```
+The project uses a comprehensive design token system with CSS variables for:
+- **Spacing**: `--spacing-xs` (4px) to `--spacing-5xl` (96px)
+- **Border Radius**: `--radius-xs` (5px) to `--radius-3xl` (20px)
+- **Typography**: `--font-size-xs` (12px) to `--font-size-4xl` (40px)
+- **Icons**: `--icon-xs` (24px) to `--icon-xl` (65px)
 
-### CSS Variables
-The project uses CSS custom properties for consistent theming:
-```css
---color-primary: Primary brand color
---color-secondary: Secondary accent color
---color-accent-teal: Accent color
---spacing-sm, --spacing-md, --spacing-lg: Spacing scale
---radius-sm, --radius-md, --radius-lg: Border radius scale
---shadow-md: Shadow elevation
-```
+All measurements use `rem` units for accessibility and consistent scaling.
 
 ### Glass Card Components
-- `glass-card`: Standard glass effect
-- `glass-card-dark`: Dark variant
-- `glass-card-inner`: Subtle inner glass effect
-- `glass-gradient-layered`: Gradient with layered effect
+- `glass-card` - Standard glass effect
+- `glass-card-dark` - Dark variant
+- `glass-card-inner` - Subtle inner glass effect
+- `glass-gradient-layered` - Gradient with layered effect
 
 ## 🔧 Key Features Implementation
 

@@ -11,17 +11,14 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="ticker-item">
+  <div class="ticker-item" :class="{ 'ticker-item-image': isTickerImage(item), 'ticker-item-project': isTickerProject(item) }">
     <div v-if="isTickerProject(item)" class="project-item">
-      <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link">
-        <img :alt="item.title" :src="getAssetPath(item.thumbnail)" class="ticker-thumbnail" />
+      <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link ticker-link-project">
+        <img :alt="item.title" :src="getAssetPath(item.thumbnail)" class="ticker-thumbnail ticker-thumbnail-project" />
       </a>
-      <!-- <div class="ticker-label">
-        <h3>{{ item.title }}</h3>
-      </div> -->
     </div>
     <div v-else-if="isTickerImage(item)" class="image-item">
-      <img :alt="item.alt" :src="getAssetPath(item.src)" class="ticker-thumbnail" />
+      <img :alt="item.alt" :src="getAssetPath(item.src)" class="ticker-thumbnail ticker-thumbnail-image" />
       <div v-if="item.caption" class="caption">{{ item.caption }}</div>
     </div>
   </div>
@@ -35,19 +32,28 @@ defineProps<Props>()
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-lg);
-  transform: translateY(-30px);
-  padding: 0px 15px;
+  transform: translateY(-10px);
+  padding: 0 var(--spacing-md);
+  overflow: visible;
+}
+
+.ticker-item-image {
+  border-radius: 0 var(--radius-lg) 0 0;
+   padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.ticker-item-project {
+
 }
 
 .ticker-link {
   position: relative;
   display: block;
   width: 100%;
+  height: 100%;
   text-decoration: none;
   transition: transform var(--transition-base);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ticker-link:hover {
@@ -58,40 +64,58 @@ defineProps<Props>()
 .image-item {
   position: relative;
   width: 100%;
-  max-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ticker-thumbnail {
   width: 100%;
-  height: auto;
-  max-height: 450px;
-  object-fit: contain;
-  border-radius: 10px;
   box-shadow: var(--shadow-md);
   display: block;
+}
+
+.project-item {
+  height: auto;
+}
+
+.ticker-link-project {
+  overflow: hidden;
+}
+
+.ticker-thumbnail-project {
+  height: auto;
+  object-fit: contain;
+}
+
+.image-item{
+  height: 100%;
+  border-radius: 0 var(--radius-3xl) 0 0;
+}
+
+.ticker-thumbnail-image {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 var(--radius-3xl) 0 0;
 }
 
 .ticker-label,
 .caption {
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: bold;
   position: absolute;
-  bottom: -6.5px;
+  bottom: -0.40625rem;
   left: 0;
   right: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.6) 50%,
+    var(--glass-dark-bg-card) 0%,
+    var(--glass-dark-bg-strong) 50%,
     transparent 100%
   );
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   pointer-events: none;
   margin: 0;
@@ -104,7 +128,7 @@ defineProps<Props>()
 
 h3 {
   margin: var(--spacing-lg);
-  font-size: 1.5rem;
+  font-size: var(--font-size-xl);
   color: var(--color-text-inverse);
   text-align: left;
   font-weight: 600;

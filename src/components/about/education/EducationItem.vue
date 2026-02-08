@@ -75,23 +75,23 @@
     display: flex;
     flex-direction: column;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+     border: 1px solid var(--glass-border-medium);
+    border-radius: var(--radius-3xl);
   }
 
   .education-item-banner {
     width: 100%;
-    height: 100px;
+    height: 6.25rem;
     display: flex;
-    gap: 10px;
+    gap: var(--spacing-2sm);
     align-items: center;
-    background-color: black;
-    padding: 20px;
-    border-radius: 18px 18px 0px 0px;
+    background-color: var(--color-background);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   }
 
   .education-item-banner img {
-    width: 60px;
+    width: var(--icon-lg);
     height: auto;
   }
 
@@ -100,12 +100,12 @@
   }
 
   .education-item-heading {
-    margin-left: 20px;
+    margin-left: var(--spacing-lg);
   }
 
   .education-item-heading h3 {
     font-family: 'Dosis';
-    font-size: 24px;
+    font-size: var(--font-size-xl);
   }
 
   .education-item-heading p {
@@ -113,20 +113,20 @@
   }
 
   .graduation-date {
-    font-size: 20px;
+    font-size: var(--font-size-lg);
     font-weight: bold;
-    margin-left: 50px;
+    margin-left: 3.125rem;
   }
 
   .education-item-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+    gap: var(--spacing-2sm);
+    padding: var(--spacing-lg);
   }
 
   .education-item-content h4 {
-    padding-bottom: 5px;
+    padding-bottom: var(--spacing-sm);
   }
 
   .education-item-content ul {
@@ -138,8 +138,8 @@
   }
 
   .degree-heading {
-    margin-bottom: 5px;
-    font-size: 20px;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
     font-weight: bold;
   }
 
@@ -148,21 +148,21 @@
   }
 
   .education-item-relevant h4 {
-    font-size: 18px;
+    font-size: var(--font-size-md);
   }
 
   .education-item-relevant ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--spacing-2sm);
   }
 
   .education-item-relevant li {
-    background-color: black;
-    padding: 4px;
-    font-size: 14px;
+   background-color: var(--color-background);
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-sm);
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: var(--radius-xs);
   }
 
   .education-item-projects {
@@ -170,20 +170,20 @@
   }
 
   .education-item-projects h4 {
-    font-size: 20px;
+    font-size: var(--font-size-lg);
     font-family: 'Dosis';
   }
 
   .ed-projects-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--spacing-2sm);
   }
 
   .project-item {
-    max-width: 250px;
-    color: white;
-    border-radius: 5px;
+   max-width: 15.625rem;
+    color: var(--color-text);
+    border-radius: var(--radius-xs);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
   }
@@ -191,31 +191,31 @@
   .project-item:hover {
     cursor: pointer;
     transform: translateY(-4px);
-    background: rgba(0, 0, 0, 0.45);
+    background: var(--glass-dark-bg-medium);
     box-shadow:
       0 8px 24px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(102, 126, 234, 0.2);
+      0 0 20px var(--color-accent-purple-blue-glow);
     border-left-color: var(--color-accent-teal);
   }
 
   .project-header {
-    background-color: black;
+     background-color: var(--color-background);
     width: 100%;
-    padding: 5px;
-    border-radius: 5px 5px 0px 0px;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-xs) var(--radius-xs) 0 0;
   }
 
   .project-header p {
     font-weight: bold;
-    font-size: 16px;
+    font-size: var(--font-size-base);
   }
 
   .project-content {
-    padding: 5px;
+    padding: var(--spacing-sm);
   }
 
   .project-content p {
-    font-size: 16px;
+    font-size: var(--font-size-base);
   }
 
   .project-name {

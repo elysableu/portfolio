@@ -45,7 +45,7 @@
 <style scoped>
   .results-container {
     display: flex;
-    gap: 80px;
+    gap: 5rem;
     justify-content: center;
     align-items: center;
   }
@@ -55,8 +55,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-    font-size: 20px;
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-lg);
     font-weight: bold;
   }
 
@@ -64,7 +64,7 @@
     width: 100%;
     border-bottom: 2px solid #49CCA4;
     text-align: center;
-    font-size: 24px !important;
+    font-size: var(--font-size-xl) !important;
   }
 
   .status {

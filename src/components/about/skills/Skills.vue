@@ -44,7 +44,7 @@
   .skills {
     padding: var(--spacing-lg);
     width: 100%;
-    border-radius: 20px;
+    border-radius: var(--radius-3xl);
     overflow: visible !important;
   }
 
@@ -54,17 +54,17 @@
   }
 
   .skills h2 {
-    font-size: 30px;
-    padding-bottom: 5px;
+    font-size: var(--font-size-2xl);
+    padding-bottom: var(--spacing-sm);
     font-family: 'Metamorphous';
   }
 
   .skills-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--spacing-2sm);
     width: 100%;
-    min-height: 200px;
+    min-height: 12.5rem;
     overflow: visible;
   }
 </style>

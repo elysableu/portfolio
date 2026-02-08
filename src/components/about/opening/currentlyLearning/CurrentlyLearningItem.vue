@@ -14,11 +14,11 @@
 
 <style scoped>
   .currently-learning-item {
-    background-color: black;
-    padding: 4px;
-    font-size: 14px;
+    background-color: var(--color-black);
+    padding: var(--spacing-xs);
+    font-size: var(--font-size-sm);
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: var(--radius-xs);
     text-align: center;
   }
 </style>

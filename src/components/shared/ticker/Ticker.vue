@@ -144,13 +144,15 @@ onUnmounted(() => {
 
 <style scoped>
   .ticker-container {
+    position: relative;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     min-height: 0;
     align-items: center;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: var(--radius-3xl);
   }
 
   .ticker-label {
@@ -158,14 +160,14 @@ onUnmounted(() => {
     font-family: 'Dosis', sans-serif;
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
-    background: black;
+    background: var(--color-background);
     text-align: center;
     flex-shrink: 0;
   }
 
   .ticker-label h4 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
     font-weight: 600;
     color: var(--color-text);
   }
@@ -179,7 +181,6 @@ onUnmounted(() => {
     position: relative;
     width: 100%;
     min-height: 0;
-    overflow: hidden;
     padding: var(--spacing-sm) 0;
   }
 
@@ -187,6 +188,7 @@ onUnmounted(() => {
     position: relative;
     width: 100%;
     height: 100%;
+    max-height: 31.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,12 +204,12 @@ onUnmounted(() => {
   }
 
   .ticker-button {
-    width: 65px;
-    height: 65px;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+    border-radius: 50%;
     background: transparent;
     border: none;
     padding: 0;
-    border-radius: 50%;
 
     display: flex;
     align-items: center;
@@ -218,24 +220,25 @@ onUnmounted(() => {
   }
 
   .ticker-button:hover {
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--glass-dark-bg-strong);
     transform: scale(1.1);
   }
 
  .ticker-button:active {
     transform: scale(0.95);
+    border-color: var(--color-accent-teal);
   }
 
   .ticker-button-disabled {
     opacity: 0.4 !important;
     cursor: not-allowed !important;
     filter: grayscale(100%) brightness(0.7);
-    background: rgba(0, 0, 0, 0.1) !important;
+     background: var(--glass-dark-bg-subtle) !important;
   }
 
   .ticker-button-disabled:hover {
     transform: none !important;
-    background: rgba(0, 0, 0, 0.1) !important;
+    background: var(--glass-dark-bg-subtle) !important;
   }
 
   .ticker-button-disabled .button-icon {
@@ -243,8 +246,8 @@ onUnmounted(() => {
   }
 
   .button-icon {
-    width: 50px;
-    height: 50px;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
 
     display: block;
     pointer-events: none;

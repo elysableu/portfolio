@@ -95,37 +95,37 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     left: 0;
     right: 0;
     width: 100%;
-    min-height: 160px;
+    min-height: 10rem;
     display: flex;
     flex-direction: column;
-    border-radius: 18px;
-    padding: 10px;
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-2sm);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    color: var(--color-text, #fff);
+    color: var(--color-text);
   }
 
   .ns-card-container:hover {
-    border-color: #667eea;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    border-color: var(--color-accent-purple-blue);
+    box-shadow: 0 4px 12px var(--color-accent-purple-blue-glow);
   }
 
 
   .ns-card-container.glass-card-inner.active {
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    background: var(--glass-bg-strong) !important;
+    backdrop-filter: blur(var(--blur-xl)) !important;
+    -webkit-backdrop-filter: blur(var(--blur-xl)) !important;
     box-shadow:
       0 12px 40px rgba(0, 0, 0, 0.6),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-color: rgba(102, 126, 234, 0.6);
+    border-color: var(--color-accent-purple-blue-border);
   }
 
   .ns-card-container.glass-card-inner:not(.active) {
     background: rgba(255, 255, 255, 0.02) !important;
-    backdrop-filter: blur(3px) !important;
-    -webkit-backdrop-filter: blur(3px) !important;
-    min-height: 70px;
+    backdrop-filter: blur(var(--blur-sm)) !important;
+    -webkit-backdrop-filter: blur(var(--blur-sm)) !important;
+    min-height: 4.375rem;
     justify-content: flex-end;
   }
 
@@ -133,23 +133,23 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    font-size: 0.95rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
-    padding: 5px 0;
+    padding: var(--spacing-sm) 0;
     line-height: 1.3;
 
   }
 
   .ns-banner {
     display: flex;
-    gap: 5px;
-    font-size: 20px;
-    padding: 5px;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-sm);
   }
 
   .ns-banner h4 {
-    color: var(--color-text, #fff);
+    color: var(--color-text);
   }
 
   .ns-icon-wrapper {
@@ -158,34 +158,34 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
   }
 
   .ns-icon {
-    width: 24px;
-    height: 24px;
+    width: var(--icon-xs);
+    height: var(--icon-xs);
   }
 
   .ns-tagline {
     font-family: 'Dosis';
-    padding: 5px;
+    padding: var(--spacing-sm);
     color: rgba(255, 255, 255, 0.85);
   }
 
   .ns-current {
     position: absolute;
-    bottom: 15px;
-    right: 20px;
+    bottom: var(--spacing-md);
+    right: var(--spacing-lg);
     font-family: 'Dosis';
     font-weight: bold;
-    padding: 3px 7px;
-    border-radius: 20px;
+    padding: var(--spacing-xs) 0.4375rem;
+    border-radius: var(--radius-3xl);
     width: fit-content;
   }
 
   .ns-date {
-    background: #ffca7b;
-    color: #333;
+    background: var(--color-accent-orange);
+    color: var(--color-text-inverse);
   }
 
   .ns-status {
-    background: #5A3896;
-    color: white;
+    background: var(--color-primary);
+    color: var(--color-text);
   }
 </style>

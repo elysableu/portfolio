@@ -92,6 +92,6 @@
   }
 
   .chapter {
-   margin: 4rem;
+    margin: var(--spacing-3xl);
   }
 </style>
