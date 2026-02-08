@@ -54,31 +54,36 @@ onMounted(async () => {
 
 <style scoped>
   .radial-content {
-    position: relative;
-    overflow: visible;
+    position: fixed;
+    bottom: var(--spacing-xl);
+    left: var(--spacing-xl);
+    z-index: 9999;
   }
 
   .radial-container {
     position: relative;
     overflow: visible;
+    width: 21.875rem;
+    height: 21.875rem;
+    cursor: pointer;
   }
 
   .headshot-background {
-    position: fixed;
-    top: -65px;
-    left: -65px;
-    width: 350px;
-    height: 350px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    top: -4.0625rem;
+    left: -4.0625rem;
+    width: 21.875rem;
+    height: 21.875rem;
+    background: var(--glass-dark-bg-medium);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 8px 32px var(--glass-dark-bg-medium),
+      inset 0 1px 0 var(--glass-bg-medium),
       inset 0 -1px 0 rgba(0, 0, 0, 0.3),
-      inset 0 0 12px 6px rgba(0, 0, 0, 0.2);
+      inset 0 0 12px 6px var(--glass-dark-bg-subtle);
     z-index: 101;
   }
 
@@ -88,11 +93,11 @@ onMounted(async () => {
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 0.0625rem;
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      var(--glass-border-medium),
       transparent
     );
   }
@@ -102,22 +107,22 @@ onMounted(async () => {
     position: absolute;
     top: 0;
     left: 0;
-    width: 1px;
+    width: 0.0625rem;
     height: 100%;
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.2),
+      var(--glass-border-medium),
       transparent,
-      rgba(255, 255, 255, 0.1)
+      var(--glass-bg-medium)
     );
   }
 
   .headshot {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 300px;
-    height: 300px;
+    top: 0.9375rem;
+    left: 0.9375rem;;
+    width: 18.75rem;
+    height: 18.75rem;
     border-radius: 50%;
     overflow: hidden;
     z-index: 200;
@@ -131,8 +136,8 @@ onMounted(async () => {
 
   .radial-items {
     position: fixed;
-    top: 125px;
-    left: 125px;
+    top: 7.8125rem;
+    left: 7.8125rem;
     width: 0;
     height: 0;
     z-index: 300;

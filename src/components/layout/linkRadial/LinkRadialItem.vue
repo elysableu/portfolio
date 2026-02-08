@@ -62,18 +62,18 @@
     display: flex;
     align-items: center;
     gap: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--glass-dark-bg-strong);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.5),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 var(--glass-bg-strong),
+      inset 0 -1px 0 var(--glass-dark-bg-medium),
       inset 0 0 12px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    color: white;
+    border-radius: var(--radius-3xl);
+    color: var(--color-white);
     overflow: hidden;
     transition: all 0.4s ease;
     transform-origin: left center;
@@ -117,7 +117,7 @@
     align-items: center;
     justify-content: center;
     justify-content: center;
-    padding: 12px;
+    padding: 0.75rem;
     flex-shrink: 0;
   }
 
@@ -136,20 +136,20 @@
   }
 
   .radial-link-text {
-    color: white;
+    color: var(--color-text);
     font-family: 'Dosis';
     text-decoration: none;
-    padding: 0 16px;
+    padding: 0 var(--spacing-md);
     display: block;
     white-space: nowrap;
   }
 
   .radial-item-container:hover .radial-content {
-   background: rgba(0, 0, 0, 0.7);
+   background: var(--glass-dark-hover);
   }
 
   .radial-item-container:hover .radial-full-value {
-    max-width: 300px;
+    max-width: 18.75rem;
     opacity: 1;
   }
 </style>
