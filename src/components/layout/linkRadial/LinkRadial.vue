@@ -9,20 +9,39 @@ import LinkRadialItem from './LinkRadialItem.vue'
 const { loading, error, getPersonal } = useData()
 const radialItemData = ref<RadialItem[]>([])
 
-const radialItemsWithPositons = computed(() =>
-  calculateRadialPostions(radialItemData.value, {
-    headshotRadius: 115,
-    orbitGap: 40,
-    startAngle: 60,
-    endAngle: 205
-  })
-)
+const isMobile = ref(false)
+
+const updateIsMobile = () => {
+  isMobile.value = window.innerWidth < 768
+}
+
+const radialItemsWithPositons = computed(() => {
+
+  const config = isMobile.value
+    ? {
+      headshotRadius: 115,
+      orbitGap: 40,
+      startAngle: 270,
+      endAngle: 90
+    } : {
+      headshotRadius: 115,
+      orbitGap: 40,
+      startAngle: 60,
+      endAngle: 205
+  }
+
+  return calculateRadialPostions(radialItemData.value, config)
+})
 
 onMounted(async () => {
   const data = await getPersonal()
   if (data) {
     radialItemData.value = extractRadialItems(data)
   }
+
+  updateIsMobile()
+
+  window.addEventListener('resize', updateIsMobile)
 })
 </script>
 
@@ -176,31 +195,15 @@ onMounted(async () => {
       transform-origin: top center;
     }
 
-    .radial-container {
-      width: 21.875rem;
-      height: 21.875rem;
-    }
-
-    .headshot-background {
-      width: 21.875rem;
-      height: 21.875rem;
-    }
-
-    .headshot {
-      width: 18.75rem;
-      height: 18.75rem;
-    }
-
-    .radial-items{
-      top: 7.8125rem;
-      left: 7.8125rem;
+    .radial-items {
+        transform: translate(-3.5vh, -3.5vh) scale(1.2);
     }
   }
 
   /* Large phones (480px - 600px) */
   @media screen and (max-width: 600px) {
     .radial-content {
-      transform: translate(17.5vh, 18vh) scale(0.6);
+      transform: translate(17.5vh, 18vh) scale(0.7);
       transform-origin: top center;
     }
   }
@@ -208,8 +211,12 @@ onMounted(async () => {
   /* Standard phones (up to 480px) */
   @media screen and (max-width: 480px) {
     .radial-content {
-      transform: translate(8.5vh, 18vh) scale(0.6);
+      transform: translate(8vh, 18vh) scale(0.7);
       transform-origin: top center;
+    }
+
+    .radial-items {
+      transform: translate(-2.7vh, -2.5vh) scale(1.25);
     }
   }
 </style>
