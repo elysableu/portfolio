@@ -53,11 +53,14 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+  /* Base styles - Average full screen (1920px) */
   .radial-content {
     position: fixed;
     top: calc(-1 * var(--spacing-xl) + 2.25rem);
     left: calc(-1 * var(--spacing-xl) + 2.25rem);
+    bottom: auto;
     z-index: 9001;
+    transition: all 0.4s ease;
   }
 
   .radial-container {
@@ -148,5 +151,65 @@ onMounted(async () => {
   .radial-items ul {
     position: relative;
     z-index: 10;
+  }
+
+  /* Half-width / Small desktop (960px - 1280px) */
+  @media screen and (max-width: 1280px) {
+    .radial-content {
+      transform: translateY(3.5vh) scale(0.8);
+      transform-origin: top left;
+    }
+  }
+
+  /* Tablet landscape (768px - 960px) */
+  @media screen and (max-width: 960px) {
+    .radial-content {
+      transform: translate(-1.8vh, 2.1vh) scale(0.7);
+      transform-origin: top left;
+    }
+  }
+
+  /* Tablet portrait (600px - 768px) */
+  @media screen and (max-width: 768px) {
+    .radial-content {
+      transform: translate(40vh, 25vh) scale(0.6);
+      transform-origin: top center;
+    }
+
+    .radial-container {
+      width: 21.875rem;
+      height: 21.875rem;
+    }
+
+    .headshot-background {
+      width: 21.875rem;
+      height: 21.875rem;
+    }
+
+    .headshot {
+      width: 18.75rem;
+      height: 18.75rem;
+    }
+
+    .radial-items{
+      top: 7.8125rem;
+      left: 7.8125rem;
+    }
+  }
+
+  /* Large phones (480px - 600px) */
+  @media screen and (max-width: 600px) {
+    .radial-content {
+      transform: translate(17.5vh, 18vh) scale(0.6);
+      transform-origin: top center;
+    }
+  }
+
+  /* Standard phones (up to 480px) */
+  @media screen and (max-width: 480px) {
+    .radial-content {
+      transform: translate(8.5vh, 18vh) scale(0.6);
+      transform-origin: top center;
+    }
   }
 </style>
