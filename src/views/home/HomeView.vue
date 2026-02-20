@@ -49,6 +49,7 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+/* Base styles - Average full screen (1920px) */
   .home-container {
     position: fixed;
     top: 0;
@@ -121,5 +122,41 @@ onMounted(async () => {
      min-height: 0;
      overflow: hidden;
      border-radius: var(--radius-3xl);
+  }
+
+
+  /* Extra wide screens (up to 3840px) */
+  @media screen and (min-width: 2560px) {
+    /* Styles for ultra-wide displays */
+  }
+
+  /* Standard desktop (1280px - 1920px) */
+  @media screen and (max-width: 1920px) {
+    /* Adjustments for standard desktop */
+  }
+
+  /* Half-width / Small desktop (960px - 1280px) */
+  @media screen and (max-width: 1280px) {
+    /* Styles for smaller desktops */
+  }
+
+  /* Tablet landscape (768px - 960px) */
+  @media screen and (max-width: 960px) {
+    /* Tablet landscape styles */
+  }
+
+  /* Tablet portrait (600px - 768px) */
+  @media screen and (max-width: 768px) {
+    /* Tablet portrait styles */
+  }
+
+  /* Large phones (480px - 600px) */
+  @media screen and (max-width: 600px) {
+    /* Large phone styles */
+  }
+
+  /* Standard phones (up to 480px) */
+  @media screen and (max-width: 480px) {
+    /* Mobile phone styles */
   }
 </style>

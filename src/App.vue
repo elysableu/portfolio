@@ -6,9 +6,14 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
 
 <template>
   <div id="app">
+    <div class="center-line"></div>
     <div class="nav-container">
-      <LinkRadial />
-      <Header />
+      <div class="radial-wrapper">
+        <LinkRadial />
+      </div>
+      <div class="header-wrapper">
+        <Header />
+      </div>
     </div>
     <main class="main-content">
       <RouterView />
@@ -81,6 +86,20 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
 
   .section {
     padding: 4rem 0;
+  }
+
+  /* ============================================
+    UI TEST CLASSES
+  ============================================ */
+
+  .center-line {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: red;
+    z-index: 99999;
   }
 
   /* ============================================
@@ -188,6 +207,8 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
   .nav-container {
     position: relative;
     z-index: 9000;
+    margin: 0;
+    padding: 0;
   }
 
   .main-content {
@@ -198,16 +219,12 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
 
 /* Small desktop (960px - 1280px) */
 @media screen and (max-width: 1280px) {
-  .nav-container {
-    transform: scale(0.95);
-  }
+
 }
 
 /* Tablet landscape (768px - 960px) */
 @media screen and (max-width: 960px) {
- .nav-container {
-    transform: scale(0.9);
-  }
+
 }
 
 /* Tablet portrait (600px - 768px) */
@@ -220,24 +237,43 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
     width: 100%;
     display: flex;
     flex-direction: column;
-    z-index: 9000;
+    align-items: center;
+    padding-top: clamp(var(--spacing-xl), 7vh, var(--spacing-5xl));
+    gap: clamp(var(--spacing-lg), 5vh, var(--spacing-2xl));
+  }
+
+  .radial-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .main-content {
-    padding-top: 140px;
+    transform: translateY(25vh);
+    overflow: visible;
+    scroll-behavior: auto;
   }
 }
 
 /* Large phones (480px - 600px) */
 @media screen and (max-width: 600px) {
-  /* Large phone styles */
+  .nav-container {
+
+  }
 }
 
 /* Standard phones (up to 480px) */
 @media screen and (max-width: 480px) {
-  .main-content {
-    padding-top: 120px;
+  .nav-container {
+    padding-top: clamp(var(--spacing-xl), 7vh, var(--spacing-3xl));
+    gap: 0.2vh;
   }
 }
-
 </style>
