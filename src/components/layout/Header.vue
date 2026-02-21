@@ -76,7 +76,7 @@ import { RouterLink } from 'vue-router'
 /* Half-width / Small desktop (960px - 1280px) */
 @media screen and (max-width: 1280px) {
   .navBar nav {
-    transform: translateX(-7vh) scale(1.4);
+    transform: translate(-7vh) scale(1.3);
   }
 }
 

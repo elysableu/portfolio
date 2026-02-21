@@ -278,8 +278,8 @@
 
   .main-content {
     padding-top: var(--spacing-xs);
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
     overflow: visible;
     scroll-behavior: auto;
   }
