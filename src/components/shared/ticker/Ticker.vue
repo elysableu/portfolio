@@ -252,4 +252,29 @@ onUnmounted(() => {
     display: block;
     pointer-events: none;
   }
+
+  /* Half-width / Small desktop (960px - 1280px) */
+  @media screen and (max-width: 1280px) {
+
+  }
+
+  /* Tablet landscape (768px - 960px) */
+  @media screen and (max-width: 960px) {
+
+  }
+
+  /* Tablet portrait (600px - 768px) */
+  @media screen and (max-width: 768px) {
+
+  }
+
+  /* Large phones (480px - 600px) */
+  @media screen and (max-width: 600px) {
+
+  }
+
+  /* Standard phones (up to 480px) */
+  @media screen and (max-width: 480px) {
+    /* Mobile phone styles */
+  }
 </style>

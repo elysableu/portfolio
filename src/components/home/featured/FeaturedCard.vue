@@ -28,7 +28,7 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
 
     const baseOffset = 180
     const stackOffset = props.stackPosition * 45
-    const translateY = props.isActive ? 0 : baseOffset + stackOffset - 80
+    const translateY = props.isActive ? 0 : baseOffset + stackOffset - 115
 
     return {
       zIndex,
@@ -95,7 +95,7 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     left: 0;
     right: 0;
     width: 100%;
-    min-height: 10rem;
+    min-height: 8rem;
     display: flex;
     flex-direction: column;
     border-radius: var(--radius-2xl);
@@ -170,10 +170,11 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
 
   .ns-current {
     position: absolute;
-    bottom: var(--spacing-md);
-    right: var(--spacing-lg);
+    bottom: var(--spacing-sm);
+    right: var(--spacing-md);
     font-family: 'Dosis';
     font-weight: bold;
+    font-size: 0.8rem;
     padding: var(--spacing-xs) 0.4375rem;
     border-radius: var(--radius-3xl);
     width: fit-content;
@@ -187,5 +188,30 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
   .ns-status {
     background: var(--color-primary);
     color: var(--color-text);
+  }
+
+   /* Half-width / Small desktop (960px - 1280px) */
+  @media screen and (max-width: 1280px) {
+
+  }
+
+  /* Tablet landscape (768px - 960px) */
+  @media screen and (max-width: 960px) {
+
+  }
+
+  /* Tablet portrait (600px - 768px) */
+  @media screen and (max-width: 768px) {
+
+  }
+
+  /* Large phones (480px - 600px) */
+  @media screen and (max-width: 600px) {
+
+  }
+
+  /* Standard phones (up to 480px) */
+  @media screen and (max-width: 480px) {
+    /* Mobile phone styles */
   }
 </style>
