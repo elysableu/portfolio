@@ -18,4 +18,30 @@ defineProps<Props>()
     font-weight: 700;
     text-align: right;
   }
+
+  /* Tablet landscape (768px - 960px) */
+  @media screen and (max-width: 960px) {
+     .headline {
+      transform: translateX(-25vw) scale(1.5);
+    }
+  }
+
+  /* Tablet portrait (600px - 768px) */
+  @media screen and (max-width: 768px) {
+    .headline {
+      transform: scale(1.4);
+      text-align: center;
+    }
+  }
+
+  /* Large phones (480px - 600px) */
+  @media screen and (max-width: 600px) {
+    /* Large phone styles */
+  }
+
+  /* Standard phones (up to 480px) */
+  @media screen and (max-width: 480px) {
+    /* Mobile phone styles */
+  }
+
 </style>

@@ -278,7 +278,7 @@ All data is strongly typed using TypeScript interfaces:
 - [ ] Embedded Figma/Miro boards in projects
 - [ ] Project demo videos
 - [ ] Comment system for blog posts
-- [ ] Introduce Project Silverguild
+- [x] Introduce Project Silverguild
 
 ## 🚢 Deployment
 

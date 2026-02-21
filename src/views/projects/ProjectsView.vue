@@ -37,18 +37,11 @@
 </template>
 
 <style>
-
   .projects-container {
-    padding-top: var(--page-padding-top);
-    padding-left: var(--page-padding-horizontal);
-    padding-right: var(--page-padding-horizontal);
-    min-height: 100vh;
     display: flex;
   }
 
   .projects-content {
-    margin-top: var(--content-offset);
-    padding-top: calc(var(--spacing-lg) + var(--spacing-2sm));
     padding-bottom: var(--page-padding-bottom);
     flex: 1;
     overflow: auto;

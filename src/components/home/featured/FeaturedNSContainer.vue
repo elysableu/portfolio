@@ -45,7 +45,12 @@
 <template>
   <div class="ns-container">
     <div class="content-container left">
-      <h3>What's New</h3>
+      <div class="heading-count">
+        <h3>What's New</h3>
+        <span class="stack-indicator">
+          {{ activeNewIndex + 1 }} / {{ nsContent.new.length }}
+        </span>
+      </div>
       <div class="content card-stack">
          <FeaturedCard
           v-for="(item, index) in newCards"
@@ -57,12 +62,14 @@
           @click="setActiveNew(index)"
         />
       </div>
-      <div class="stack-indicator">
-        {{ activeNewIndex + 1 }} / {{ nsContent.new.length }}
-      </div>
     </div>
     <div class="content-container right">
-      <h3>Coming Soon</h3>
+      <div class="heading-count">
+        <h3>Coming Soon</h3>
+          <span class="stack-indicator">
+            {{ activeSoonIndex + 1 }} / {{ nsContent.soon.length }}
+          </span>
+      </div>
       <div class="content card-stack">
         <FeaturedCard
           v-for="(item, index) in soonCards"
@@ -73,9 +80,6 @@
           :totalCards="nsContent.soon.length"
           @click="setActiveSoon(index)"
         />
-      </div>
-      <div class="stack-indicator">
-        {{ activeSoonIndex + 1 }} / {{ nsContent.soon.length }}
       </div>
     </div>
   </div>
@@ -99,9 +103,25 @@
     overflow: hidden;
   }
 
-  .content-container h3 {
-    font-size: var(--font-size-xl);
+  .heading-count {
+    display: flex;
     padding-bottom: var(--spacing-md);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .heading-count h3 {
+    font-size: var(--font-size-xl);
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .stack-indicator {
+    text-align: center;
+    font-family: 'Dosis';
+    font-size: var(--font-size-sm);
+    opacity: 0.7;
+    font-weight: bold;
     flex-shrink: 0;
   }
 
@@ -111,7 +131,8 @@
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    min-height: 0;
+    border-radius: var(--radius-2xl);
+    min-height: 9rem;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
   }
@@ -128,12 +149,28 @@
     border-radius: 0 var(--radius-3xl) var(--radius-3xl) 0;
   }
 
-  .stack-indicator {
-    text-align: center;
-    margin-top: var(--spacing-lg);
-    font-size: var(--font-size-sm);
-    opacity: 0.7;
-    font-weight: 500;
-    flex-shrink: 0;
+  /* Half-width / Small desktop (960px - 1280px) */
+  @media screen and (max-width: 1280px) {
+
+  }
+
+  /* Tablet landscape (768px - 960px) */
+  @media screen and (max-width: 960px) {
+
+  }
+
+  /* Tablet portrait (600px - 768px) */
+  @media screen and (max-width: 768px) {
+
+  }
+
+  /* Large phones (480px - 600px) */
+  @media screen and (max-width: 600px) {
+
+  }
+
+  /* Standard phones (up to 480px) */
+  @media screen and (max-width: 480px) {
+    /* Mobile phone styles */
   }
 </style>

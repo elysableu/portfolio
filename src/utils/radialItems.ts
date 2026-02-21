@@ -90,7 +90,7 @@ export function calculateRadialPostions(
   items: RadialItem[],
   config: RadialConfig
 ): RadialItemWithPosition[] {
-  const { headshotRadius, orbitGap, startAngle, endAngle } = config
+  const { headshotRadius, orbitGap, startAngle, endAngle, offsetX, offsetY } = config
   const orbitRadius = headshotRadius + orbitGap
   const totalItems = items.length
   const angleRange = endAngle - startAngle
@@ -99,8 +99,8 @@ export function calculateRadialPostions(
     const angle = startAngle + (angleRange / (totalItems - 1)) * index
     const radians = (angle * Math.PI) / 180
 
-    const x = orbitRadius * Math.sin(radians) + 7
-    const y = -orbitRadius * Math.cos(radians) + 7
+    const x = orbitRadius * Math.sin(radians) + (offsetX ?? 7)
+    const y = -orbitRadius * Math.cos(radians) + (offsetY ?? 7)
 
     const rotation = angle + 90
 
