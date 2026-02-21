@@ -15,14 +15,14 @@ const radialItemsWithPositons = computed(() => {
 
   const config = isMobile.value
     ? {
-      headshotRadius: 115,
+      headshotRadius: 110,
       orbitGap: 40,
       startAngle: 270,
       endAngle: 90,
       offsetX: 0,
       offsetY: 0
     } : {
-      headshotRadius: 115,
+      headshotRadius: 110,
       orbitGap: 50,
       startAngle: 60,
       endAngle: 205,
