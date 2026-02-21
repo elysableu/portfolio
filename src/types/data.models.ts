@@ -317,6 +317,8 @@ export interface RadialConfig {
   orbitGap: number
   startAngle: number
   endAngle: number
+  offsetX: number
+  offsetY: number
 }
 
 export type RadialItemWithPosition = RadialItem & {
