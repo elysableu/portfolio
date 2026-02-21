@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import Header from './components/layout/Header.vue'
-import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
+  import { RouterView } from 'vue-router'
+  import Header from './components/layout/Header.vue'
+  import LinkRadial from './components/layout/linkRadial/LinkRadial.vue'
+  import { useResponsive } from './composables/useResponsive'
+
+  const {isMobile, navHeight, navContainer} = useResponsive()
 </script>
 
 <template>
-  <div id="app">
+  <div id="app" :style="{'--nav-height': `${navHeight}px`}">
     <div class="center-line"></div>
-    <div class="nav-container">
+    <div class="nav-container" ref="navContainer">
       <div class="radial-wrapper">
         <LinkRadial />
       </div>
@@ -16,6 +19,7 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
       </div>
     </div>
     <main class="main-content">
+      <div class="content-line"></div>
       <RouterView />
     </main>
   </div>
@@ -100,6 +104,16 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
     width: 1px;
     background-color: red;
     z-index: 99999;
+  }
+
+  .content-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--greeting-offset);
+    height: 1px;
+    background-color: blue;
+    z-index: 9999;
   }
 
   /* ============================================
@@ -204,17 +218,25 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
 
 <style scoped>
 /* Base styles - Average full screen (1920px) */
+  #app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+  }
+
   .nav-container {
-    position: relative;
     z-index: 9000;
-    margin: 0;
-    padding: 0;
+    width: 100%;
   }
 
   .main-content {
-    min-height: 100vh;
+    flex: 1;
     z-index: 100;
     position: relative;
+    padding-top: var(--greeting-offset);
+    padding-left: var(--page-padding-horizontal);
+    padding-right: var(--page-padding-horizontal);
   }
 
 /* Small desktop (960px - 1280px) */
@@ -230,7 +252,7 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
 /* Tablet portrait (600px - 768px) */
 @media screen and (max-width: 768px) {
   .nav-container {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -256,7 +278,9 @@ import LinkRadial from './components/layout/linkRadial/LinkRadial.vue';
   }
 
   .main-content {
-    transform: translateY(25vh);
+    padding-top: var(--spacing-xs);
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
     overflow: visible;
     scroll-behavior: auto;
   }

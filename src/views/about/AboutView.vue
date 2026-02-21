@@ -50,9 +50,6 @@
 .about-container {
   display: flex;
   flex-direction: column;
-  padding-top: var(--page-padding-top);
-  padding-left: var(--page-padding-horizontal);
-  padding-right: var(--page-padding-horizontal);
   margin: 0 auto;
   min-width: 100%;
   min-height: 100vh;
@@ -61,8 +58,6 @@
 .about-content {
   display: flex;
   gap: var(--spacing-md);
-  margin-top: var(--content-offset);
-  padding-top: calc(var(--spacing-lg) + var(--spacing-2sm));
   padding-bottom: var(--page-padding-bottom);
   overflow: auto;
 }

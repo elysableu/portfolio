@@ -169,10 +169,11 @@ body {
 
   /* ===== LAYOUT ===== */
   --navbar-height: 7.607rem;
-  --page-padding-top: 8.125rem;
+  --page-padding-top: 11.25rem;
   --page-padding-bottom: 2.1875rem;
   --page-padding-horizontal: calc(var(--spacing-lg) + var(--spacing-2sm));
   --content-offset: calc(var(--navbar-height) + 2.5rem + var(--spacing-xl));
+  --greeting-offset: 12.5rem;
 
   /* ===== BLUR ===== */
   --blur-sm: 3px;

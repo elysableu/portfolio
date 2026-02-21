@@ -51,17 +51,9 @@ onMounted(async () => {
 <style scoped>
 /* Base styles - Average full screen (1920px) */
   .home-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: var(--page-padding-top);
-    padding-left: var(--page-padding-horizontal);
-    padding-right: var(--page-padding-horizontal);
   }
 
   .home {
@@ -69,10 +61,14 @@ onMounted(async () => {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    overflow: hidden;
+    position: relative;
   }
 
   .greeting-header {
+    position: absolute;
+    top: calc(-1 * var(--greeting-offset));
+    right: 0;
+    left: 0;
     font-size: x-large;
     text-align: right;
     padding: 2.5rem 6.25rem var(--spacing-lg) var(--spacing-sm);
@@ -83,11 +79,9 @@ onMounted(async () => {
   .home-content {
     display: flex;
     gap: var(--spacing-xl);
-    padding-top: calc(var(--spacing-lg) + var(--spacing-2sm));
     padding-bottom: var(--page-padding-bottom);
     min-height: 0;
     flex: 1;
-    overflow: hidden;
   }
 
   .intro-ns-container {
