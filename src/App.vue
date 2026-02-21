@@ -37,7 +37,7 @@
     padding: 0;
     overflow-x: hidden;
     background-image: url(/img/neon-background-unsplash.jpg);
-    background-size: 110%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
     background-attachment: fixed;
@@ -151,7 +151,6 @@
   /* Tablet Portrait (768px and below) */
   @media screen and (max-width: 768px) {
     body {
-      background-attachment: scroll;
       background-size: cover;
     }
 

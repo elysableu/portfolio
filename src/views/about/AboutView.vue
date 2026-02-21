@@ -52,14 +52,13 @@
   flex-direction: column;
   margin: 0 auto;
   min-width: 100%;
-  min-height: 100vh;
 }
 
 .about-content {
   display: flex;
   gap: var(--spacing-md);
   padding-bottom: var(--page-padding-bottom);
-  overflow: auto;
+  overflow: hidden;
 }
 
 .about-content-left {
