@@ -19,7 +19,9 @@ defineProps<Props>()
 
   /* Tablet landscape (768px - 960px) */
   @media screen and (max-width: 960px) {
-
+     .greeting-message {
+      transform: translateX(-20vw) scale(1.4);
+    }
   }
 
   /* Tablet portrait (600px - 768px) */

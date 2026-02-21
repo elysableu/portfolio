@@ -115,7 +115,6 @@ onMounted(async () => {
      border-radius: var(--radius-3xl);
   }
 
-
   /* Half-width / Small desktop (960px - 1280px) */
   @media screen and (max-width: 1280px) {
     .greeting-header {
@@ -146,7 +145,7 @@ onMounted(async () => {
   /* Tablet landscape (768px - 960px) */
   @media screen and (max-width: 960px) {
     .greeting-header {
-      transform: translate(10vw, 5vh) scale(0.8);
+      transform: translate(13vw, 5vh) scale(0.7);
       padding: 0;
       padding-top: var(--spacing-md);
     }

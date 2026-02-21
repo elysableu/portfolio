@@ -21,7 +21,9 @@ defineProps<Props>()
 
   /* Tablet landscape (768px - 960px) */
   @media screen and (max-width: 960px) {
-
+     .headline {
+      transform: translateX(-25vw) scale(1.5);
+    }
   }
 
   /* Tablet portrait (600px - 768px) */

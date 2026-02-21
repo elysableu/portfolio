@@ -9,7 +9,7 @@
 
 <template>
   <div id="app" :style="{'--nav-height': `${navHeight}px`}">
-    <div class="center-line"></div>
+    <!-- <div class="center-line"></div> -->
     <div class="nav-container" ref="navContainer">
       <div class="radial-wrapper">
         <LinkRadial />
@@ -19,7 +19,7 @@
       </div>
     </div>
     <main class="main-content">
-      <div class="content-line"></div>
+      <!-- <div class="content-line"></div> -->
       <RouterView />
     </main>
   </div>
