@@ -26,8 +26,8 @@
           Back To Projects
         </RouterLink>
         <div class="title-current">
-          <div v-if="current" class="project-current">Current</div>
           <h2>{{ title }}</h2>
+          <div v-if="current" class="project-current">Current</div>
         </div>
         <div class="project-tagline">{{ tagline }}</div>
       </div>
@@ -101,26 +101,24 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
-    top: var(--spacing-hlg);
+    top: var(--spacing-lg);
     left: var(--spacing-hlg);
   }
 
   .title-current {
     display: flex;
-    gap: var(--spacing-2sm);
+    gap: var(--spacing-md);
     justify-content: center;
     align-items: center;
+    padding-top: var(--spacing-xl);
     padding-bottom: var(--spacing-2sm);
   }
 
   .title-current h2 {
     font-family: 'Metamorphous';
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
     font-weight: bold;
-  }
-
-  .project-tagline {
-    font-size: var(--font-size-lg);
+    margin: 0;
   }
 
   .project-current {
@@ -130,6 +128,11 @@
     text-align: center;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-full);
+  }
+
+  .project-tagline {
+    font-size: var(--font-size-lg);
+    text-align: center;
   }
 
   .project-tags {
