@@ -20,11 +20,6 @@
 <style scoped>
 .project-container {
   display: flex;
-  padding-top: var(--page-padding-top);
-  padding-left: var(--page-padding-horizontal);
-  padding-right: var(--page-padding-horizontal);
-  min-height: 100vh;
-  display: flex;
   flex-direction: column;
 }
 
@@ -41,8 +36,6 @@
 }
 
 .project-detail-content {
-  margin-top: var(--content-offset);
-  padding-top: calc(var(--spacing-lg) + var(--spacing-2sm));
   padding-bottom: var(--page-padding-bottom);
   border-radius: var(--radius-3xl);
   overflow: auto;
