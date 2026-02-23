@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import {RouterLink} from 'vue-router'
 import { getAssetPath } from '@/utils/assets'
-import type { TickerItemType } from '@/types/data.models'
+import type { TickerItemType, TickerProjectType } from '@/types/data.models'
 import { isTickerImage, isTickerProject } from '@/utils/typeGuards'
 
 interface Props {
@@ -13,9 +14,9 @@ defineProps<Props>()
 <template>
   <div class="ticker-item" :class="{ 'ticker-item-image': isTickerImage(item), 'ticker-item-project': isTickerProject(item) }">
     <div v-if="isTickerProject(item)" class="project-item">
-      <a :href="item.url" target="_blank" rel="noopener noreferrer" class="ticker-link ticker-link-project">
+      <RouterLink :to="(item as TickerProjectType).url || '/projects'" class="ticker-link ticker-link-project">
         <img :alt="item.title" :src="getAssetPath(item.thumbnail)" class="ticker-thumbnail ticker-thumbnail-project" />
-      </a>
+      </RouterLink>
     </div>
     <div v-else-if="isTickerImage(item)" class="image-item">
       <img :alt="item.alt" :src="getAssetPath(item.src)" class="ticker-thumbnail ticker-thumbnail-image" />

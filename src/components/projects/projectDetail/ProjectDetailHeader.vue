@@ -11,8 +11,6 @@
   }
 
   const props = defineProps<Props>()
-
-  const {title, current, tagline, tags, liveUrl, githubUrl, images} = toRefs(props.projectHeader)
 </script>
 
 <template>
@@ -26,25 +24,25 @@
           Back To Projects
         </RouterLink>
         <div class="title-current">
-          <h2>{{ title }}</h2>
-          <div v-if="current" class="project-current">Current</div>
+          <h2>{{ projectHeader.title }}</h2>
+          <div v-if="projectHeader.current" class="project-current">Current</div>
         </div>
-        <div class="project-tagline">{{ tagline }}</div>
+        <div class="project-tagline">{{ projectHeader.tagline }}</div>
       </div>
       <div class="project-tags">
         <ul>
-          <li v-for="(item, index) in tags" :key="index">
+          <li v-for="(item, index) in projectHeader.tags" :key="index">
             {{ item }}
           </li>
         </ul>
       </div>
       <div class="project-links">
-        <a v-if="liveUrl" :href="liveUrl">Live Site</a>
-        <a v-if="githubUrl" :href="githubUrl">Github Repo</a>
+        <a v-if="projectHeader.liveUrl" :href="projectHeader.liveUrl">Live Site</a>
+        <a v-if="projectHeader.githubUrl" :href="projectHeader.githubUrl">Github Repo</a>
       </div>
     </div>
     <div class="detail-ticker glass-card-inner">
-      <Ticker :items="images" />
+      <Ticker :items="projectHeader.images" />
     </div>
   </div>
 </template>
