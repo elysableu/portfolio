@@ -270,7 +270,13 @@ onUnmounted(() => {
 
   /* Large phones (480px - 600px) */
   @media screen and (max-width: 600px) {
+    .ticker-controls {
+      gap: 0.05rem;
+    }
 
+    .ticker-button {
+      transform: translate(2vw, 1vh) scale(0.7);
+    }
   }
 
   /* Standard phones (up to 480px) */

@@ -28,7 +28,7 @@
         <div class="experience-item-heading">
           <h3>{{ experienceItem.title }}</h3>
           <div v-if="experienceItem.current" class="is-current">
-            <p>CURRENT</p>
+            CURRENT
           </div>
         </div>
         <div class="experience-heading-content">
@@ -103,7 +103,7 @@
     display: flex;
     align-items: center;
     background-color: var(--color-background);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   }
 
@@ -121,12 +121,13 @@
   .experience-item-heading {
     display: flex;
     align-items: center;
-    gap: var(--spacing-2sm);
+    gap: var(--spacing-md);
   }
 
   .experience-item-heading h3 {
     font-family: 'Dosis';
     font-size: var(--font-size-xl);
+    margin: 0;
   }
 
   .is-current {

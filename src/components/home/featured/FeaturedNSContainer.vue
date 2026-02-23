@@ -1,13 +1,15 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import type { NSFeatured } from '@/types/data.models'
-  import FeaturedCard from './FeaturedCard.vue';
+  import FeaturedCard from './FeaturedCard.vue'
+  import { useResponsive } from '@/composables/useResponsive'
 
   interface Props {
     nsContent: NSFeatured
   }
 
   const props = defineProps<Props>()
+  const { isMobile } = useResponsive()
 
   const newCards = ref([...props.nsContent.new])
   const soonCards = ref([...props.nsContent.soon])
@@ -63,6 +65,7 @@
         />
       </div>
     </div>
+    <div v-if="isMobile" class="divider"></div>
     <div class="content-container right">
       <div class="heading-count">
         <h3>Coming Soon</h3>
@@ -161,7 +164,22 @@
 
   /* Tablet portrait (600px - 768px) */
   @media screen and (max-width: 768px) {
+    .ns-container {
+      flex-direction: column;
+      padding-top: var(--spacing-md);
+    }
 
+    .card-stack {
+      min-height: 22rem;
+    }
+
+    .left {
+      border-right: none;
+    }
+
+    .right {
+      border-left: none;
+    }
   }
 
   /* Large phones (480px - 600px) */
