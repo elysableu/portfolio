@@ -81,9 +81,7 @@
 
   .education-item-banner {
     width: 100%;
-    height: 6.25rem;
     display: flex;
-    gap: var(--spacing-2sm);
     align-items: center;
     background-color: var(--color-background);
     padding: var(--spacing-lg);
@@ -106,6 +104,7 @@
   .education-item-heading h3 {
     font-family: 'Dosis';
     font-size: var(--font-size-xl);
+
   }
 
   .education-item-heading p {
@@ -115,7 +114,7 @@
   .graduation-date {
     font-size: var(--font-size-lg);
     font-weight: bold;
-    margin-left: 3.125rem;
+    width: fit-content;
   }
 
   .education-item-content {
@@ -199,7 +198,7 @@
   }
 
   .project-header {
-     background-color: var(--color-background);
+    background-color: var(--color-background);
     width: 100%;
     padding: var(--spacing-sm);
     border-radius: var(--radius-xs) var(--radius-xs) 0 0;
