@@ -39,7 +39,7 @@
       </a>
       <a
         v-else-if="item.type === 'resume'"
-        :href="item.resume"
+        :href="getAssetPath(item.resume)"
         target="_blank"
         class="radial-link-text"
       >
