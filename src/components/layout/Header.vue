@@ -40,12 +40,13 @@ import { RouterLink } from 'vue-router'
   gap: var(--spacing-xl);
   align-items: center;
   padding-top: var(--spacing-xl);
+  padding-right: var(--spacing-lg);
 }
 
 .navBar a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
   font-weight: 500;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-md);
@@ -76,14 +77,14 @@ import { RouterLink } from 'vue-router'
 /* Half-width / Small desktop (960px - 1280px) */
 @media screen and (max-width: 1280px) {
   .navBar nav {
-    transform: translate(-7vh) scale(1.3);
+    transform: translateX(2vw) scale(0.95);
   }
 }
 
 /* Tablet landscape (768px - 960px) */
 @media screen and (max-width: 960px) {
   .navBar nav {
-    transform: translate(-1vh, 2.5vh) scale(0.95);
+    transform: translateY(-1vh);
   }
 }
 
