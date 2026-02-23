@@ -1,20 +1,20 @@
 import {ref, onMounted, onUnmounted, nextTick } from 'vue'
 
+const isMobile = ref(false)
+const navHeight = ref(0)
+const navContainer = ref<HTMLElement | null>(null)
+
+const updateBreakpoints = () => {
+  isMobile.value = window.innerWidth <= 800
+}
+
+const updateNavHeight = () => {
+  if (navContainer.value) {
+    navHeight.value = navContainer.value.offsetHeight
+  }
+}
+
 export function useResponsive() {
-  const isMobile = ref(false)
-  const navHeight = ref(0)
-  const navContainer = ref<HTMLElement | null>(null)
-
-  const updateBreakpoints = () => {
-    isMobile.value = window.innerWidth <= 768
-  }
-
-  const updateNavHeight = () => {
-    if (navContainer.value) {
-      navHeight.value = navContainer.value.offsetHeight
-    }
-  }
-
   onMounted(async () => {
     updateBreakpoints()
     await nextTick()

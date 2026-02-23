@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useData } from '@/composables/useData'
+import { useResponsive } from '@/composables/useResponsive'
 import type { Personal, Home, TickerItemType, NSFeatured } from '@/types/data.models'
 
 import Greeting from '@/components/home/Greeting.vue'
@@ -16,6 +17,8 @@ const homeData = ref<{
   featuredProjects: TickerItemType[],
   nsContent: NSFeatured
 } | null>(null)
+
+const {isMobile} = useResponsive()
 
 onMounted(async () => {
   homeData.value = await getHomePageData()
