@@ -13,7 +13,8 @@
 
   import ProjectsLibrary from '@/components/projects/projectsLibrary/ProjectsLibrary.vue'
 
-  const { loading, error, getProjectsPageData } = useData()
+  const { loading, error, fetchData, getProjectsPageData } = useData()
+
   const projectsData = ref<{
     projects: Project[]
     featured: TickerItemType[]
@@ -23,7 +24,7 @@
   } | null>(null)
 
   onMounted(async () => {
-    projectsData.value = await getProjectsPageData()
+    projectsData.value = await fetchData(() => getProjectsPageData())
   })
 </script>
 

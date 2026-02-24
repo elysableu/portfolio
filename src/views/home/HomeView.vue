@@ -21,7 +21,7 @@ import Introduction from '@/components/home/Introduction.vue'
 import FeaturedProjects from '@/components/home/featured/FeaturedProjects.vue'
 import FeaturedNSContainer from '@/components/home/featured/FeaturedNSContainer.vue'
 
-const { loading, error, getHomePageData } = useData()
+const { loading, error, fetchData, getHomePageData } = useData()
 
 //Typed ref for all home page data; null until fetch resolves
 const homeData = ref<{
@@ -35,7 +35,7 @@ const {isMobile} = useResponsive()
 
 // Fetch all home page data on mount; homeData => render gate
 onMounted(async () => {
-  homeData.value = await getHomePageData()
+  homeData.value = await fetchData(()=> getHomePageData())
 })
 </script>
 

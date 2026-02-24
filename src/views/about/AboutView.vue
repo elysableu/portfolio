@@ -19,7 +19,7 @@
   import Experience from '@/components/about/experience/Experience.vue'
   import Skills from '@/components/about/skills/Skills.vue'
 
-  const { loading, error, getAboutPageData } = useData()
+  const { loading, error, fetchData, getAboutPageData } = useData()
 
   // Typed ref for all about page data; null until fetch resolves
   const aboutData = ref<{
@@ -30,7 +30,7 @@
   } | null>(null)
 
   onMounted(async () => {
-    aboutData.value = await getAboutPageData()
+    aboutData.value = await fetchData(() => getAboutPageData())
   })
 </script>
 
