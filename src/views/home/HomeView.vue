@@ -1,4 +1,15 @@
 <script setup lang="ts">
+  /**
+   * HomeView.vue - Main landing page component
+   *
+   * Fetches and renders all home page content via useData().
+   * Layout:
+   * - Greeting/headline blcok, positioned absolutely above main-content container
+   * - Featured projects ticker (left column)
+   * - Introduction + "new & soon" (i.e. What's new and Coming Soon) section (right column)
+   *
+   * Data is fetched on mount and stored in homeData.
+   */
 import { ref, onMounted } from 'vue'
 import { useData } from '@/composables/useData'
 import { useResponsive } from '@/composables/useResponsive'
@@ -11,6 +22,8 @@ import FeaturedProjects from '@/components/home/featured/FeaturedProjects.vue'
 import FeaturedNSContainer from '@/components/home/featured/FeaturedNSContainer.vue'
 
 const { loading, error, getHomePageData } = useData()
+
+//Typed ref for all home page data; null until fetch resolves
 const homeData = ref<{
   home: Home
   personal: Personal
@@ -20,6 +33,7 @@ const homeData = ref<{
 
 const {isMobile} = useResponsive()
 
+// Fetch all home page data on mount; homeData => render gate
 onMounted(async () => {
   homeData.value = await getHomePageData()
 })
@@ -27,17 +41,24 @@ onMounted(async () => {
 
 <template>
   <div class="home-container">
+    <!-- Loading / error states shown while homeData is null -->
     <div v-if="loading" class="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
+
+    <!-- Main layout: only renders once data has resolved -->
     <div v-else-if="homeData" class="home">
+      <!-- Greeting + headline: absolutely positioned to sit above the main content
+          area, overlapping the nav via negative top offset (--greeting-offset) -->
       <div class="greeting-header">
         <Greeting :greeting="homeData.home.greeting" />
         <Headline :headline="homeData.home.headline" />
       </div>
     <div class="home-content">
+      <!-- Left Column: Featured Projects Ticker -->
       <div class="featured glass-card-dark">
         <FeaturedProjects :featured="homeData.featuredProjects" />
       </div>
+      <!-- Right Column: introduction text (top) + new & soon card stacks (bottom) -->
       <div class="intro-ns-container">
         <div class="intro-content glass-card-dark">
           <Introduction :introduction="homeData.home.introduction" />

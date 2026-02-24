@@ -1,4 +1,15 @@
 <script setup lang="ts">
+  /**
+   * AboutView.vue - About page component
+   *
+   * Fetches and renders all about page content via useData()
+   * Layout:
+   * - Left Column: Openning/bio details and skills
+   * - Right Column: Education history and work experience
+   *
+   * Data is fetched on mount and stored in aboutData.
+   *
+   */
   import {ref, onMounted } from 'vue'
   import { useData } from '@/composables/useData'
   import type { About, EducationType, ExperienceType, SkillsType } from '@/types/data.models'
@@ -9,6 +20,8 @@
   import Skills from '@/components/about/skills/Skills.vue'
 
   const { loading, error, getAboutPageData } = useData()
+
+  // Typed ref for all about page data; null until fetch resolves
   const aboutData = ref<{
     about: About
     education: EducationType[]
@@ -23,9 +36,12 @@
 
 <template>
   <div class="about-container">
+    <!-- Loading / error states shown while aboutData is null -->
     <div v-if="loading" class="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
+    <!-- Two Column (main content): only renders once aboutData resolves -->
     <div v-else-if="aboutData" class="about-content">
+      <!-- Left Column: who I am and what I know -->
       <div class="about-content-left">
         <div class="opening-container">
           <OpeningDetails :about="aboutData.about"/>
@@ -34,6 +50,7 @@
           <Skills :skills="aboutData.skills"/>
         </div>
       </div>
+      <!-- Right Column: where I've studied and where I'e worked -->
       <div class="about-content-right">
         <div class="education-container">
           <Education :educationList="aboutData.education"/>
