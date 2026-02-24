@@ -1,25 +1,47 @@
 <script setup lang="ts">
+  /**
+   * App.vue - Root application component
+   *
+   * Defines the top-level layout structure:
+   * - A nav container holding the radial link menu and header
+   * - A main content area that renders the active route via <RouterView>
+   *
+   * The --nav-height CSS custom property is set here so child components
+   * can reference the nav's measured height without tight coupling.
+   */
   import { RouterView } from 'vue-router'
   import Header from './components/layout/Header.vue'
   import LinkRadial from './components/layout/linkRadial/LinkRadial.vue'
   import { useResponsive } from './composables/useResponsive'
 
+  // navHeight: measured height of the nav container (in px), exposed as --nav-height CSS var
+  // navContainer: template ref passed to useResponsive so it can observe the nav's size
+  // isMobile: boolean flag for responsive logic (currently unused here, consumed by children)
   const {isMobile, navHeight, navContainer} = useResponsive()
 </script>
 
 <template>
   <div id="app" :style="{'--nav-height': `${navHeight}px`}">
-    <!-- <div class="center-line"></div> -->
+    <!-- <div class="testing center-line"></div> -->
+    <!-- Nav Container: holds both radial link menu and site navigation header.
+         ref="navContainer" allows useResponsive to measure and track its height
+         On movile (<=768px), this shifts the to a stacked column layout via CSS. -->
     <div class="nav-container" ref="navContainer">
+      <!-- Radial Link Menu: centered in mobile; positioned absolutely on desktop
+           Navigates to both internal assets and external resources -->
       <div class="radial-wrapper">
         <LinkRadial />
       </div>
+      <!-- Navigation Header: Basic site navigation using RouterLink -->
       <div class="header-wrapper">
         <Header />
       </div>
     </div>
+    <!-- Main Content Area: renders matched route component.
+         Padding and positioning standardized across views.
+        Offset by --greeting-offest to ensure alignment regardless of view. -->
     <main class="main-content">
-      <!-- <div class="content-line"></div> -->
+      <!-- <div class="testing content-line"></div> -->
       <RouterView />
     </main>
   </div>

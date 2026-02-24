@@ -1,3 +1,16 @@
+/**
+ *  dataService.ts - Statis JSON data fetching layer
+ *
+ * All portfolio data is served as static JSON files (with plans to add a backend and postgresql db).
+ * This module provides typed fetch wrappers and data utilities organized into three categories:
+ *
+ *  1. Basic Retrieval - raw fetch for each JSON file
+ *  2. Filtered/Computed - derived data built on top of basic retrieval
+ *  3. Bulk Loading - paralell fetches for page-level data fetching
+ *
+ *  DATA_PATH switches bewteen /data (dev) and the BASE_URL-relative path
+ * (prod) to handle Vite's base URL configuration for deployment
+ */
 import type {
   Personal,
   Home,
@@ -16,10 +29,10 @@ import { serializeProjectBrief } from '@/utils/serializer'
 
 const DATA_PATH = import.meta.env.DEV ? '/data' : `${import.meta.env.BASE_URL}data`
 
-
-
 // =========================
 // BASIC DATA RETRIEVAL
+// Thin fetch wrappers - one per JSON file. Each throws errors on a non-OK response
+// so callers don't need to check response status themselves
 // =========================
 
 export const getPersonal = async (): Promise<Personal> => {
@@ -72,8 +85,11 @@ export const getProjects = async (): Promise<Project[]> => {
 
 // ==============================
 // FILTERED/COMPUTED DATA
+// These functions build on the above basic fetchers.
+// Note: each call re-fetches the source data - cahcing will later be added at the module level
 // ==============================
 
+/** Returns featured projects shpaed as TickerItemType for the ticker component */
 export const getFeaturedProjects = async (): Promise<TickerItemType[]> => {
   const projects = await getProjects()
   return projects
@@ -86,6 +102,7 @@ export const getFeaturedProjects = async (): Promise<TickerItemType[]> => {
     }))
 }
 
+/** Return the single currenty active project, or undefined if none is marked current */
 export const getCurrentProject = async (): Promise<ProjectBriefType | undefined> => {
   const projects = await getProjects()
   const currentProject = projects.find((project) => project.current === true)
@@ -93,6 +110,7 @@ export const getCurrentProject = async (): Promise<ProjectBriefType | undefined>
   return currentProject ? serializeProjectBrief(currentProject) : undefined
 }
 
+/** Finds a project by its id; returns undefined if no match is found */
 export const getProjectById = async (id: string): Promise<Project | undefined> => {
   const projects = await getProjects()
   return projects.find((project) => project.id === id)
@@ -108,6 +126,7 @@ export const getProjectsByTag = async (tag: string): Promise<Project[]> => {
   return projects.filter((project) => project.tags?.includes(tag))
 }
 
+/** Searches across all technology layers (frontend, backend, database, other) */
 export const getProjectsByTechnology = async (technology: string): Promise<Project[]> => {
   const projects = await getProjects()
   return projects.filter((project) => {
@@ -120,6 +139,7 @@ export const getProjectsByTechnology = async (technology: string): Promise<Proje
   })
 }
 
+/** Returns a sorted list of all tags across all projects (deduplicated) */
 export const getAllProjectTags = async (): Promise<string[]> => {
   const projects = await getProjects()
   const tags = new Set<string>()
@@ -129,6 +149,7 @@ export const getAllProjectTags = async (): Promise<string[]> => {
   return Array.from(tags).sort()
 }
 
+/** Returns sorted list of all technologies across all projects and layers */
 export const getAllTechnologies = async (): Promise<string[]> => {
   const projects = await getProjects()
   const techSet = new Set<string>()
@@ -145,11 +166,13 @@ export const getAllTechnologies = async (): Promise<string[]> => {
   return Array.from(techSet).sort()
 }
 
+/** Returns only experiences without and endDate, or where endDate is 'present' */
 export const getCurrentExperience = async (): Promise<ExperienceType[]> => {
   const experiences = await getExperience()
   return experiences.filter((exp) => !exp.endDate || exp.endDate === 'Present')
 }
 
+/** Returns all experiences sorted by startDate descending (most recent first) */
 export const getExperienceSorted = async (): Promise<ExperienceType[]> => {
   const experiences = await getExperience()
   return experiences.sort((a, b) => {
@@ -159,6 +182,7 @@ export const getExperienceSorted = async (): Promise<ExperienceType[]> => {
   })
 }
 
+/** Returns all education entries sorted by graduationDate descending (mort recent first) */
 export const getEducationSorted = async (): Promise<EducationType[]> => {
   const education = await getEducation()
   return education.sort((a, b) => {
@@ -170,8 +194,11 @@ export const getEducationSorted = async (): Promise<EducationType[]> => {
 
 // =====================================
 // BULK DATA LOADING
+// Page-level loaders that use Promise.all to fetch all required data in parallel.
+// These are the primary entry points consumed by useData().
 // =====================================
 
+/** Fetches all data sources in parallel; useful for preloading or SSG (will be utilized with the addition of caching in future versions) */
 export const getAllData = async () => {
   const [personal, home, nsContent, about, education, experience, skills, projects] = await Promise.all([
     getPersonal(),
@@ -196,6 +223,7 @@ export const getAllData = async () => {
   }
 }
 
+/** Fetches all data needed for HomeView in parallel */
 export const getHomePageData = async () => {
   const [home, personal, featuredProjects, nsContent] = await Promise.all([
     getHome(),
@@ -212,6 +240,7 @@ export const getHomePageData = async () => {
   }
 }
 
+/** Fetches all data needed for AboutView in parallel */
 export const getAboutPageData = async () => {
   const [about, education, experience, skills] = await Promise.all([
     getAbout(),
@@ -228,6 +257,7 @@ export const getAboutPageData = async () => {
   }
 }
 
+/** Fetches all data needed for ProjectsView in parallel */
 export const getProjectsPageData = async () => {
   const [projects, featured, current, tags, technologies] = await Promise.all([
     getProjects(),

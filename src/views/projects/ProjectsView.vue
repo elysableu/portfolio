@@ -1,4 +1,11 @@
 <script setup lang="ts">
+/**
+ * ProjectsView.vue - Projects library page component
+ *
+ * Fetches and renders the full projects library via useData().
+ *
+ * Fetch layer ProjectsLibrary handles layout and logic
+ */
   import { ref, onMounted } from 'vue'
   import { useData } from '@/composables/useData'
 
@@ -6,7 +13,8 @@
 
   import ProjectsLibrary from '@/components/projects/projectsLibrary/ProjectsLibrary.vue'
 
-  const { loading, error, getProjectsPageData } = useData()
+  const { loading, error, fetchData, getProjectsPageData } = useData()
+
   const projectsData = ref<{
     projects: Project[]
     featured: TickerItemType[]
@@ -16,14 +24,16 @@
   } | null>(null)
 
   onMounted(async () => {
-    projectsData.value = await getProjectsPageData()
+    projectsData.value = await fetchData(() => getProjectsPageData())
   })
 </script>
 
 <template>
   <div class="projects-container">
+    <!-- Loading / error states shown while projectsData is null -->
     <div v-if="loading" class="loading">Loading...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
+    <!-- Delegates all rendering, (sorting, and filtering) to ProjectsLibrary once data resolves. -->
     <div v-else-if="projectsData" class="projects-content">
       <ProjectsLibrary
       :projects="projectsData.projects"
