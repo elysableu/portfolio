@@ -57,7 +57,7 @@
   body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   body::before {
@@ -246,7 +246,7 @@
 <style scoped>
 /* Base styles - Average full screen (1920px) */
   #app {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-3xl);
@@ -259,11 +259,30 @@
 
   .main-content {
     flex: 1;
+    min-height: 0;
+    overflow-y: auto;
     z-index: 100;
     position: relative;
     padding-top: var(--greeting-offset);
     padding-left: var(--page-padding-horizontal);
     padding-right: var(--page-padding-horizontal);
+
+    /* Soften the scroll edges: fade content */
+    --fade: 2rem;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%
+    );
   }
 
 /* Small desktop (960px - 1280px) */

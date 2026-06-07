@@ -76,15 +76,19 @@ onMounted(async () => {
 /* Base styles - Average full screen (1920px) */
   .home-container {
     height: 100%;
+    min-width: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+
   }
 
   .home {
     flex: 1;
+    min-height: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 0;
     position: relative;
   }
 
@@ -121,8 +125,8 @@ onMounted(async () => {
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
-    height: fit-content;
-    overflow: auto;
+    min-height: 0;
+    overflow-y: auto;
   }
 
   .new-soon {
