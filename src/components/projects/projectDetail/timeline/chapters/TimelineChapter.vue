@@ -49,7 +49,7 @@
         </div>
 
         <div v-else-if="chapterNum === '05'" class="challenge-table">
-         <TimelineChallenges :content="(chapterContent as Challenge[])"/>
+          <TimelineChallenges :content="(chapterContent as Challenge[])"/>
         </div>
 
         <div v-else-if="chapterNum === '06' && typeof chapterContent === 'object' && !Array.isArray(chapterContent)" class="results">

@@ -310,11 +310,11 @@
   },
   {
     "id": "agarcade",
-    "title": "agArcade",
+    "title": "AfterGlow Arcade",
     "tagline": "Where the arcade never closes.",
     "shortDescription": "An online 90s neon-themed arcade with a growing library of browser games and a roadmap for community requests and contributions.",
-    "fullDescription": "agArcade is an online arcade wrapped in a 90s neon aesthetic, where the games never stop. It currently launches as a frontend landing page backed by a small library of game logic that's ready to be given playable interfaces. The roadmap includes building UIs for the already-coded games, fleshing out about pages, and adding a space for visitors to request new games or contribute to the project. A planned backend will manage request storage and contributor validation, with email-driven microservices that notify the admin of new requests and allow replies straight through the requester's email—no separate admin portal required.",
-    "motivation": "Born from a desire to keep my foundational coding skills sharp and preserve my enthusiasm for software development, agArcade is a personal playground for practicing fundamentals while building something genuinely fun to use.",
+    "fullDescription": "AfterGlow Arcade is an online arcade wrapped in a 90s neon aesthetic, where the games never stop. It currently launches as a frontend landing page backed by a small library of game logic that's ready to be given playable interfaces. The roadmap includes building UIs for the already-coded games, fleshing out about pages, and adding a space for visitors to request new games or contribute to the project. A planned backend will manage request storage and contributor validation, with email-driven microservices that notify the admin of new requests and allow replies straight through the requester's email—no separate admin portal required.",
+    "motivation": "Born from a desire to keep my foundational coding skills sharp and preserve my enthusiasm for software development, AfterGlow Arcade is a personal playground for practicing fundamentals while building something genuinely fun to use.",
     "projectPlan": null,
     "technologies": {
       "frontend": ["React", "CSS Modules", "JavaScript", "HTML"],
@@ -346,18 +346,45 @@
         "Email microservices for admin notifications and replies",
         "Dynamic contributor-validation microservices"
       ],
-    "challenges": [],
-    "images": [
+    "challenges": [
       {
-        "src": "/img/project_screenshots/agarcade.png",
-        "alt": "homepage",
-        "caption": "homepage"
+        "challenge": "Finding a repeating background SVG that matched the retro neon vision without overcomplicating the design",
+        "solution": "Iterated through many pattern variations and weighed layering multiple SVGs for the desired effect, but applied the KISS principle and reverted to the original base SVG to avoid unnecessary complexity early in the project"
+      },
+      {
+        "challenge": "Merging a found CSS toggle switch with a separate neon effect to build an interactive retro switch",
+        "solution": "Learned how the cascade of element heights and widths affects CSS transforms, and adjusted the parent containers of certain layers so the combined switch rendered correctly"
+      },
+      {
+        "challenge": "Positioning the switch's neon glow and getting its pulsating animation to apply from the global index.css file",
+        "solution": "Extracted the animations into a dedicated file and imported them through main.jsx, making the pulsating glow reusable across any component"
+      },
+      {
+        "challenge": "A sharp drop in rendering and interaction performance after animating two separate elements",
+        "solution": "Traced the slowdown to the site re-rendering on every keyframe, then prioritized and kept a single animation to restore smooth performance"
       }
     ],
-    "thumbnail": "/img/project_screenshots/agarcade.png",
+    "images": [
+      {
+        "src": "/img/project_screenshots/agarcade-landing.png",
+        "alt": "homepage",
+        "caption": "homepage"
+      },
+      {
+        "src": "/img/project_screenshots/agarcade-library.png",
+        "alt": "gameLibrary",
+        "caption": "game library"
+      },
+      {
+        "src": "/img/project_screenshots/agarcade-about.png",
+        "alt": "aboutAG",
+        "caption": "about AfterGlow Arcade"
+      }
+    ],
+    "thumbnail": "/img/project_screenshots/agarcade-landing.png",
     "githubLinks": {
       "repository": null,
-      "frontend": null,
+      "frontend": "https://github.com/elysableu/after_glow",
       "backend": null
     },
     "liveUrl": null,
