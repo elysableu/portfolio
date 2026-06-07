@@ -15,14 +15,14 @@ const radialItemsWithPositons = computed(() => {
 
   const config = isMobile.value
     ? {
-      headshotRadius: 110,
+      headshotRadius: 80,
       orbitGap: 40,
       startAngle: 270,
       endAngle: 90,
       offsetX: 0,
       offsetY: 0
     } : {
-      headshotRadius: 110,
+      headshotRadius: 80,
       orbitGap: 50,
       startAngle: 60,
       endAngle: 205,
@@ -86,8 +86,8 @@ onMounted(async () => {
     position: absolute;
     top: 0;
     left: 0;
-    width: 21.875rem;
-    height: 21.875rem;
+    width: 16rem;
+    height: 16rem;
     background: var(--glass-dark-bg-medium);
     backdrop-filter: blur(var(--blur-lg));
     -webkit-backdrop-filter: blur(var(--blur-lg));
@@ -136,8 +136,8 @@ onMounted(async () => {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 18.75rem;
-    height: 18.75rem;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
     overflow: hidden;
     z-index: 2;
@@ -151,8 +151,8 @@ onMounted(async () => {
 
   .radial-items {
     position: absolute;
-    top: 11.875rem;
-    left: 11.875rem;
+    top: 8rem;
+    left: 8rem;
     width: 0;
     height: 0;
     z-index: 10;

@@ -111,8 +111,8 @@
   }
 
   .radial-icon-container {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;

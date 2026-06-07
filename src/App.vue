@@ -249,7 +249,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-3xl);
+    gap: var(--spacing-2xl);
   }
 
   .nav-container {
