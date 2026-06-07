@@ -58,11 +58,17 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
     background-image: url(/img/neon-background-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-attachment: fixed;
   }
 
   #app {
