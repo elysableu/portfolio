@@ -157,6 +157,7 @@ onUnmounted(() => {
 
   .ticker-label {
     width: 100%;
+    z-index: 10;
     font-family: 'Dosis', sans-serif;
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);

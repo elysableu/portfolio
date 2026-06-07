@@ -77,7 +77,9 @@ defineProps<Props>()
 }
 
 .project-item {
-  height: auto;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
 }
 
 .ticker-link-project {
