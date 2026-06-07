@@ -77,7 +77,7 @@ onMounted(async () => {
   .home-container {
     height: 100%;
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
 
@@ -86,7 +86,7 @@ onMounted(async () => {
   .home {
     flex: 1;
     min-height: 0;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -94,12 +94,12 @@ onMounted(async () => {
 
   .greeting-header {
     position: absolute;
-    top: calc(-1 * var(--greeting-offset));
+    top: calc(-1 * (var(--greeting-offset) - 1rem));
     right: 0;
     left: 0;
     font-size: x-large;
     text-align: right;
-    padding: 0.5rem 4rem calc(var(--spacing-lg) + 2.5rem) var(--spacing-sm);
+    padding: 0.5rem 3rem calc(var(--spacing-lg) + 2.5rem) var(--spacing-sm);
     z-index: 20;
     flex-shrink: 0;
   }
