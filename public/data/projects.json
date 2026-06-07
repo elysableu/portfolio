@@ -11,7 +11,7 @@
       "frontend": ["React", "Node.js", "Cypress"],
       "backend": ["Ruby on Rails", "RSpec"],
       "database": ["PostgreSQL"],
-      "other":["5 Calls API", "Federal Register API", "Render"]
+      "other": ["5 Calls API", "Federal Register API", "Render"]
     },
     "features": [
       {
@@ -27,6 +27,7 @@
         "description": "Connect government action to your community with representative profiles and accessible policy explanations"
       }
     ],
+    "roadmap": [],
     "challenges": [
       {
         "challenge": "Integrating multiple government APIs with inconsistent data formats",
@@ -49,9 +50,13 @@
       }
     ],
     "thumbnail": "/img/project_screenshots/repradar.png",
-    "githubUrl": "https://github.com/RedRadar-WT-Team",
+    "githubLinks": {
+      "repository": "https://github.com/RedRadar-WT-Team",
+      "frontend": null,
+      "backend": null
+    },
     "liveUrl": "https://frontend-9cax.onrender.com",
-    "demoVideo": "",
+    "demoVideo": null,
     "status": "completed",
     "startDate": "2025-04",
     "endDate": "2025-04",
@@ -60,12 +65,8 @@
     "priority": 3,
     "role": "Full-Stack Developer",
     "teamSize": 6,
-    "tags": ["civic-tech", "full-stack", "API-integration", "data-visualization"],
-    "metrics": {
-      "users": "",
-      "uptime": "",
-      "apiCalls": ""
-    }
+    "tags": ["civic-tech", "full-stack", "api-integration", "data-visualization"],
+    "metrics": { "users": null, "uptime": null, "apiCalls": null }
   },
   {
     "id": "tracker",
@@ -74,12 +75,12 @@
     "shortDescription": "A comprehensive job hunt tracking application for managing contacts, companies, and applications.",
     "fullDescription": "A full-stack job search management application designed to help users stay organized throughout their job hunt. Features include contact management, company tracking, application progress monitoring, and relationship mapping between contacts, companies, and applications. The app helps users maintain meaningful connections while keeping track of their entire job search pipeline.",
     "motivation": "After experiencing the chaos of managing hundreds of applications, contacts, and company research during my own job search, I wanted to create a centralized tool that connects all the pieces of the job hunt process.",
-    "projectPlan": "",
+    "projectPlan": null,
     "technologies": {
       "frontend": ["React", "TypeScript", "Tailwind CSS", "Cypress"],
-      "backend": [ "Ruby on Rails", "PostgreSQL", "RSpec", "CircleCI"],
-      "database": [],
-      "other": []
+      "backend": ["Ruby on Rails", "RSpec"],
+      "database": ["PostgreSQL"],
+      "other": ["CircleCI"]
     },
     "features": [
       {
@@ -103,6 +104,7 @@
         "description": "Get a bird's-eye view of your entire job search with interactive visualizations showing where each opportunity stands"
       }
     ],
+    "roadmap": [],
     "challenges": [
       {
         "challenge": "Selecting and integrating a rich text editor that balanced functionality with simplicity",
@@ -123,11 +125,14 @@
         "src": "/img/project_screenshots/tracker-dashboard.png",
         "alt": "dashboard",
         "caption": "Dashboard"
-      } 
+      }
     ],
     "thumbnail": "/img/project_screenshots/tracker.png",
-    "githubUrl-fe": "https://github.com/turingschool/tracker-crm-fe",
-    "githubUrl-be": "https://github.com/turingschool/tracker-crm",
+    "githubLinks": {
+      "repository": null,
+      "frontend": "https://github.com/turingschool/tracker-crm-fe",
+      "backend": "https://github.com/turingschool/tracker-crm"
+    },
     "liveUrl": "https://tracker-crm-fe-38f7cf1aaca5.herokuapp.com/",
     "demoVideo": null,
     "status": "in-progress",
@@ -139,7 +144,7 @@
     "role": "Frontend Developer",
     "teamSize": 39,
     "tags": ["productivity", "full-stack", "data-visualization", "job-search"],
-    "metrics": null
+    "metrics": { "users": null, "uptime": null, "apiCalls": null }
   },
   {
     "id": "portfolio",
@@ -148,9 +153,9 @@
     "shortDescription": "This portfolio website built with Vue and modern web technologies.",
     "fullDescription": "A modern, responsive portfolio website showcasing my projects, skills, and experience. Built with Vue 3.5 and featuring server-side rendering, custom reusable components, a clean design system using CSS variables, and dynamic content loading. Demonstrates proficiency in modern web development practices and attention to detail.",
     "motivation": "To create a professional online presence that showcases both my technical skills and design sensibility.",
-    "projectPlan": "",
+    "projectPlan": null,
     "technologies": {
-      "frontend": ["Vue.js","TypeScript", "CSS"],
+      "frontend": ["Vue.js", "TypeScript", "CSS"],
       "backend": [],
       "database": [],
       "other": []
@@ -177,10 +182,11 @@
         "description": "Centralized CSS variables create a cohesive visual language with maintainable theming"
       }
     ],
+    "roadmap": [],
     "challenges": [
       {
         "challenge": "Making components SSR-compatible",
-        "solution": "Used platform detection and conditional rendering" 
+        "solution": "Used platform detection and conditional rendering"
       },
       {
         "challenge": "Implementing complex CSS animations for radial menu navigation",
@@ -203,19 +209,23 @@
       }
     ],
     "thumbnail": "/img/project_screenshots/portfolio.png",
-    "githubUrl": "https://github.com/elysableu/portfolio",
+    "githubLinks": {
+      "repository": "https://github.com/elysableu/portfolio",
+      "frontend": null,
+      "backend": null
+    },
     "liveUrl": "https://elysableu.github.io/portfolio/",
     "demoVideo": null,
     "status": "in-progress",
     "startDate": "2024-12",
     "endDate": "2025-01",
-    "current": true,
+    "current": false,
     "featured": false,
     "priority": 1,
     "role": "Designer & Developer",
     "teamSize": 1,
-    "tags": ["frontend", "Vue", "web-design", "SSR"],
-    "metrics": null
+    "tags": ["frontend", "vue", "web-design", "ssr"],
+    "metrics": { "users": null, "uptime": null, "apiCalls": null }
   },
   {
     "id": "sguild",
@@ -224,7 +234,7 @@
     "shortDescription": "A comprehensive D&D toolkit application starting with intelligent character sheet creation and management.",
     "fullDescription": "SilverGuild is a full-stack D&D companion application designed to streamline tabletop gaming for players and dungeon masters alike. Currently featuring an intuitive character sheet creator and manager, the app aims to become a complete toolkit with dice rolling, interactive dungeon maps, GM mode for campaign management, beginner-friendly tutorials, and toggleable tooltips for rules clarification. Built with a focus on reducing the barrier to entry for new players while providing powerful tools that experienced gamers need to manage complex campaigns.",
     "motivation": "To create an accessible, all-in-one platform that makes D&D more approachable for newcomers while providing the depth and tools that experienced players need to manage complex campaigns.",
-    "projectPlan": "",
+    "projectPlan": null,
     "technologies": {
       "frontend": ["React", "TypeScript", "Next.js"],
       "backend": ["Ruby on Rails", "RSpec"],
@@ -261,6 +271,7 @@
         "description": "Toggleable rule clarifications and mechanic explanations throughout the interface"
       }
     ],
+    "roadmap": [],
     "challenges": [
       {
         "challenge": "Determining how to break down character creation into a logical, user-friendly workflow",
@@ -279,18 +290,114 @@
       }
     ],
     "thumbnail": "/img/project_screenshots/silverguild.png",
-    "githubUrl": "https://github.com/SilverGuild",
-    "liveUrl": "",
+    "githubLinks": {
+      "repository": "https://github.com/SilverGuild",
+      "frontend": null,
+      "backend": null
+    },
+    "liveUrl": null,
     "demoVideo": null,
     "status": "in-progress",
     "startDate": "2024-04",
-    "endDate": "",
+    "endDate": null,
     "current": true,
     "featured": false,
     "priority": 2,
     "role": "Founder & Full-Stack Developer",
     "teamSize": 1,
-    "tags": ["full-stack", "gaming", "passion-project", "D&D", "toolkit"],
-    "metrics": null
+    "tags": ["full-stack", "gaming", "passion-project", "dungeons-and-dragons", "toolkit"],
+    "metrics": { "users": null, "uptime": null, "apiCalls": null }
+  },
+  {
+    "id": "agarcade",
+    "title": "AfterGlow Arcade",
+    "tagline": "Where the arcade never closes.",
+    "shortDescription": "An online 90s neon-themed arcade with a growing library of browser games and a roadmap for community requests and contributions.",
+    "fullDescription": "AfterGlow Arcade is an online arcade wrapped in a 90s neon aesthetic, where the games never stop. It currently launches as a frontend landing page backed by a small library of game logic that's ready to be given playable interfaces. The roadmap includes building UIs for the already-coded games, fleshing out about pages, and adding a space for visitors to request new games or contribute to the project. A planned backend will manage request storage and contributor validation, with email-driven microservices that notify the admin of new requests and allow replies straight through the requester's email—no separate admin portal required.",
+    "motivation": "Born from a desire to keep my foundational coding skills sharp and preserve my enthusiasm for software development, AfterGlow Arcade is a personal playground for practicing fundamentals while building something genuinely fun to use.",
+    "projectPlan": null,
+    "technologies": {
+      "frontend": ["React", "CSS Modules", "JavaScript", "HTML"],
+      "backend": [],
+      "database": [],
+      "other": []
+    },
+    "features": [
+      {
+        "title": "Retro Neon Landing",
+        "description": "A 90s-inspired neon arcade landing page that sets the tone the moment you arrive"
+      },
+      {
+        "title": "Game Library",
+        "description": "A small but growing collection of games, with core logic already coded and ready for playable UIs"
+      },
+      {
+        "title": "Game Requests",
+        "description": "A dedicated space for visitors to request a specific game they'd like to see added"
+      },
+      {
+        "title": "Community Contributions",
+        "description": "An open invitation for users to contribute to the project and help grow the arcade"
+      }
+    ],
+    "roadmap": [
+        "Playable UIs for games with completed logic",
+        "Backend for request storage and contributor validation",
+        "Email microservices for admin notifications and replies",
+        "Dynamic contributor-validation microservices"
+      ],
+    "challenges": [
+      {
+        "challenge": "Finding a repeating background SVG that matched the retro neon vision without overcomplicating the design",
+        "solution": "Iterated through many pattern variations and weighed layering multiple SVGs for the desired effect, but applied the KISS principle and reverted to the original base SVG to avoid unnecessary complexity early in the project"
+      },
+      {
+        "challenge": "Merging a found CSS toggle switch with a separate neon effect to build an interactive retro switch",
+        "solution": "Learned how the cascade of element heights and widths affects CSS transforms, and adjusted the parent containers of certain layers so the combined switch rendered correctly"
+      },
+      {
+        "challenge": "Positioning the switch's neon glow and getting its pulsating animation to apply from the global index.css file",
+        "solution": "Extracted the animations into a dedicated file and imported them through main.jsx, making the pulsating glow reusable across any component"
+      },
+      {
+        "challenge": "A sharp drop in rendering and interaction performance after animating two separate elements",
+        "solution": "Traced the slowdown to the site re-rendering on every keyframe, then prioritized and kept a single animation to restore smooth performance"
+      }
+    ],
+    "images": [
+      {
+        "src": "/img/project_screenshots/agarcade-landing.png",
+        "alt": "homepage",
+        "caption": "homepage"
+      },
+      {
+        "src": "/img/project_screenshots/agarcade-library.png",
+        "alt": "gameLibrary",
+        "caption": "game library"
+      },
+      {
+        "src": "/img/project_screenshots/agarcade-about.png",
+        "alt": "aboutAG",
+        "caption": "about AfterGlow Arcade"
+      }
+    ],
+    "thumbnail": "/img/project_screenshots/agarcade-landing.png",
+    "githubLinks": {
+      "repository": null,
+      "frontend": "https://github.com/elysableu/after_glow",
+      "backend": null
+    },
+    "liveUrl": null,
+    "demoVideo": null,
+    "status": "in-progress",
+    "startDate": "2026-05",
+    "endDate": null,
+    "current": true,
+    "featured": false,
+    "priority": 1,
+    "role": "Solo Developer",
+    "teamSize": 1,
+    "tags": ["frontend", "games", "retro", "passion-project"],
+    "metrics": { "users": null, "uptime": null, "apiCalls": null }
   }
 ]

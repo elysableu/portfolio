@@ -193,7 +193,7 @@ export interface Project {
   challenges: Challenge[]
   images: TickerImageType[]       // Gallery images for the project ticker
   thumbnail: string
-  githubUrl?: string
+  githubLinks?: GithubLinks
   liveUrl?: string
   demoVideo?: string
   status: ProjectStatus
@@ -211,6 +211,12 @@ export interface Project {
 export interface Challenge {
   challenge: string
   solution: string
+}
+
+export interface GithubLinks {
+  repository?: string
+  frontend?: string
+  backend?: string
 }
 
 /** Flexible project metrics */
@@ -237,7 +243,7 @@ export interface ProjectHeader {
   current: boolean,
   tagline: string,
   liveUrl?: string,
-  githubUrl?: string,
+  githubUrl?: GithubLinks,
   tags: string[]
   images: TickerImageType[]
 }
