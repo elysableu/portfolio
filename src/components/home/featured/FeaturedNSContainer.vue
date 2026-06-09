@@ -1,7 +1,8 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
   import type { NSFeatured } from '@/types/data.models'
   import FeaturedCard from './FeaturedCard.vue'
+  import FeaturedActiveCard from './FeaturedActiveCard.vue'
   import { useResponsive } from '@/composables/useResponsive'
 
   interface Props {
@@ -11,36 +12,29 @@
   const props = defineProps<Props>()
   const { isMobile } = useResponsive()
 
-  const newCards = ref([...props.nsContent.new])
-  const soonCards = ref([...props.nsContent.soon])
+  const newContent = props.nsContent.new
+  const soonContent = props.nsContent.soon
 
-  const activeNewIndex = ref(0)
-  const activeSoonIndex = ref(0)
+  const activeNewId = ref<string | null>(newContent[0]?.id ?? null)
+  const activeSoonId = ref<string | null>(soonContent[0]?.id ?? null)
 
-  const setActiveNew = (index: number) => {
-    if (activeNewIndex.value === index) return
+  const newActiveIndex = computed(() => newContent.findIndex(c => c.id === activeNewId.value))
+  const soonActiveIndex = computed(() => soonContent.findIndex(c => c.id === activeSoonId.value))
 
-    const clickedCard = newCards.value[index]
-    if(!clickedCard) return
+  const activeNew = computed(() => newContent.find( c => c.id === activeNewId.value))
+  const activeSoon = computed(() => soonContent.find( c => c.id === activeSoonId.value))
 
-    const beforeClicked = newCards.value.slice(0, index)
-    const afterClicked = newCards.value.slice(index + 1)
+  const peekNew = computed(() =>  newContent.filter( c => c.id !== activeNewId.value))
+  const peekSoon = computed(() =>  soonContent.filter( c => c.id !== activeSoonId.value))
 
-    newCards.value = [clickedCard, ...beforeClicked, ...afterClicked]
-    activeNewIndex.value = 0
+  const setActiveNew = (id: string) => {
+    if (activeNewId.value === id) return
+    activeNewId.value = id
   }
 
-  const setActiveSoon = (index: number) => {
-    if (activeSoonIndex.value === index) return
-
-    const clickedCard = soonCards.value[index]
-    if(!clickedCard) return
-
-    const beforeClicked = soonCards.value.slice(0, index)
-    const afterClicked = soonCards.value.slice(index + 1)
-
-    soonCards.value = [clickedCard, ...beforeClicked, ...afterClicked]
-    activeSoonIndex.value = 0
+  const setActiveSoon = (id: string) => {
+    if (activeSoonId.value === id) return
+    activeSoonId.value = id
   }
 </script>
 
@@ -50,18 +44,23 @@
       <div class="heading-count">
         <h3>What's New</h3>
         <span class="stack-indicator">
-          {{ activeNewIndex + 1 }} / {{ nsContent.new.length }}
+          {{ newActiveIndex + 1 }} / {{ newContent.length }}
         </span>
       </div>
-      <div class="content card-stack">
-         <FeaturedCard
-          v-for="(item, index) in newCards"
-          :key="item.id"
-          :cardContent="item"
-          :isActive="activeNewIndex === index"
-          :stackPosition="index"
-          :totalCards="nsContent.new.length"
-          @click="setActiveNew(index)"
+      <div class="stack-layers" >
+        <TransitionGroup name="stack" tag="div" class="content card-stack">
+           <FeaturedCard
+            v-for="item in peekNew"
+            :key="item.id"
+            :cardContent="item"
+            @click="setActiveNew(item.id)"
+          />
+        </TransitionGroup>
+        <FeaturedActiveCard
+          v-if="activeNew"
+          :key="activeNew.id"
+          :cardContent="activeNew"
+          class="pinned-active"
         />
       </div>
     </div>
@@ -69,19 +68,24 @@
     <div class="content-container right">
       <div class="heading-count">
         <h3>Coming Soon</h3>
-          <span class="stack-indicator">
-            {{ activeSoonIndex + 1 }} / {{ nsContent.soon.length }}
-          </span>
+        <span class="stack-indicator">
+          {{ soonActiveIndex + 1 }} / {{ soonContent.length }}
+        </span>
       </div>
-      <div class="content card-stack">
-        <FeaturedCard
-          v-for="(item, index) in soonCards"
+      <div class="stack-layers">
+        <TransitionGroup name="stack" tag="div" class="content card-stack">
+          <FeaturedCard
+          v-for="item in peekSoon"
           :key="item.id"
           :cardContent="item"
-          :isActive="activeSoonIndex === index"
-          :stackPosition="index"
-          :totalCards="nsContent.soon.length"
-          @click="setActiveSoon(index)"
+          @click="setActiveSoon(item.id)"
+          />
+        </TransitionGroup>
+        <FeaturedActiveCard
+        v-if="activeSoon"
+        :key="activeSoon.id"
+        :cardContent="activeSoon"
+        class="pinned-active"
         />
       </div>
     </div>
@@ -128,16 +132,37 @@
     flex-shrink: 0;
   }
 
-  .card-stack {
+  .stack-layers {
     position: relative;
-    min-height: 21.875rem;
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: var(--radius-2xl);
     min-height: 9rem;
+    flex: 1;
+    border-radius: var(--radius-2xl);
+  }
+
+  .card-stack {
+    position: absolute;
+    inset: 0;
+    overflow-x: hidden;
+    overflow-y:  auto;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 8rem;
+
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    clip-path: inset(0 round var(--radius-2xl));
+  }
+
+  .pinned-active {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .stack-move {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .left {
@@ -169,8 +194,12 @@
       padding-top: var(--spacing-md);
     }
 
-    .card-stack {
+    .stack-layers {
       min-height: 22rem;
+    }
+
+    .card-stack {
+      
     }
 
     .left {
