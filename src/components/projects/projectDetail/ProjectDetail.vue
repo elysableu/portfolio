@@ -15,7 +15,7 @@
     current: props.project.current,
     tagline: props.project.tagline,
     liveUrl: props.project.liveUrl,
-    githubUrl: props.project.githubUrl,
+    githubLinks: props.project.githubLinks,
     tags: props.project.tags,
     images: props.project.images
   }
