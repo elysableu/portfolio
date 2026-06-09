@@ -108,6 +108,7 @@ onMounted(async () => {
     gap: var(--spacing-xl);
     padding-bottom: var(--page-padding-bottom);
     min-height: 0;
+    min-width: 0;
     flex: 1;
   }
 
@@ -117,6 +118,7 @@ onMounted(async () => {
     flex-direction: column;
     border-radius: var(--radius-3xl);
     gap: var(--spacing-2sm);
+    min-width: 0;
   }
 
   .intro-content {
@@ -132,6 +134,7 @@ onMounted(async () => {
     flex: 5;
     display: flex;
     min-height: 0;
+    min-width: 0;
     overflow: hidden;
   }
 

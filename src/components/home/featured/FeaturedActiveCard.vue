@@ -19,36 +19,7 @@
 <template>
   <div class="ns-active-container glass-card-inner">
 
-    <div class="ns-banner">
-        <span class="ns-icon-wrapper">
-          <img
-          v-if="cardContent.content.icon"
-          :alt="cardContent.title"
-          :src="cardContent.content.icon"
-          class="ns-icon"
-          />
-        </span>
-        <h4>{{ cardContent.title }}</h4>
-      </div>
-
-      <div class="ns-tagline">
-        {{ cardContent.content.tagline }}
-      </div>
-
-      <div
-        v-if="isNew(cardContent)"
-        class="ns-current ns-status"
-      >
-        {{ cardContent.dateCompleted }}
-      </div>
-
-      <div
-        v-else-if="isSoon(cardContent) && cardContent.content.status"
-        class="ns-current ns-date"
-      >
-        {{ cardContent.content.status }}
-    </div>
-  </div>
+   
 </template>
 
 <style scoped>

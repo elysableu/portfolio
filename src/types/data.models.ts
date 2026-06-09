@@ -328,7 +328,7 @@ export type TickerItemType = TickerProjectType | TickerImageType
 // UTILITY TYPES
 // ============================================================================
 
-export type ProjectStatus = 'completed' | 'in-progress' | 'planned'
+export type ProjectStatus = 'completed' | 'in-progress' | 'planned' | 'on-hold'
 
 export interface SearchResult {
   type: 'project' | 'skill' | 'experience'
