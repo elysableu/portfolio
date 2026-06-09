@@ -17,6 +17,10 @@ defineProps<Props>()
     font-family: 'Metamorphous';
   }
 
+  .greeting-message h1 {
+    margin-bottom: 0.5rem !important;
+  }
+
   /* Tablet landscape (768px - 960px) */
   @media screen and (max-width: 960px) {
      .greeting-message {

@@ -1,88 +1,62 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
   import type { NSFeatured } from '@/types/data.models'
   import FeaturedCard from './FeaturedCard.vue'
-  import { useResponsive } from '@/composables/useResponsive'
 
   interface Props {
     nsContent: NSFeatured
   }
 
   const props = defineProps<Props>()
-  const { isMobile } = useResponsive()
 
-  const newCards = ref([...props.nsContent.new])
-  const soonCards = ref([...props.nsContent.soon])
+  const newContent = props.nsContent.new
+  const soonContent = props.nsContent.soon
 
-  const activeNewIndex = ref(0)
-  const activeSoonIndex = ref(0)
-
-  const setActiveNew = (index: number) => {
-    if (activeNewIndex.value === index) return
-
-    const clickedCard = newCards.value[index]
-    if(!clickedCard) return
-
-    const beforeClicked = newCards.value.slice(0, index)
-    const afterClicked = newCards.value.slice(index + 1)
-
-    newCards.value = [clickedCard, ...beforeClicked, ...afterClicked]
-    activeNewIndex.value = 0
-  }
-
-  const setActiveSoon = (index: number) => {
-    if (activeSoonIndex.value === index) return
-
-    const clickedCard = soonCards.value[index]
-    if(!clickedCard) return
-
-    const beforeClicked = soonCards.value.slice(0, index)
-    const afterClicked = soonCards.value.slice(index + 1)
-
-    soonCards.value = [clickedCard, ...beforeClicked, ...afterClicked]
-    activeSoonIndex.value = 0
-  }
+  const repeat = 3
 </script>
 
 <template>
   <div class="ns-container">
-    <div class="content-container left">
-      <div class="heading-count">
+    <div class="content-container top">
+      <div class="heading">
         <h3>What's New</h3>
-        <span class="stack-indicator">
-          {{ activeNewIndex + 1 }} / {{ nsContent.new.length }}
-        </span>
       </div>
-      <div class="content card-stack">
-         <FeaturedCard
-          v-for="(item, index) in newCards"
-          :key="item.id"
-          :cardContent="item"
-          :isActive="activeNewIndex === index"
-          :stackPosition="index"
-          :totalCards="nsContent.new.length"
-          @click="setActiveNew(index)"
-        />
+      <div class="marquee-viewport">
+        <div class="marquee">
+          <div
+            v-for="n in repeat"
+            :key="n"
+            class="marquee__group"
+            :aria-hidden="n > 1 ? 'true' : undefined"
+          >
+            <FeaturedCard
+            v-for="item in newContent"
+            :key="item.id"
+            :cardContent="item"
+            />
+          </div>
+        </div>
       </div>
     </div>
-    <div v-if="isMobile" class="divider"></div>
-    <div class="content-container right">
-      <div class="heading-count">
+    <!-- <div v-if="smallScreen" class="divider"></div> -->
+    <div class="content-container bottom">
+      <div class="heading">
         <h3>Coming Soon</h3>
-          <span class="stack-indicator">
-            {{ activeSoonIndex + 1 }} / {{ nsContent.soon.length }}
-          </span>
       </div>
-      <div class="content card-stack">
-        <FeaturedCard
-          v-for="(item, index) in soonCards"
-          :key="item.id"
-          :cardContent="item"
-          :isActive="activeSoonIndex === index"
-          :stackPosition="index"
-          :totalCards="nsContent.soon.length"
-          @click="setActiveSoon(index)"
-        />
+      <div class="marquee-viewport">
+        <div class="marquee">
+          <div
+            v-for="n in repeat"
+            :key="n"
+            class="marquee__group marquee__group--reverse"
+            :aria-hidden="n > 1 ? 'true' : undefined"
+          >
+            <FeaturedCard
+            v-for="item in soonContent"
+            :key="item.id"
+            :cardContent="item"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -93,6 +67,7 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     padding: var(--spacing-md);
     border-radius: var(--spacing-2sm);
     overflow: hidden;
@@ -100,56 +75,89 @@
 
   .content-container {
     flex: 1;
+    min-height: 0;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     padding: var(--spacing-2sm);
     overflow: hidden;
   }
 
-  .heading-count {
-    display: flex;
-    padding-bottom: var(--spacing-md);
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .heading-count h3 {
-    font-size: var(--font-size-xl);
+  .heading h3 {
+    font-size: var(--font-size-lg);
     flex-shrink: 0;
     margin: 0;
+    margin-bottom: 0.5rem;
   }
 
-  .stack-indicator {
-    text-align: center;
-    font-family: 'Dosis';
-    font-size: var(--font-size-sm);
-    opacity: 0.7;
-    font-weight: bold;
-    flex-shrink: 0;
-  }
-
-  .card-stack {
+  .marquee-viewport {
     position: relative;
-    min-height: 21.875rem;
     flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
     border-radius: var(--radius-2xl);
-    min-height: 9rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);;
   }
 
-  .left {
-    padding-right: var(--spacing-md);
-    border-right: 2px solid var(--color-border);
-    border-radius: var(--radius-3xl) 0 0 var(--radius-3xl);
+  .marquee {
+    --gap: var(--spacing-lg);
+    --marquee-duration: 40s;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--gap);
+    height: 100%;
   }
 
-  .right {
-    padding-left: var(--spacing-md);
-    border-left: 2px solid var(--color-border);
-    border-radius: 0 var(--radius-3xl) var(--radius-3xl) 0;
+  .marquee__group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap);
+    flex-shrink: 0;
+    min-width: max-content;
+    animation: marquee-left var(--marquee-duration) linear infinite;
+  }
+
+  .marquee__group--reverse {
+    animation-direction: reverse;
+  }
+
+  .marquee-viewport:hover .marquee__group {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-viewport {
+      overflow-x: auto;
+      -webkit-mask-image: none;
+          mask-image: none;
+    }
+
+    .marquee__group {
+      animation: none;
+    }
+
+    .marquee__group:not(:first-child) {
+      display: none;
+    }
+  }
+
+
+  .top {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-border);
   }
 
   /* Half-width / Small desktop (960px - 1280px) */
@@ -169,8 +177,12 @@
       padding-top: var(--spacing-md);
     }
 
-    .card-stack {
+    .stack-layers {
       min-height: 22rem;
+    }
+
+    .card-stack {
+
     }
 
     .left {

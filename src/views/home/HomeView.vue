@@ -47,12 +47,12 @@ onMounted(async () => {
 
     <!-- Main layout: only renders once data has resolved -->
     <div v-else-if="homeData" class="home">
-      <!-- Greeting + headline: absolutely positioned to sit above the main content
-          area, overlapping the nav via negative top offset (--greeting-offset) -->
-      <div class="greeting-header">
-        <Greeting :greeting="homeData.home.greeting" />
-        <Headline :headline="homeData.home.headline" />
-      </div>
+    <!-- Greeting + headline: absolutely positioned to sit above the main content
+        area, overlapping the nav via negative top offset (--greeting-offset) -->
+    <div class="greeting-header">
+      <Greeting :greeting="homeData.home.greeting" />
+      <Headline :headline="homeData.home.headline" />
+    </div>
     <div class="home-content">
       <!-- Left Column: Featured Projects Ticker -->
       <div class="featured glass-card-dark">
@@ -76,26 +76,29 @@ onMounted(async () => {
 /* Base styles - Average full screen (1920px) */
   .home-container {
     height: 100%;
+    min-width: 0;
+    overflow: visible;
     display: flex;
     flex-direction: column;
+
   }
 
   .home {
     flex: 1;
+    min-height: 0;
+    overflow: visible;
     display: flex;
     flex-direction: column;
-    min-height: 0;
     position: relative;
   }
 
   .greeting-header {
     position: absolute;
-    top: calc(-1 * var(--greeting-offset));
+    top: calc(-1 * (var(--greeting-offset) - 2rem));
     right: 0;
     left: 0;
     font-size: x-large;
     text-align: right;
-    padding: 0.5rem 4rem calc(var(--spacing-lg) + 2.5rem) var(--spacing-sm);
     z-index: 20;
     flex-shrink: 0;
   }
@@ -105,6 +108,7 @@ onMounted(async () => {
     gap: var(--spacing-xl);
     padding-bottom: var(--page-padding-bottom);
     min-height: 0;
+    min-width: 0;
     flex: 1;
   }
 
@@ -114,6 +118,7 @@ onMounted(async () => {
     flex-direction: column;
     border-radius: var(--radius-3xl);
     gap: var(--spacing-2sm);
+    min-width: 0;
   }
 
   .intro-content {
@@ -121,14 +126,15 @@ onMounted(async () => {
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
-    height: fit-content;
-    overflow: auto;
+    min-height: 0;
+    overflow-y: auto;
   }
 
   .new-soon {
     flex: 5;
     display: flex;
     min-height: 0;
+    min-width: 0;
     overflow: hidden;
   }
 

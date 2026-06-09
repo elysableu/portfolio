@@ -173,7 +173,7 @@ body {
   --page-padding-bottom: 2.1875rem;
   --page-padding-horizontal: calc(var(--spacing-lg) + var(--spacing-2sm));
   --content-offset: calc(var(--navbar-height) + 2.5rem + var(--spacing-xl));
-  --greeting-offset: 12.5rem;
+  --greeting-offset: 10rem;
 
   /* ===== BLUR ===== */
   --blur-sm: 3px;

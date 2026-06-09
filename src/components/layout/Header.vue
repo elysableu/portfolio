@@ -46,7 +46,7 @@ import { RouterLink } from 'vue-router'
 .navBar a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl);
   font-weight: 500;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-md);
