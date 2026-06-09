@@ -243,7 +243,7 @@ export interface ProjectHeader {
   current: boolean,
   tagline: string,
   liveUrl?: string,
-  githubUrl?: GithubLinks,
+  githubLinks?: GithubLinks,
   tags: string[]
   images: TickerImageType[]
 }
@@ -300,6 +300,12 @@ export interface Technologies {
   backend?: string[],
   database?: string[],
   other?: string[]
+}
+
+export interface GithubLinks {
+  repository?: string,
+  frontend?: string,
+  backend?: string
 }
 
 // ============================================================================

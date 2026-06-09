@@ -38,7 +38,9 @@
       </div>
       <div class="project-links">
         <a v-if="projectHeader.liveUrl" :href="projectHeader.liveUrl">Live Site</a>
-        <a v-if="projectHeader.githubUrl" :href="projectHeader.githubUrl">Github Repo</a>
+        <a v-if="projectHeader.githubLinks?.repository" :href="projectHeader.githubLinks.repository">Github Repo</a>
+        <a v-if="projectHeader.githubLinks?.frontend" :href="projectHeader.githubLinks.frontend">Github FE Repo</a>
+        <a v-if="projectHeader.githubLinks?.backend" :href="projectHeader.githubLinks.backend">Github BE Repo</a>
       </div>
     </div>
     <div class="detail-ticker glass-card-inner">
