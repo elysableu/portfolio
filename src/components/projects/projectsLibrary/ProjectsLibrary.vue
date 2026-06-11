@@ -30,12 +30,15 @@
 <style scoped>
   .library-container {
     padding: var(--spacing-lg);
+    display: flex;
   }
-
+  
   .library {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-hlg);
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 </style>
 
