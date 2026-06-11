@@ -15,19 +15,19 @@ const radialItemsWithPositons = computed(() => {
 
   const config = isMobile.value
     ? {
-      headshotRadius: 80,
-      orbitGap: 40,
+      headshotRadius: 85,
+      orbitGap: 35,
       startAngle: 270,
       endAngle: 90,
-      offsetX: 0,
+      offsetX: 4,
       offsetY: 0
     } : {
       headshotRadius: 80,
       orbitGap: 50,
-      startAngle: 60,
+      startAngle: 65,
       endAngle: 205,
-      offsetX: 7,
-      offsetY: 7
+      offsetX: 12,
+      offsetY: 12
   }
 
   return calculateRadialPostions(radialItemData.value, config)
@@ -211,7 +211,7 @@ onMounted(async () => {
       position: absolute;
       top: calc(10.9375rem * 0.9);
       left: 50%;
-      transform: translate(-50%, -50%) scale(1.08);
+      transform: translate(-50%, -50%) scale(1.5);
       width: 0;
       height: 0;
     }
