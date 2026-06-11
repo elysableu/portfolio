@@ -247,6 +247,7 @@
 /* Base styles - Average full screen (1920px) */
   #app {
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2xl);

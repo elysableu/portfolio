@@ -102,7 +102,7 @@
     display: flex;
     align-items: stretch;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);;
+           mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
   }
 
   .marquee {
@@ -154,7 +154,6 @@
     }
   }
 
-
   .top {
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--color-border);
@@ -175,22 +174,6 @@
     .ns-container {
       flex-direction: column;
       padding-top: var(--spacing-md);
-    }
-
-    .stack-layers {
-      min-height: 22rem;
-    }
-
-    .card-stack {
-
-    }
-
-    .left {
-      border-right: none;
-    }
-
-    .right {
-      border-left: none;
     }
   }
 

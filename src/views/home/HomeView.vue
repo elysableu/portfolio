@@ -80,7 +80,6 @@ onMounted(async () => {
     overflow: visible;
     display: flex;
     flex-direction: column;
-
   }
 
   .home {
@@ -136,6 +135,7 @@ onMounted(async () => {
     min-height: 0;
     min-width: 0;
     overflow: hidden;
+    box-shadow: none;
   }
 
   .featured {

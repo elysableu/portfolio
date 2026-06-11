@@ -46,7 +46,10 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
       </div>
     </div>
     <div class="ns-tagline">
-      <p>{{ cardContent.content.tagline }}</p>
+      <div class="ns-tagline__track">
+        <p>{{  cardContent.content.tagline }}</p>
+        <p aria-hidden="true">{{ cardContent.content.tagline }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -62,7 +65,6 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     flex-direction: column;
     border-radius: var(--radius-2xl);
     padding: var(--spacing-md);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--color-text);
     overflow: hidden;
   }
@@ -72,9 +74,6 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     background: var(--glass-bg-strong) !important;
     backdrop-filter: blur(var(--blur-xl)) !important;
     -webkit-backdrop-filter: blur(var(--blur-xl)) !important;
-    box-shadow:
-      0 12px 40px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-2xl);
   }
 
@@ -125,12 +124,6 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     color: var(--color-text);
   }
 
-
-  .ns-icon-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
   .ns-tagline {
     flex: 0 0 auto;
     overflow: hidden;
@@ -138,36 +131,35 @@ import type { NewFeature, SoonFeature } from '@/types/data.models';
     padding: 0 var(--spacing-sm);
     color: rgba(255, 255, 255, 0.85);
 
-    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
-            mask-image: linear-gradient(to bottom, #000 70%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
   }
 
-  .ns-tagline p {
-    --tagline-visible: calc(clamp(14rem, 22vw, 18rem) - 2 * var(--spacing-2sm) - 2 * var(--spacing-sm));
+  .ns-tagline__track {
+    --gap: 2rem;
+    display: flex;
+    gap: var(--gap);
+    width: max-content;
+    transform: translateX(0);
+  }
 
+  .ns-tagline__track p {
     margin: 0;
     white-space: nowrap;
-    display: inline-block;
-    transform: translateX(0);
-    transition: transform 0.3s ease;
+    flex-shrink: 0;
   }
 
-  .ns-card-container:hover .ns-tagline {
-    -webkit-mask-image: none;
-            mask-image: none;
+  .ns-card-container:hover .ns-tagline__track {
+    animation: tagline-cycle 8s linear infinite;
   }
 
-  .ns-card-container:hover .ns-tagline p {
-    animation: tagline-scroll 5.5s ease-in-out infinite alternate;
-  }
-
-  @keyframes tagline-scroll {
+  @keyframes tagline-cycle {
     from { transform: translateX(0); }
-    to { transform: translateX(min(0px, calc(var(--tagline-visible) - 100%))); }
+    to { transform: translateX(calc(-50% - (var(--gap) / 2))); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .ns-card-container:hover .ns-tagline p {
+    .ns-card-container:hover .ns-tagline__track {
       animation: none;
     }
   }
