@@ -37,6 +37,7 @@
         </ul>
       </div>
       <div class="project-links">
+      {{console.log(projectHeader.githubLinks)}}
         <a v-if="projectHeader.liveUrl" :href="projectHeader.liveUrl">Live Site</a>
         <a v-if="projectHeader.githubLinks?.repository" :href="projectHeader.githubLinks.repository">Github Repo</a>
         <a v-if="projectHeader.githubLinks?.frontend" :href="projectHeader.githubLinks.frontend">Github FE Repo</a>
@@ -169,6 +170,7 @@
     color: var(--color-text-inverse);
     font-size: var(--font-size-base);
     font-weight: bold;
+    text-align: center;
     padding: var(--spacing-2sm) var(--spacing-md);
     border-radius: var(--radius-hxl);
   }
