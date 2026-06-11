@@ -204,8 +204,8 @@ onMounted(async () => {
 
     .featured {
       flex: none;
-      height: 29rem;
-      min-height: 24rem;
+      height: 22rem;
+      min-height: 18rem;
     }
 
     .intro-ns-container {
