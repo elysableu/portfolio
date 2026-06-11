@@ -31,8 +31,6 @@ const homeData = ref<{
   nsContent: NSFeatured
 } | null>(null)
 
-const {isMobile} = useResponsive()
-
 // Fetch all home page data on mount; homeData => render gate
 onMounted(async () => {
   homeData.value = await fetchData(()=> getHomePageData())
@@ -47,27 +45,27 @@ onMounted(async () => {
 
     <!-- Main layout: only renders once data has resolved -->
     <div v-else-if="homeData" class="home">
-    <!-- Greeting + headline: absolutely positioned to sit above the main content
-        area, overlapping the nav via negative top offset (--greeting-offset) -->
-    <div class="greeting-header">
-      <Greeting :greeting="homeData.home.greeting" />
-      <Headline :headline="homeData.home.headline" />
-    </div>
-    <div class="home-content">
-      <!-- Left Column: Featured Projects Ticker -->
-      <div class="featured glass-card-dark">
-        <FeaturedProjects :featured="homeData.featuredProjects" />
+      <!-- Greeting + headline: absolutely positioned to sit above the main content
+          area, overlapping the nav via negative top offset (--greeting-offset) -->
+      <div class="greeting-header">
+        <Greeting :greeting="homeData.home.greeting" />
+        <Headline :headline="homeData.home.headline" />
       </div>
-      <!-- Right Column: introduction text (top) + new & soon card stacks (bottom) -->
-      <div class="intro-ns-container">
-        <div class="intro-content glass-card-dark">
-          <Introduction :introduction="homeData.home.introduction" />
+      <div class="home-content">
+        <!-- Left Column: Featured Projects Ticker -->
+        <div class="featured glass-card-dark">
+          <FeaturedProjects :featured="homeData.featuredProjects" />
         </div>
-        <div class="new-soon glass-card-dark">
-          <FeaturedNSContainer :nsContent="homeData.nsContent"/>
+        <!-- Right Column: introduction text (top) + new & soon marquees (bottom) -->
+        <div class="intro-ns-container">
+          <div class="intro-content glass-card-dark">
+            <Introduction :introduction="homeData.home.introduction" />
+          </div>
+          <div class="new-soon glass-card-dark">
+            <FeaturedNSContainer :nsContent="homeData.nsContent"/>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </template>
@@ -80,7 +78,6 @@ onMounted(async () => {
     overflow: visible;
     display: flex;
     flex-direction: column;
-
   }
 
   .home {
@@ -136,6 +133,7 @@ onMounted(async () => {
     min-height: 0;
     min-width: 0;
     overflow: hidden;
+    box-shadow: none;
   }
 
   .featured {
@@ -162,20 +160,12 @@ onMounted(async () => {
     .intro-content {
       height: fit-content;
     }
-
-    .new-soon {
-
-    }
-
-    .featured {
-
-    }
   }
 
   /* Tablet landscape (768px - 960px) */
   @media screen and (max-width: 960px) {
     .greeting-header {
-      transform: translate(13vw, 5vh) scale(0.7);
+      transform: translateX(13vw) scale(0.7);
       padding: 0;
       padding-top: var(--spacing-md);
     }
@@ -183,53 +173,54 @@ onMounted(async () => {
     .home-content {
       gap: var(--spacing-md);
     }
-
-    .intro-ns-container {
-
-    }
-
-    .intro-content {
-
-    }
-
-    .new-soon {
-
-    }
-
-    .featured {
-
-    }
   }
 
   /* Tablet portrait (600px - 768px) */
   @media screen and (max-width: 768px) {
     .home-container {
+      height: auto;
+      min-height: 100%;
       padding-top: calc(var(--spacing-5xl) + var(--spacing-md));
     }
 
+    .home {
+      min-height: 0;
+      gap: var(--spacing-lg)
+    }
+
     .greeting-header {
-      transform: translateY(5vh) scale(0.8);
+      transform: translateY(4vh) scale(0.8);
       text-align: center;
     }
-
+    
     .home-content {
-      gap: var(--spacing-2xl);
-    }
-
-    .intro-ns-container {
-      gap: var(--spacing-2xl);
-    }
-
-    .intro-content {
-
-    }
-
-    .new-soon {
-
+      flex-direction: column-reverse;
+      flex: none;
+      height: auto;
+      min-height: 0;
+      gap: var(--spacing-lg);
+      margin-top: 3rem;
     }
 
     .featured {
+      flex: none;
+      height: 29rem;
+      min-height: 24rem;
+    }
 
+    .intro-ns-container {
+      gap: var(--spacing-lg);
+    }
+
+    .new-soon {
+      flex: none;
+      height: 28rem;
+    }
+
+    .intro-content {
+      flex: none;
+      height: auto;
+      overflow-y: visible;
     }
   }
 
@@ -250,6 +241,10 @@ onMounted(async () => {
       padding-top: calc(var(--spacing-5xl));
     }
 
+    .greeting-header {
+
+    }
+
     .intro-ns-container {
       padding-top: 0;
     }
@@ -260,6 +255,12 @@ onMounted(async () => {
 
     .intro-ns-container {
       gap: var(--spacing-xl);
+    }
+
+    .featured {
+      flex: none;
+      height: 15rem;
+      min-height: 10rem;
     }
   }
 </style>
