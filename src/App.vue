@@ -166,6 +166,12 @@
 
   /* Tablet Landscape (960px and below) */
   @media screen and (max-width: 960px) {
+    body, html {
+      overflow-y: auto;
+      height: auto;
+      min-height: 100dvh;
+    }
+
     body {
       background-size: cover;
       background-position: center;
@@ -298,6 +304,12 @@
 
 /* Tablet portrait (600px - 768px) */
 @media screen and (max-width: 768px) {
+  #app {
+      overflow-y: auto;
+      height: auto;
+      min-height: 100dvh;
+  } 
+
   .nav-container {
     position: relative;
     top: 0;
@@ -325,11 +337,15 @@
   }
 
   .main-content {
+    flex: none;
+    min-height: 0;
+    overflow: visible;
     padding-top: var(--spacing-xs);
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
-    overflow: visible;
-    scroll-behavior: auto;
+
+    -webkit-mask-image: none;
+            mask-image: none;
   }
 }
 

@@ -31,8 +31,9 @@ defineProps<Props>()
   /* Tablet portrait (600px - 768px) */
   @media screen and (max-width: 768px) {
     .greeting-message {
-      transform: scale(1.4);
+      transform: scale(1.6);
       text-align: center;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -43,6 +44,8 @@ defineProps<Props>()
 
   /* Standard phones (up to 480px) */
   @media screen and (max-width: 480px) {
-    /* Mobile phone styles */
+    .greeting-message {
+      margin-bottom: 1.5rem;
+    }
   }
 </style>
