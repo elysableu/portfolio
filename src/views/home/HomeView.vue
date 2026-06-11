@@ -146,7 +146,7 @@ onMounted(async () => {
   /* Half-width / Small desktop (960px - 1280px) */
   @media screen and (max-width: 1280px) {
     .greeting-header {
-      transform: translate(7vw, 4vh) scale(0.95);
+      transform: translate(2.5vw, 0.5vh) scale(0.95);
     }
 
     .home-content {
