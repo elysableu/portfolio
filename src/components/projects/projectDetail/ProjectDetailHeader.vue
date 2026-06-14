@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { toRefs } from 'vue'
   import { RouterLink } from 'vue-router'
 
   import type { ProjectHeader } from '@/types/data.models'
@@ -208,12 +207,17 @@
       border-radius: 0;
     }
 
+    .project-links {
+      gap: 2.5rem;
+    }
+
+    .project-links a {
+      font-size: var(--font-size-sm);
+    }
   }
 
   /* ===== Phones ↓ ===== */
   @media (max-width: 480px) {
-
-
     .title-current {
       position: relative;
     }
@@ -229,8 +233,15 @@
       right: -1.5rem;
     }
 
-    .detail-ticker {
+    .project-links {
+      gap: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .project-links a {
+      font-size: var(--font-size-sm);
     }
   }
 </style>
