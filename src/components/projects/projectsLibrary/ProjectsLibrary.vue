@@ -37,8 +37,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-hlg);
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-around;
   }
 </style>
 

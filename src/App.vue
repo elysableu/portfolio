@@ -334,6 +334,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
   }
 
   .main-content {
@@ -351,9 +352,7 @@
 
 /* Large phones (480px - 600px) */
 @media screen and (max-width: 600px) {
-  .nav-container {
 
-  }
 }
 
 /* Standard phones (up to 480px) */
