@@ -37,7 +37,6 @@
         </ul>
       </div>
       <div class="project-links">
-      {{console.log(projectHeader.githubLinks)}}
         <a v-if="projectHeader.liveUrl" :href="projectHeader.liveUrl">Live Site</a>
         <a v-if="projectHeader.githubLinks?.repository" :href="projectHeader.githubLinks.repository">Github Repo</a>
         <a v-if="projectHeader.githubLinks?.frontend" :href="projectHeader.githubLinks.frontend">Github FE Repo</a>
@@ -51,6 +50,7 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .project-header-container {
     display: flex;
     width: 100%;
@@ -179,5 +179,58 @@
     background-color: var(--color-accent-orange-dark);
     color: var(--color-text);
     transform: scale(1.1);
+  }
+
+  /* ===== Large desktop ↓ ===== */
+  @media (max-width: 1200px) {
+
+  }
+
+  /* ===== Tablet landscape ↓ ===== */
+  @media (max-width: 1024px) {
+    .title-current h2 {
+      font-size: var(--font-size-2xl);
+    }
+  }
+
+  /* ===== Tablet portrait / mobile switch ↓ ===== */
+  @media (max-width: 768px) {
+    .project-header-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-hero-container {
+      border-radius: var(--radius-3xl) var(--radius-3xl)  0 0 !important;
+    }
+
+    .detail-ticker {
+      border-radius: 0;
+    }
+
+  }
+
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+
+
+    .title-current {
+      position: relative;
+    }
+
+    .title-current h2 {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .project-current {
+      position: absolute;
+      top: 0;
+      right: -1.5rem;
+    }
+
+    .detail-ticker {
+
+    }
   }
 </style>

@@ -40,7 +40,7 @@ defineProps<Props>()
 
 .ticker-item-image {
   border-radius: 0 var(--radius-3xl) 0 0;
-  padding: var(--spacing-md) var(--spacing-sm);
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
 .ticker-item-project {
@@ -146,8 +146,17 @@ h3 {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
+  .ticker-item-image {
+    border-radius: 0 !important;
+  }
+
   .ticker-thumbnail {
     max-width: 100%;
+  }
+
+  .ticker-thumbnail-image {
+    border-radius: 0 !important;
   }
 }
 </style>
