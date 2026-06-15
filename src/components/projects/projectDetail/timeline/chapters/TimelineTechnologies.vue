@@ -39,15 +39,10 @@
   }
 
   .technologies-container table {
-    border-collapse: collaspe;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
     border-spacing: 0 var(--spacing-lg);
-  }
-  .technologies-container tbody {
-
-  }
-
-  .technologies-container tr {
-
   }
 
   .category-label{
@@ -58,6 +53,7 @@
 
   .tech-items {
     padding-left: 2.1875rem;
+    overflow-wrap: break-word;
   }
 
   .tech-tag {

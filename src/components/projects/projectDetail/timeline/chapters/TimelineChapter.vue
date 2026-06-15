@@ -101,7 +101,8 @@
   }
 
   .chapter-title-wrapper {
-    padding-top: 1rem;
+    margin-left: 1rem;
+    padding: var(--spacing-md) 0;
   }
 
   .chapter-title-wrapper h2 {
@@ -111,7 +112,6 @@
   .chapter-title-wrapper h3 {
     font-family: 'Dosis';
     font-size: var(--font-size-xl);
-    padding-bottom: var(--spacing-lg);
   }
 
   .chapter-content {
@@ -124,15 +124,25 @@
     padding: calc(var(--spacing-lg) + var(--spacing-2sm));
     border-radius: var(--radius-3xl);
     z-index: 2;
-    margin-bottom: var(--spacing-lg);
   }
 
-  .timeline-list {
-    padding: 0 var(--spacing-2sm);
+  .chapter-content > * {
+    max-width: 100%;
+    min-width: 0;
   }
 
-  .timeline-list li {
-    padding: var(--spacing-xs);
+  .idea {
+    overflow-wrap:  break-word;
+  }
+
+  .vision {
+    overflow-wrap:  break-word;
+  }
+
+  .vision img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   .features {
@@ -158,6 +168,10 @@
 
   /* ===== Tablet portrait / mobile switch ↓ ===== */
   @media (max-width: 768px) {
+    .chapter-container {
+      padding-left: var(--spacing-lg);
+    }
+
     .chapter-num-wrapper {
       left: 5.5rem;
     }
@@ -167,6 +181,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-left: 3rem;
     }
 
     .features {
@@ -178,15 +193,15 @@
   @media (max-width: 480px) {
     .chapter-container {
       margin: var(--spacing-sm);
-      padding-left: var(--spacing-2xl);
+      padding-left: var(--spacing-xl);
     }
 
     .chapter-num-wrapper {
-      left: 7rem;
+      left: 0;
     }
 
     .chapter-title-wrapper {
-       margin-left: 3.5rem;
+       margin-left: 4rem;
     }
 
     .chapter-title-wrapper h2 {
@@ -196,11 +211,5 @@
     .chapter-title-wrapper h3 {
       font-size: var(--font-size-lg)
     }
-
-    .chapter-content {
-
-    }
-
-
   }
 </style>

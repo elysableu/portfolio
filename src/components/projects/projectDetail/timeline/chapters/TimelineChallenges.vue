@@ -35,7 +35,7 @@
 
   .challenges-table {
     width: 100%;
-    border-collapse: collapse;
+    table-layout: fixed;
   }
 
   .challenges-table thead th {
@@ -59,23 +59,8 @@
     padding: 1rem;
   }
 
-  .challenges-container tbody {
-
-  }
-
-  .challenge-item {
-
-  }
-
-  td {
+  .challenges-table td {
     padding: 20px;
-  }
-
-  .challenge {
-
-  }
-
-  .solution {
-
+    overflow-wrap: break-word;
   }
 </style>
