@@ -173,7 +173,15 @@
     }
 
     .chapter-num-wrapper {
+      top: 0.3rem;
       left: 5.5rem;
+    }
+
+    .chapter-num {
+      width: var(--spacing-4xl);
+      height: var(--spacing-4xl);
+      padding: var(--spacing-md);
+      font-size: var(--font-size-lg);
     }
 
     .chapter-title-wrapper {
@@ -193,7 +201,7 @@
   @media (max-width: 480px) {
     .chapter-container {
       margin: var(--spacing-sm);
-      padding-left: var(--spacing-xl);
+      padding-left: var(--spacing-md);
     }
 
     .chapter-num-wrapper {
@@ -210,6 +218,14 @@
 
     .chapter-title-wrapper h3 {
       font-size: var(--font-size-lg)
+    }
+
+    .chapter-content {
+      padding: var(--spacing-lg);
+    }
+
+    .chapter-content > * {
+      font-size: 0.8em;
     }
   }
 </style>
