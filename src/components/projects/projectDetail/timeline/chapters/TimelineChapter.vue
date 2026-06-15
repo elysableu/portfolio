@@ -20,11 +20,12 @@
   <div class="chapter-container">
     <div class="chapter-num-wrapper">
       <div class="chapter-num">{{ chapterNum }}</div>
-      <div class="chapter-line"></div>
     </div>
     <div class="chapter-content-container">
-      <h2>{{ chapterTitle }}</h2>
-      <h3>{{ chapterSubtitle }}</h3>
+      <div class="chapter-title-wrapper">
+        <h2>{{ chapterTitle }}</h2>
+        <h3>{{ chapterSubtitle }}</h3>
+      </div>
       <div class="chapter-content glass-card-inner">
 
         <div v-if="chapterNum === '01'" class="idea">
@@ -63,6 +64,7 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .chapter-container {
     margin: var(--spacing-xl);
     margin-bottom: var(--spacing-2xl);
@@ -93,19 +95,20 @@
     z-index: 2;
   }
 
-  .chapter-line {
-
-  }
-
   .chapter-content-container {
     width: 100%;
+    min-width: 0;
   }
 
-  .chapter-content-container h2 {
+  .chapter-title-wrapper {
+    padding-top: 1rem;
+  }
+
+  .chapter-title-wrapper h2 {
     font-size: var(--font-size-3xl);
   }
 
-  .chapter-content-container h3 {
+  .chapter-title-wrapper h3 {
     font-family: 'Dosis';
     font-size: var(--font-size-xl);
     padding-bottom: var(--spacing-lg);
@@ -116,23 +119,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 0;
     font-size: var(--font-size-lg);
     padding: calc(var(--spacing-lg) + var(--spacing-2sm));
     border-radius: var(--radius-3xl);
     z-index: 2;
     margin-bottom: var(--spacing-lg);
-  }
-
-  .timeline-text {
-
-  }
-
-  .idea {
-
-  }
-
-  .vision {
-
   }
 
   .timeline-list {
@@ -146,7 +138,7 @@
   .features {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-md);
   }
 
@@ -154,11 +146,61 @@
     width: 100%;
   }
 
-  .challenge-table {
+  /* ===== Large desktop ↓ ===== */
+  @media (max-width: 1200px) {
 
   }
 
-  .results {
+  /* ===== Tablet landscape ↓ ===== */
+  @media (max-width: 1024px) {
+
+  }
+
+  /* ===== Tablet portrait / mobile switch ↓ ===== */
+  @media (max-width: 768px) {
+    .chapter-num-wrapper {
+      left: 5.5rem;
+    }
+
+    .chapter-title-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .features {
+      grid-template-columns: 1fr;
+    };
+  }
+
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+    .chapter-container {
+      margin: var(--spacing-sm);
+      padding-left: var(--spacing-2xl);
+    }
+
+    .chapter-num-wrapper {
+      left: 7rem;
+    }
+
+    .chapter-title-wrapper {
+       margin-left: 3.5rem;
+    }
+
+    .chapter-title-wrapper h2 {
+      font-size: var(--font-size-xl)
+    }
+
+    .chapter-title-wrapper h3 {
+      font-size: var(--font-size-lg)
+    }
+
+    .chapter-content {
+
+    }
+
 
   }
 </style>
