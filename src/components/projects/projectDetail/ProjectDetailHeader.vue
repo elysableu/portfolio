@@ -234,14 +234,16 @@
     }
 
     .project-links {
-      gap: 1.5rem;
+      gap: 0.8rem;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .project-links a {
-      font-size: var(--font-size-sm);
+      font-size: var(--font-size-xs);
+      white-space: nowrap;
+      padding: 0.75rem;
     }
   }
 </style>
