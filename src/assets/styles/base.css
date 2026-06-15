@@ -213,3 +213,9 @@ a:hover {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

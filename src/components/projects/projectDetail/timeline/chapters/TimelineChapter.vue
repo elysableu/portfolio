@@ -20,11 +20,12 @@
   <div class="chapter-container">
     <div class="chapter-num-wrapper">
       <div class="chapter-num">{{ chapterNum }}</div>
-      <div class="chapter-line"></div>
     </div>
     <div class="chapter-content-container">
-      <h2>{{ chapterTitle }}</h2>
-      <h3>{{ chapterSubtitle }}</h3>
+      <div class="chapter-title-wrapper">
+        <h2>{{ chapterTitle }}</h2>
+        <h3>{{ chapterSubtitle }}</h3>
+      </div>
       <div class="chapter-content glass-card-inner">
 
         <div v-if="chapterNum === '01'" class="idea">
@@ -63,6 +64,7 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .chapter-container {
     margin: var(--spacing-xl);
     margin-bottom: var(--spacing-2xl);
@@ -93,22 +95,23 @@
     z-index: 2;
   }
 
-  .chapter-line {
-
-  }
-
   .chapter-content-container {
     width: 100%;
+    min-width: 0;
   }
 
-  .chapter-content-container h2 {
+  .chapter-title-wrapper {
+    margin-left: 1rem;
+    padding: var(--spacing-md) 0;
+  }
+
+  .chapter-title-wrapper h2 {
     font-size: var(--font-size-3xl);
   }
 
-  .chapter-content-container h3 {
+  .chapter-title-wrapper h3 {
     font-family: 'Dosis';
     font-size: var(--font-size-xl);
-    padding-bottom: var(--spacing-lg);
   }
 
   .chapter-content {
@@ -116,37 +119,36 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 0;
     font-size: var(--font-size-lg);
     padding: calc(var(--spacing-lg) + var(--spacing-2sm));
     border-radius: var(--radius-3xl);
     z-index: 2;
-    margin-bottom: var(--spacing-lg);
   }
 
-  .timeline-text {
-
+  .chapter-content > * {
+    max-width: 100%;
+    min-width: 0;
   }
 
   .idea {
-
+    overflow-wrap:  break-word;
   }
 
   .vision {
-
+    overflow-wrap:  break-word;
   }
 
-  .timeline-list {
-    padding: 0 var(--spacing-2sm);
-  }
-
-  .timeline-list li {
-    padding: var(--spacing-xs);
+  .vision img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   .features {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-md);
   }
 
@@ -154,11 +156,76 @@
     width: 100%;
   }
 
-  .challenge-table {
+  /* ===== Large desktop ↓ ===== */
+  @media (max-width: 1200px) {
 
   }
 
-  .results {
+  /* ===== Tablet landscape ↓ ===== */
+  @media (max-width: 1024px) {
 
+  }
+
+  /* ===== Tablet portrait / mobile switch ↓ ===== */
+  @media (max-width: 768px) {
+    .chapter-container {
+      padding-left: var(--spacing-lg);
+    }
+
+    .chapter-num-wrapper {
+      top: 0.3rem;
+      left: 5.5rem;
+    }
+
+    .chapter-num {
+      width: var(--spacing-4xl);
+      height: var(--spacing-4xl);
+      padding: var(--spacing-md);
+      font-size: var(--font-size-lg);
+    }
+
+    .chapter-title-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 3rem;
+    }
+
+    .features {
+      grid-template-columns: 1fr;
+    };
+  }
+
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+    .chapter-container {
+      margin: var(--spacing-sm);
+      padding-left: var(--spacing-md);
+    }
+
+    .chapter-num-wrapper {
+      left: 0;
+    }
+
+    .chapter-title-wrapper {
+       margin-left: 4rem;
+    }
+
+    .chapter-title-wrapper h2 {
+      font-size: var(--font-size-xl)
+    }
+
+    .chapter-title-wrapper h3 {
+      font-size: var(--font-size-lg)
+    }
+
+    .chapter-content {
+      padding: var(--spacing-lg);
+    }
+
+    .chapter-content > * {
+      font-size: 0.8em;
+    }
   }
 </style>

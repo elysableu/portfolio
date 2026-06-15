@@ -3,6 +3,9 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { getAssetPath } from '@/utils/assets'
 import TickerItem from './TickerItem.vue'
 import type { TickerItemType } from '@/types/data.models'
+import { isTickerImage } from '@/utils/typeGuards'
+import { isIterationStatement } from 'typescript'
+
 
 interface Props {
   title?: string
@@ -112,7 +115,7 @@ onUnmounted(() => {
       <div v-if="currentItem" class="ticker-wrapper">
         <TickerItem :key="currentItem.id" :item="currentItem" />
       </div>
-      <div v-if="currentItem && items.length > 1" class="ticker-controls">
+      <div v-if="currentItem && items.length > 1" class="ticker-controls" :class="{'is-ticker-image': isTickerImage(currentItem) }">
         <button
           @click="previousSlide"
           class="ticker-button"
@@ -266,7 +269,11 @@ onUnmounted(() => {
 
   /* Tablet portrait (600px - 768px) */
   @media screen and (max-width: 768px) {
-
+    .ticker-controls.is-ticker-image {
+      right: auto;
+      left: auto;
+      bottom: calc(-1 * var(--spacing-xs));
+    }
   }
 
   /* Large phones (480px - 600px) */

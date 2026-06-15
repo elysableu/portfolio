@@ -49,7 +49,7 @@
     chapterSix: {
       chapterNum: "06",
       chapterTitle: "The Result",
-      chapterSubtitle: "",
+      chapterSubtitle: "Where It Stands Today",
       chapterContent: {
         status: status.value,
         teamSize: teamSize.value,
@@ -88,10 +88,23 @@
 
 <style scoped>
   .timeline-container {
-
+    display: flex;
+    flex-direction: column;
   }
 
   .chapter {
-    margin: var(--spacing-3xl);
+    margin: var(--spacing-sm) var(--spacing-2xl);
+  }
+
+  @media (max-width:   768px) {
+    .chapter {
+      margin: var(--spacing-md) var(--spacing-md);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chapter {
+      margin: var(--spacing-md);
+    }
   }
 </style>

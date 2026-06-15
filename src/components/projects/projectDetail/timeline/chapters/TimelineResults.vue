@@ -45,7 +45,8 @@
 <style scoped>
   .results-container {
     display: flex;
-    gap: 5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
   }
@@ -55,6 +56,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 0;
     padding: var(--spacing-xs);
     font-size: var(--font-size-lg);
     font-weight: bold;
@@ -65,17 +67,5 @@
     border-bottom: 2px solid #49CCA4;
     text-align: center;
     font-size: var(--font-size-xl) !important;
-  }
-
-  .status {
-
-  }
-
-  .team-size {
-
-  }
-
-  .duration {
-
   }
 </style>
