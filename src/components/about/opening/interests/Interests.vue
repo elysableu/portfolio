@@ -39,4 +39,16 @@
     justify-content: center;
     padding-top: var(--spacing-sm);
   }
+
+   /* ===== Tablet portrait / mobile switch ↓ ===== */
+  @media (max-width: 768px) {
+
+  }
+
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+    .interests h4 {
+      font-size: var(--font-size-lg);
+    }
+  }
 </style>

@@ -13,6 +13,7 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .interest-item {
     background-color: var(--color-black);
     padding: var(--spacing-xs);
@@ -20,5 +21,17 @@
     font-weight: bold;
     border-radius: var(--radius-xs);
     text-align: center;
+  }
+
+  /* ===== Tablet portrait / mobile switch ↓ ===== */
+  @media (max-width: 768px) {
+
+  }
+
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+    .interest-item {
+       font-size: var(--font-size-xs);
+    }
   }
 </style>

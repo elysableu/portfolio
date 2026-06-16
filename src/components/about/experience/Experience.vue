@@ -23,6 +23,7 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .experience {
     display: flex;
     flex-direction: column;
@@ -30,7 +31,7 @@
   }
 
   .experience h2 {
-    text-align: right;
+    text-align: left;
     font-family: 'Metamorphous';
     font-size: var(--font-size-2xl);
     padding-bottom: var(--spacing-sm);
@@ -41,4 +42,24 @@
     flex-direction: column;
     gap: var(--spacing-2sm);
   }
+
+  /* ===== Large desktop ↓ ===== */
+    @media (max-width: 1200px) {
+
+    }
+
+    /* ===== Tablet landscape ↓ ===== */
+    @media (max-width: 1024px) {
+
+    }
+
+    /* ===== Tablet portrait / mobile switch ↓ ===== */
+    @media (max-width: 768px) {
+
+    }
+
+    /* ===== Phones ↓ ===== */
+    @media (max-width: 480px) {
+
+    }
 </style>
