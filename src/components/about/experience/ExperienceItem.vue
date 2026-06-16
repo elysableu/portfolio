@@ -38,6 +38,10 @@
               <img class="experience-mini-icon" alt="locationIcon" :src="getAssetPath(xpIcons.location)" />
               <p>{{ experienceItem.location }}</p>
             </span>
+            <span class="xp-heading-detail start-end">
+              <img class="experience-mini-icon" alt="startEndIcon" :src="getAssetPath(xpIcons.startEnd)" />
+              <p>{{ formatDate(experienceItem.startDate) }} - {{ formatDate(experienceItem.endDate) }}</p>
+            </span>
             <span class="xp-heading-detail location-type">
               <img class="experience-mini-icon" alt="locationTypeIcon" :src="getAssetPath(xpIcons.locationType)" />
               <p>{{ experienceItem.locationType }}</p>
@@ -45,10 +49,6 @@
             <span class="xp-heading-detail xp-type">
               <img class="experience-mini-icon" alt="xpTypeIcon" :src="getAssetPath(xpIcons.xpType)" />
               <p>{{ experienceItem.type }}</p>
-            </span>
-            <span class="xp-heading-detail start-end">
-              <img class="experience-mini-icon" alt="startEndIcon" :src="getAssetPath(xpIcons.startEnd)" />
-              <p>{{ formatDate(experienceItem.startDate) }} - {{ formatDate(experienceItem.endDate) }}</p>
             </span>
           </div>
         </div>
@@ -89,6 +89,7 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .experience-item {
     display: flex;
     flex-direction: column;
@@ -103,7 +104,7 @@
     display: flex;
     align-items: center;
     background-color: var(--color-background);
-    padding: var(--spacing-md);
+    padding: var(--spacing-xl);
     border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   }
 
@@ -162,12 +163,13 @@
   .xp-heading-detail {
     display: flex;
     font-weight: bold;
+    gap: var(--spacing-sm);
   }
 
   .experience-mini-icon {
     width: var(--icon-sm);
     height: var(--icon-sm);
-    padding-right: var(--spacing-sm);
+    /* padding-right: var(--spacing-sm); */
   }
 
   .location {
@@ -263,5 +265,66 @@
     font-size: var(--font-size-sm);
     font-weight: bold;
     border-radius: var(--radius-xs);
+  }
+
+  /* ===== Tablet portrait / mobile switch ↓ ===== */
+  @media (max-width: 768px) {
+
+  }
+
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+    .experience-item,
+    .experience-item-banner,
+    .experience-banner-content,
+    .experience-heading-content,
+    .experience-item-heading {
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .experience-item-banner {
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .experience-banner-content {
+      margin-left: 0;
+    }
+
+    .experience-item-heading {
+      flex-direction: column-reverse;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .is-current {
+      position: absolute;
+      top: -3.75rem;
+      right: -0.5rem;
+    }
+
+    .experience-heading-content {
+      justify-content: center;
+    }
+
+    .experience-heading-content h4 {
+      min-width: 0;
+      text-align: center;
+    }
+
+    .experience-heading-details {
+      flex-direction: column;
+      margin-top: var(--spacing-sm);
+      gap: var(--spacing-xs);
+    }
+
+    .xp-heading-detail {
+
+    }
   }
 </style>

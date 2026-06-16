@@ -18,9 +18,11 @@
       <img alt="education-icon" :src="getAssetPath(graduationIcon)" />
       <div class="education-item-heading">
         <h3>{{ educationItem.institution }}</h3>
-        <p>{{ educationItem.location }}</p>
+        <div class="education-item-subheading">
+          <span class="education-subheading">{{ educationItem.location }}</span>
+          <span class="education-subheading">Graduation: {{ educationItem.graduationDate }}</span>
+        </div>
       </div>
-      <div class="graduation-date">{{ educationItem.graduationDate }}</div>
     </div>
     <div class="education-item-content">
       <div class="education-item-degree">
@@ -71,11 +73,12 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .education-item {
     display: flex;
     flex-direction: column;
     background: transparent;
-     border: 1px solid var(--glass-border-medium);
+    border: 1px solid var(--glass-border-medium);
     border-radius: var(--radius-3xl);
   }
 
@@ -93,10 +96,6 @@
     height: auto;
   }
 
-  .education-item-banner p {
-
-  }
-
   .education-item-heading {
     margin-left: var(--spacing-lg);
   }
@@ -107,8 +106,9 @@
 
   }
 
-  .education-item-heading p {
-
+  .education-item-subheading {
+    display: flex;
+    gap: var(--spacing-xl);
   }
 
   .graduation-date {
@@ -132,18 +132,10 @@
     list-style: none;
   }
 
-  .education-item-degree {
-
-  }
-
   .degree-heading {
     margin-bottom: var(--spacing-sm);
     font-size: var(--font-size-lg);
     font-weight: bold;
-  }
-
-  .education-item-relevant {
-
   }
 
   .education-item-relevant h4 {
@@ -164,10 +156,6 @@
     border-radius: var(--radius-xs);
   }
 
-  .education-item-projects {
-
-  }
-
   .education-item-projects h4 {
     font-size: var(--font-size-lg);
     font-family: 'Dosis';
@@ -180,7 +168,7 @@
   }
 
   .project-item {
-   max-width: 15.625rem;
+    width: 13rem;
     color: var(--color-text);
     border-radius: var(--radius-xs);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -211,13 +199,30 @@
 
   .project-content {
     padding: var(--spacing-sm);
-  }
-
-  .project-content p {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-base)
   }
 
   .project-name {
+    font-weight: bold;
+  }
 
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+    .education-item-banner {
+      flex-direction: column;
+    }
+
+    .education-item-heading {
+      text-align: center;
+      margin-left: 0;
+    }
+
+    .education-item-subheading {
+      justify-content: center;
+    }
+
+    .project-item {
+
+    }
   }
 </style>

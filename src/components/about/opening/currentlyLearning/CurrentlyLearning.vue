@@ -22,6 +22,7 @@
 </template>
 
 <style scoped>
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
   .currently-learning {
    padding-bottom: var(--spacing-2sm);
   }
@@ -38,5 +39,17 @@
     gap: var(--spacing-2sm);
     justify-content: center;
     padding-top: var(--spacing-sm);
+  }
+
+   /* ===== Tablet portrait / mobile switch ↓ ===== */
+  @media (max-width: 768px) {
+
+  }
+
+  /* ===== Phones ↓ ===== */
+  @media (max-width: 480px) {
+    .currently-learning h4 {
+      font-size: var(--font-size-lg);
+    }
   }
 </style>

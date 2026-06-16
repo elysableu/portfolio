@@ -30,6 +30,7 @@
 
   .journey-item img {
     margin-right: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
     width: var(--icon-lg);
     height: auto;
   }

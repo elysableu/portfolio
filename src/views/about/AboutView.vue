@@ -42,86 +42,103 @@
     <!-- Two Column (main content): only renders once aboutData resolves -->
     <div v-else-if="aboutData" class="about-content">
       <!-- Left Column: who I am and what I know -->
-      <div class="about-content-left">
+      <!-- <div class="about-content-left"> -->
         <div class="opening-container">
           <OpeningDetails :about="aboutData.about"/>
         </div>
         <div class="skills-container">
           <Skills :skills="aboutData.skills"/>
         </div>
-      </div>
+      <!-- </div> -->
       <!-- Right Column: where I've studied and where I'e worked -->
-      <div class="about-content-right">
+      <!-- <div class="about-content-right"> -->
         <div class="education-container">
           <Education :educationList="aboutData.education"/>
         </div>
         <div class="experience-container">
           <Experience :experienceList="aboutData.experience"/>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </template>
 
 <style>
-.about-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  min-width: 100%;
-}
-
-.about-content {
-  display: flex;
-  gap: var(--spacing-md);
-  padding-bottom: var(--page-padding-bottom);
-  overflow: hidden;
-}
-
-.about-content-left {
- min-width: 0;
- display: flex;
- flex-direction: column;
- gap: var(--spacing-md);
-}
-
-.about-content-right {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.opening-container {
-
-}
-
-.education-container {
-
-}
-
-.experience-container {
-
-}
-
-.skills-container {
-  width: 100%;
-  position: relative;
-  border-radius: var(--radius-3xl);
-}
-
-.loading {
-
-}
-
-.error {
-
-}
-
-/* @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
+  /* ===== Base / desktop-first styles go above the breakpoints ===== */
+  .about-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    min-width: 100%;
   }
-} */
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding-bottom: var(--page-padding-bottom);
+    overflow: hidden;
+  }
+
+  .about-content-left {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  }
+
+  .about-content-right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .opening-container {
+
+  }
+
+  .education-container {
+
+  }
+
+  .experience-container {
+
+  }
+
+  .skills-container {
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-3xl);
+  }
+
+  .loading {
+
+  }
+
+  .error {
+
+  }
+
+
+
+
+    /* ===== Large desktop ↓ ===== */
+    @media (max-width: 1200px) {
+
+    }
+
+    /* ===== Tablet landscape ↓ ===== */
+    @media (max-width: 1024px) {
+
+    }
+
+    /* ===== Tablet portrait / mobile switch ↓ ===== */
+    @media (max-width: 768px) {
+
+    }
+
+    /* ===== Phones ↓ ===== */
+    @media (max-width: 480px) {
+
+    }
 </style>
