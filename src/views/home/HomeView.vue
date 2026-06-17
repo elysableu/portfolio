@@ -145,6 +145,11 @@ onMounted(async () => {
 
   /* Half-width / Small desktop (960px - 1280px) */
   @media screen and (max-width: 1280px) {
+    .home-container {
+      height: auto;
+      min-height: 100%;
+    }
+
     .greeting-header {
       transform: translate(2.5vw, 0.5vh) scale(0.95);
     }
@@ -192,7 +197,7 @@ onMounted(async () => {
       transform: translateY(4vh) scale(0.8);
       text-align: center;
     }
-    
+
     .home-content {
       flex-direction: column-reverse;
       flex: none;
